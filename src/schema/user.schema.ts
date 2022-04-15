@@ -1,5 +1,11 @@
 import { object, string, ref } from "yup";
 
+export const googleLoginSchema = object({
+  body: object({
+    tokenId: string().required("Token id is required")
+  })
+})
+
 export const createUserSchema = object({
     body: object({
       name: string().required("Name is required"),

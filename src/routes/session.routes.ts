@@ -2,9 +2,10 @@ import express from "express";
 import { 
     createUserSessionHandler,
     getUserSessionsHandler,
-    invalidateUserSessionHandler
+    invalidateUserSessionHandler,
+    createSessionWithGoogle
 } from "../controller/session.controller";
-import { createUserSessionSchema } from "../schema/user.schema";
+import { createUserSessionSchema, googleLoginSchema } from "../schema/user.schema";
 import { validateRequest, requiredUser } from "../middleware";
 
 const router = express.Router();
@@ -13,6 +14,12 @@ router.post(
     "/",
     validateRequest(createUserSessionSchema),
     createUserSessionHandler
+);
+
+router.post(
+    "/google",
+    validateRequest(googleLoginSchema),
+    createSessionWithGoogle
 );
 
 router.get(
