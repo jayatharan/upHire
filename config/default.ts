@@ -3,7 +3,7 @@ export default {
     host: "localhost",
     dbUri: "mongodb://localhost:27017/rest-api",
     saltWorkFactor: 10,
-    accessTokenTtl: "15m",
+    accessTokenTtl: "1440m",
     refreshTokenTtl: "1y",
     privateKey: `-----BEGIN RSA PRIVATE KEY-----
     MIICWwIBAAKBgQCQNBc4IP2ewViqE+ZHbnqGoCZFyAUtrxKmO4k/boSvBisJH6BX
@@ -22,4 +22,3 @@ export default {
     -----END CERTIFICATE-----`,
     googleClientId:"686177336588-qhhagupocke5qsclkt0n07h9s6c8bbpu.apps.googleusercontent.com"
 };
-  

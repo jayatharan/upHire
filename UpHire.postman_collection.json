@@ -70,7 +70,7 @@
 				"header": [
 					{
 						"key": "authorization",
-						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjU4MTk0MGE3YTEwYjc3MzMzYjQ3NDEiLCJlbWFpbCI6ImluZHJhbmpheWF0aGFyYW4zQGdtYWlsLmNvbSIsIm5hbWUiOiJKYXlhdGhhcmFuIiwiY3JlYXRlZEF0IjoiMjAyMi0wNC0xNFQxMjo1MzoyMC45NjhaIiwidXBkYXRlZEF0IjoiMjAyMi0wNC0xNFQxMjo1MzoyMC45NjhaIiwiX192IjowLCJzZXNzaW9uIjoiNjI1ODJmNmE3NmY4MjcwYjZkZDYwZWUyIiwiaWF0IjoxNjQ5OTQ2NDc0LCJleHAiOjE2NDk5NDczNzR9.V2jxR32FXUaCAWKNdLJkXeQG4Gk5brqtIOl-dWzxlZ8",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjU4MTk0MGE3YTEwYjc3MzMzYjQ3NDEiLCJlbWFpbCI6ImluZHJhbmpheWF0aGFyYW4zQGdtYWlsLmNvbSIsIm5hbWUiOiJKYXlhdGhhcmFuIiwiY3JlYXRlZEF0IjoiMjAyMi0wNC0xNFQxMjo1MzoyMC45NjhaIiwidXBkYXRlZEF0IjoiMjAyMi0wNC0xNFQxMjo1MzoyMC45NjhaIiwiX192IjowLCJzZXNzaW9uIjoiNjI1OGVkMDllNjY2N2NjYzI0MmMxZDk2IiwiaWF0IjoxNjQ5OTk1MDE3LCJleHAiOjE2NDk5OTU5MTd9.J5SPlKKcCe18a24R5CTqlBfmHMnKWqaUpIY18_AS-OA",
 						"type": "text"
 					},
 					{
@@ -120,6 +120,36 @@
 					"path": [
 						"api",
 						"sessions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateSessionWithGoogle",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tokenId\":\"eyJhbGciOiJSUzI1NiIsImtpZCI6ImYxMzM4Y2EyNjgzNTg2M2Y2NzE0MDhmNDE3MzhhN2I0OWU3NDBmYzAiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiNjg2MTc3MzM2NTg4LXFoaGFndXBvY2tlNXFzY2xrdDBuMDdoOXM2YzhiYnB1LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiNjg2MTc3MzM2NTg4LXFoaGFndXBvY2tlNXFzY2xrdDBuMDdoOXM2YzhiYnB1LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTAxNDc4NjYwODUxODczOTAxNTI2IiwiaGQiOiJjYWxjZXkuY29tIiwiZW1haWwiOiJpbmRyYW5AY2FsY2V5LmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhdF9oYXNoIjoiYWZPOGFSeG9IWi1scDJNRmxDSEJHZyIsIm5hbWUiOiJJbmRyYW4gSmF5YXRoYXJhbiIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQVRYQUp4WDBUdkFISWhMR2hoVDNHb1pqYjVPVE10UENuaHBYbnVBUXBubz1zOTYtYyIsImdpdmVuX25hbWUiOiJJbmRyYW4iLCJmYW1pbHlfbmFtZSI6IkpheWF0aGFyYW4iLCJsb2NhbGUiOiJlbiIsImlhdCI6MTY1MDAxMDE2MiwiZXhwIjoxNjUwMDEzNzYyLCJqdGkiOiIxZWNmZDNmODA5NjBmNzcyY2NmOTRlYjI0MjQ0MDRiMzlhZDU4YTY1In0.QxYQGebVBXMr4OifsUrKol3k3sI9suTd8iGfG8W1vdgng7Q3ic2YRDeb4jCFP9l-asJy04Eup8QBORHTdQ8xoIKlAK-nBcog879_wrhH5kWqj9EmXeteTtxLEp-6TnG58ulxHj99RuIh205ablbHoSbl_22xbkA1Juyxsc4y0Rb95oHydbD_UKrVo2pdfq9KSOoZvbsL96vyha-WEM-daCPekOG6jb0cGABlZXzdRT5y13gCbHwY9DfA9Xjld2ogoMPedSqDTi5j-p2uv4RZFEmlhopJFgF8OH-ho6cgIc4wyCU3eR4seZQJoyzUoUtwHJ9GwnZg6F2eFrOETkfujg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1337/api/sessions/google",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"sessions",
+						"google"
 					]
 				}
 			},
