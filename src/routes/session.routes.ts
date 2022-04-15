@@ -10,19 +10,19 @@ import { validateRequest, requiredUser } from "../middleware";
 const router = express.Router();
 
 router.post(
-    "/api/sessions",
+    "/",
     validateRequest(createUserSessionSchema),
     createUserSessionHandler
 );
 
 router.get(
-    "/api/sessions",
+    "/",
     requiredUser,
     getUserSessionsHandler
 );
 
 router.delete(
-    "/api/sessions", 
+    "/", 
     requiredUser, 
     invalidateUserSessionHandler
 );

@@ -6,7 +6,7 @@ import { validateRequest } from "../middleware";
 const router = express.Router();
 
 router.post(
-    "/api/users",
+    "/",
     validateRequest(createUserSchema),
     createUserHandler
 );
