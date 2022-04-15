@@ -1,0 +1,129 @@
+{
+	"info": {
+		"_postman_id": "8ad61253-bf36-4f3a-ade2-7fb11bd3112d",
+		"name": "UpHire",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "createUser",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Jayatharan\",\r\n    \"email\":\"indranjayatharan3@gmail.com\",\r\n    \"password\":\"123456\",\r\n    \"passwordConfirmation\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1337/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createSession",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"indranjayatharan3@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1337/api/sessions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"sessions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Sessions",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjU4MTk0MGE3YTEwYjc3MzMzYjQ3NDEiLCJlbWFpbCI6ImluZHJhbmpheWF0aGFyYW4zQGdtYWlsLmNvbSIsIm5hbWUiOiJKYXlhdGhhcmFuIiwiY3JlYXRlZEF0IjoiMjAyMi0wNC0xNFQxMjo1MzoyMC45NjhaIiwidXBkYXRlZEF0IjoiMjAyMi0wNC0xNFQxMjo1MzoyMC45NjhaIiwiX192IjowLCJzZXNzaW9uIjoiNjI1ODJmNmE3NmY4MjcwYjZkZDYwZWUyIiwiaWF0IjoxNjQ5OTQ2NDc0LCJleHAiOjE2NDk5NDczNzR9.V2jxR32FXUaCAWKNdLJkXeQG4Gk5brqtIOl-dWzxlZ8",
+						"type": "text"
+					},
+					{
+						"key": "x-refresh",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjI1ODE5NDBhN2ExMGI3NzMzM2I0NzQxIiwidmFsaWQiOnRydWUsInVzZXJBZ2VudCI6IlBvc3RtYW5SdW50aW1lLzcuMjkuMCIsIl9pZCI6IjYyNTgyZjZhNzZmODI3MGI2ZGQ2MGVlMiIsImNyZWF0ZWRBdCI6IjIwMjItMDQtMTRUMTQ6Mjc6NTQuMjM4WiIsInVwZGF0ZWRBdCI6IjIwMjItMDQtMTRUMTQ6Mjc6NTQuMjM4WiIsIl9fdiI6MCwiaWF0IjoxNjQ5OTQ2NDc0LCJleHAiOjE2ODE1MDQwNzR9.KLwFAdSXmdInYH1a1k0djtbl1ftmlEQGy3hlEtp-zc8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:1337/api/sessions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"sessions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete Session",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjU4MTk0MGE3YTEwYjc3MzMzYjQ3NDEiLCJlbWFpbCI6ImluZHJhbmpheWF0aGFyYW4zQGdtYWlsLmNvbSIsIm5hbWUiOiJKYXlhdGhhcmFuIiwiY3JlYXRlZEF0IjoiMjAyMi0wNC0xNFQxMjo1MzoyMC45NjhaIiwidXBkYXRlZEF0IjoiMjAyMi0wNC0xNFQxMjo1MzoyMC45NjhaIiwiX192IjowLCJzZXNzaW9uIjoiNjI1ODJmNmE3NmY4MjcwYjZkZDYwZWUyIiwiaWF0IjoxNjQ5OTQ2NDc0LCJleHAiOjE2NDk5NDczNzR9.V2jxR32FXUaCAWKNdLJkXeQG4Gk5brqtIOl-dWzxlZ8",
+						"type": "text"
+					},
+					{
+						"key": "x-refresh",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjI1ODE5NDBhN2ExMGI3NzMzM2I0NzQxIiwidmFsaWQiOnRydWUsInVzZXJBZ2VudCI6IlBvc3RtYW5SdW50aW1lLzcuMjkuMCIsIl9pZCI6IjYyNTgyZjZhNzZmODI3MGI2ZGQ2MGVlMiIsImNyZWF0ZWRBdCI6IjIwMjItMDQtMTRUMTQ6Mjc6NTQuMjM4WiIsInVwZGF0ZWRBdCI6IjIwMjItMDQtMTRUMTQ6Mjc6NTQuMjM4WiIsIl9fdiI6MCwiaWF0IjoxNjQ5OTQ2NDc0LCJleHAiOjE2ODE1MDQwNzR9.KLwFAdSXmdInYH1a1k0djtbl1ftmlEQGy3hlEtp-zc8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:1337/api/sessions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"api",
+						"sessions"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
