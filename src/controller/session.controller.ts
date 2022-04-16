@@ -36,7 +36,7 @@ export async function createUserSessionHandler(req: Request, res: Response) {
         expiresIn: config.get("refreshTokenTtl"), // 1 year
     });
 
-    return res.send({ accessToken, refreshToken });
+    return res.send({ accessToken, refreshToken, user });
 }
 
 export async function createSessionWithGoogle(req:Request, res:Response) {
@@ -66,7 +66,7 @@ export async function createSessionWithGoogle(req:Request, res:Response) {
             expiresIn: config.get("refreshTokenTtl"), // 1 year
         });
 
-        return res.send({ accessToken, refreshToken });
+        return res.send({ accessToken, refreshToken, user });
     } catch (e) {
         log.error(e);
         return res.status(409).send(e)
