@@ -5,7 +5,8 @@ import {
     createSession,
     createAccessToken,
     findSessions,
-    updateSession
+    updateSession,
+    reIssueAccessToken
 } from "../service/session.service";
 import { sign } from "../utils/jwt.utils";
 import { get } from "lodash";
@@ -71,6 +72,19 @@ export async function createSessionWithGoogle(req:Request, res:Response) {
         log.error(e);
         return res.status(409).send(e)
     }
+}
+
+export async function createAccessTokenWithRefreshToken(req: Request,res: Response) {
+    
+    const {refreshToken} = req.body;
+
+    const newAccessToken = await reIssueAccessToken({ refreshToken });
+
+    if (newAccessToken) {
+        return res.send({accessToken : newAccessToken})
+    }
+
+    return res.status(403).send();
 }
 
 export async function invalidateUserSessionHandler(

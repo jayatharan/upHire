@@ -35,3 +35,10 @@ export const createUserSessionSchema = object({
         .required("Email is required"),
     }),
 });
+
+export const refreshTokenSchema = object({
+  body: object({
+    refreshToken: string()
+    .required("Refresh token is required")
+  })
+})

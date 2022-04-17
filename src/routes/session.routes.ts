@@ -3,9 +3,14 @@ import {
     createUserSessionHandler,
     getUserSessionsHandler,
     invalidateUserSessionHandler,
-    createSessionWithGoogle
+    createSessionWithGoogle,
+    createAccessTokenWithRefreshToken
 } from "../controller/session.controller";
-import { createUserSessionSchema, googleLoginSchema } from "../schema/user.schema";
+import { 
+    createUserSessionSchema, 
+    googleLoginSchema,
+    refreshTokenSchema
+} from "../schema/user.schema";
 import { validateRequest, requiredUser } from "../middleware";
 
 const router = express.Router();
@@ -21,6 +26,12 @@ router.post(
     validateRequest(googleLoginSchema),
     createSessionWithGoogle
 );
+
+router.post(
+    "/token",
+    validateRequest(refreshTokenSchema),
+    createAccessTokenWithRefreshToken
+)
 
 router.get(
     "/",
