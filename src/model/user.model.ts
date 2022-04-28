@@ -5,6 +5,8 @@ import config from "config";
 export interface UserDocument extends mongoose.Document {
     email: string;
     name: string;
+    role?: string;
+    emailVerified?:boolean;
     password?: string;
     createdAt: Date;
     updateAt: Date;
@@ -14,8 +16,21 @@ export interface UserDocument extends mongoose.Document {
 const UserSchema = new mongoose.Schema(
     {
         email: { type: String, require: true, unique: true },
+        alternativeEmail: { type: String, require: false },
         name: { type: String, require: true },
-        password: { type: String, require: false }
+        password: { type: String, require: false },
+        role: { 
+            type: String,
+            enum: ["client", "admin"],
+            default: "client"
+        },
+        emailVerified : {
+            type:Boolean,
+            default: false
+        },
+        mobileNumber : {
+            type: String
+        }
     },
     { timestamps: true }
 );
