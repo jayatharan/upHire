@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import { AddressSchema, CompanyBasicSchema, DateDurationSchema, UserBasicSchema } from "./schemas";
+import Proposal from "./proposal.model";
 
 const ProjectSchema = new mongoose.Schema({
     user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
@@ -37,6 +38,10 @@ const ProjectSchema = new mongoose.Schema({
     },
     remainingAmount: {
         type: Number
+    },
+    acceptedProposal: {
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: "Proposal"
     }
 },{
     timestamps:true
