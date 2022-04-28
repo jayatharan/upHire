@@ -1,6 +1,24 @@
 import mongoose from "mongoose";
-import { AddressSchema, CompanyBasicSchema, DateDurationSchema, UserBasicSchema } from "./schemas";
-import Proposal from "./proposal.model";
+import { DateDurationSchema, UserBasicSchema, DateDuration, UserBasic } from "./schemas";
+
+export interface ProjectDocument {
+    user?: mongoose.Schema.Types.ObjectId;
+    createBy?: UserBasic;
+    showContactDetails?: boolean;
+    title?: string;
+    description?: string;
+    category?: string;
+    budget?: number;
+    hourly?: number;
+    timeline?: string;
+    duration?: DateDuration;
+    amount?: number;
+    rate?: number;
+    remainingAmount?: number;
+    acceptedProposal?:mongoose.Schema.Types.ObjectId;
+    createdAt: Date;
+    updateAt: Date;
+}
 
 const ProjectSchema = new mongoose.Schema({
     user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
@@ -48,6 +66,6 @@ const ProjectSchema = new mongoose.Schema({
 }
 )
 
-const Project = mongoose.model("Project", ProjectSchema);
+const Project = mongoose.model<ProjectDocument>("Project", ProjectSchema);
 
 export default Project;

@@ -1,5 +1,11 @@
 import mongoose from "mongoose";
-import AddressSchema from "./address.shema";
+import AddressSchema,{Address} from "./address.shema";
+
+export interface CompanyBasic {
+    name?:string;
+    description?:string;
+    address?:Address;
+}
 
 const CompanyBasicSchema = new mongoose.Schema({
     name: {

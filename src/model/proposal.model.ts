@@ -1,11 +1,29 @@
 import mongoose from "mongoose";
-import { AddressSchema, CompanyBasicSchema, DateDurationSchema, UserBasicSchema } from "./schemas";
+import { DateDurationSchema, UserBasicSchema, DateDuration, UserBasic } from "./schemas";
+
+export interface ProposalDocument {
+    project:mongoose.Schema.Types.ObjectId;
+    user:mongoose.Schema.Types.ObjectId;
+    createBy?: UserBasic;
+    showContactDetails?:boolean;
+    amount?:number;
+    duration?:DateDuration;
+    status?:string;
+    createdAt: Date;
+    updateAt: Date;
+}
 
 const ProposalSchema = new mongoose.Schema({
     project:{
-        type: mongoose.Schema.Types.ObjectId, ref: "Project"
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: "Project",
+        required:true
     },
-    user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+    user: { 
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: "User",
+        required:true
+    },
     createBy: UserBasicSchema,
     showContactDetails: {
         type: Boolean
@@ -21,6 +39,6 @@ const ProposalSchema = new mongoose.Schema({
     timestamps:true
 })
 
-const Proposal = mongoose.model("Proposal", ProposalSchema);
+const Proposal = mongoose.model<ProposalDocument>("Proposal", ProposalSchema);
 
 export default Proposal;
