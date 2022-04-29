@@ -29,7 +29,13 @@ export default class BaseCRUDApi<T> {
     }
 
     public async update(id: mongoose.Schema.Types.ObjectId, data:T){
-        return (await this.model.updateOne({_id:id}, data));
+        return (await this.model.replaceOne({_id:id}, data).setOptions({
+            upsert: true
+        }));
+    }
+
+    public async patch(id: mongoose.Schema.Types.ObjectId, data:T){
+        return (await this.model.findByIdAndUpdate(id, data, { new: true }))
     }
 
     public async delete(id: mongoose.Schema.Types.ObjectId){

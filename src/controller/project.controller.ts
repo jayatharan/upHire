@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import { Request, Response } from "express";
 import ProjectService from "../service/project.service";
 import { ProjectDocument } from "../model/project.model";
@@ -31,6 +32,29 @@ export async function createProject(req: Request, res: Response) {
             email:user.email
         }
         const project = await ProjectService.baseApi.create(data);
+        res.send(project);
+    }catch (e) {
+        log.error(e);
+        return res.status(400).send(e);
+    }
+}
+
+export async function getProjectById(req: Request, res: Response) {
+    try{
+        const id = req.params.id as unknown as mongoose.Schema.Types.ObjectId;
+        const project = await ProjectService.baseApi.get(id);
+        res.send(project);
+    }catch (e) {
+        log.error(e);
+        return res.status(400).send(e);
+    }
+}
+
+export async function patchProject(req: Request, res: Response) {
+    try{
+        const id = req.params.id as unknown as mongoose.Schema.Types.ObjectId;
+        let data = req.body as ProjectDocument;
+        const project = await ProjectService.baseApi.patch(id, data);
         res.send(project);
     }catch (e) {
         log.error(e);
