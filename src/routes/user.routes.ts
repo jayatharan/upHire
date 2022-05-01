@@ -1,7 +1,7 @@
 import express from "express";
-import { createUserHandler } from "../controller/user.controller";
+import { createUserHandler, updateUserBiography, getUserDetails, addUserProfessionalDetail, addUserEducationalDetail } from "../controller/user.controller";
 import { createUserSchema } from "../schema/user.schema";
-import { validateRequest } from "../middleware";
+import { validateRequest, requiredUser } from "../middleware";
 
 const router = express.Router();
 
@@ -10,5 +10,29 @@ router.post(
     validateRequest(createUserSchema),
     createUserHandler
 );
+
+router.get(
+    "/",
+    requiredUser,
+    getUserDetails
+);
+
+router.post(
+    "/biography",
+    requiredUser,
+    updateUserBiography
+);
+
+router.post(
+    "/professional-detail",
+    requiredUser,
+    addUserProfessionalDetail
+);
+
+router.post(
+    "/educational-detail",
+    requiredUser,
+    addUserEducationalDetail
+)
 
 export default router;

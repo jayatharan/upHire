@@ -20,7 +20,7 @@ export default class BaseCRUDApi<T> {
         return (await this.model.find().limit(limit).skip((page-1)*1));
     }
 
-    public async get(id: mongoose.Schema.Types.ObjectId) {
+    public async get(id: mongoose.Types.ObjectId) {
         return (await this.model.findById(id));
     }
 
@@ -28,17 +28,17 @@ export default class BaseCRUDApi<T> {
         return (await this.model.create(data));
     }
 
-    public async update(id: mongoose.Schema.Types.ObjectId, data:T){
+    public async update(id: mongoose.Types.ObjectId, data:T){
         return (await this.model.replaceOne({_id:id}, data).setOptions({
             upsert: true
         }));
     }
 
-    public async patch(id: mongoose.Schema.Types.ObjectId, data:T){
+    public async patch(id: mongoose.Types.ObjectId, data:T){
         return (await this.model.findByIdAndUpdate(id, data, { new: true }))
     }
 
-    public async delete(id: mongoose.Schema.Types.ObjectId){
+    public async delete(id: mongoose.Types.ObjectId){
         return (await this.model.deleteOne({_id:id}));
     }
 }

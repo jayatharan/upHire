@@ -37,7 +37,7 @@ export async function createProposal(req: Request, res: Response) {
 
 export async function getProposalById(req: Request, res: Response) {
     try{
-        const id = req.params.id as unknown as mongoose.Schema.Types.ObjectId;
+        const id = req.params.id as unknown as mongoose.Types.ObjectId;
         const proposal = await ProposalService.baseApi.get(id);
         res.send(proposal);
     }catch (e) {
@@ -48,7 +48,7 @@ export async function getProposalById(req: Request, res: Response) {
 
 export async function patchProposal(req: Request, res: Response) {
     try{
-        const id = req.params.id as unknown as mongoose.Schema.Types.ObjectId;
+        const id = req.params.id as unknown as mongoose.Types.ObjectId;
         let data = req.body as ProposalDocument;
         const proposal = await ProposalService.baseApi.patch(id, data);
         res.send(proposal);

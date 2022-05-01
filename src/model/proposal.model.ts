@@ -2,8 +2,8 @@ import mongoose from "mongoose";
 import { DateDurationSchema, UserBasicSchema, DateDuration, UserBasic } from "./schemas";
 
 export interface ProposalDocument {
-    project:mongoose.Schema.Types.ObjectId;
-    user:mongoose.Schema.Types.ObjectId;
+    project:mongoose.Types.ObjectId;
+    user:mongoose.Types.ObjectId;
     createBy?: UserBasic;
     showContactDetails?:boolean;
     amount?:number;

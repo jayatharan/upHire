@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import { DateDurationSchema, UserBasicSchema, DateDuration, UserBasic } from "./schemas";
 
 export interface ProjectDocument {
-    user?: mongoose.Schema.Types.ObjectId;
+    user?: mongoose.Types.ObjectId;
     createBy?: UserBasic;
     showContactDetails?: boolean;
     title?: string;
@@ -15,7 +15,7 @@ export interface ProjectDocument {
     amount?: number;
     rate?: number;
     remainingAmount?: number;
-    acceptedProposal?:mongoose.Schema.Types.ObjectId;
+    acceptedProposal?:mongoose.Types.ObjectId;
     createdAt: Date;
     updateAt: Date;
 }

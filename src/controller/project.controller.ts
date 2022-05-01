@@ -37,7 +37,7 @@ export async function createProject(req: Request, res: Response) {
 
 export async function getProjectById(req: Request, res: Response) {
     try{
-        const id = req.params.id as unknown as mongoose.Schema.Types.ObjectId;
+        const id = req.params.id as unknown as mongoose.Types.ObjectId;
         const project = await ProjectService.baseApi.get(id);
         res.send(project);
     }catch (e) {
@@ -48,7 +48,7 @@ export async function getProjectById(req: Request, res: Response) {
 
 export async function patchProject(req: Request, res: Response) {
     try{
-        const id = req.params.id as unknown as mongoose.Schema.Types.ObjectId;
+        const id = req.params.id as unknown as mongoose.Types.ObjectId;
         let data = req.body as ProjectDocument;
         const project = await ProjectService.baseApi.patch(id, data);
         res.send(project);
@@ -60,7 +60,7 @@ export async function patchProject(req: Request, res: Response) {
 
 export async function getAllProjectProposals(req: Request, res: Response) {
     try{
-        const id = req.params.id as unknown as mongoose.Schema.Types.ObjectId;
+        const id = req.params.id as unknown as mongoose.Types.ObjectId;
         const pagination:Pagination = extractPagination(req);
         const proposals = await ProjectService.getAllProjectProposals(pagination.limit, pagination.page, id);
         return res.send(proposals)
