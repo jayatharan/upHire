@@ -1,5 +1,12 @@
 import express from "express";
-import { createUserHandler, updateUserBiography, getUserDetails, addUserProfessionalDetail, addUserEducationalDetail } from "../controller/user.controller";
+import { 
+    createUserHandler, 
+    updateUserBiography, 
+    getUserDetails, 
+    addUserProfessionalDetail, 
+    addUserEducationalDetail, 
+    addUserProjectDetail 
+} from "../controller/user.controller";
 import { createUserSchema } from "../schema/user.schema";
 import { validateRequest, requiredUser } from "../middleware";
 
@@ -33,6 +40,12 @@ router.post(
     "/educational-detail",
     requiredUser,
     addUserEducationalDetail
+)
+
+router.post(
+    "/project-detail",
+    requiredUser,
+    addUserProjectDetail
 )
 
 export default router;

@@ -28,7 +28,7 @@ export async function createProposal(req: Request, res: Response) {
             email:user.email
         }
         const proposal = await ProposalService.baseApi.create(data);
-        res.send(proposal);
+        return res.send(proposal);
     }catch (e) {
         log.error(e);
         return res.status(400).send(e);
@@ -39,7 +39,7 @@ export async function getProposalById(req: Request, res: Response) {
     try{
         const id = req.params.id as unknown as mongoose.Types.ObjectId;
         const proposal = await ProposalService.baseApi.get(id);
-        res.send(proposal);
+        return res.send(proposal);
     }catch (e) {
         log.error(e);
         return res.status(400).send(e);
@@ -49,9 +49,26 @@ export async function getProposalById(req: Request, res: Response) {
 export async function patchProposal(req: Request, res: Response) {
     try{
         const id = req.params.id as unknown as mongoose.Types.ObjectId;
+        const user = get(req, "user");
         let data = req.body as ProposalDocument;
+        const existingProposal = await ProposalService.baseApi.get(id);
+        if(existingProposal === null || existingProposal.user.toString() !== user._id) return res.status(403).send();
         const proposal = await ProposalService.baseApi.patch(id, data);
-        res.send(proposal);
+        return res.send(proposal);
+    }catch (e) {
+        log.error(e);
+        return res.status(400).send(e);
+    }
+}
+
+export async function deleteProposal(req: Request, res: Response){
+    try{
+        const id = req.params.id as unknown as mongoose.Types.ObjectId;
+        const user = get(req, "user");
+        const proposal = await ProposalService.baseApi.get(id);
+        if(proposal === null || proposal.user.toString() === user._id) return res.status(403).send();
+        await ProposalService.baseApi.delete(id);
+        return res.send(proposal);
     }catch (e) {
         log.error(e);
         return res.status(400).send(e);

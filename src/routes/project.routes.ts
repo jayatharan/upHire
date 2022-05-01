@@ -1,5 +1,5 @@
 import express from "express";
-import { getAllProjects, createProject, patchProject, getProjectById,getAllProjectProposals } from "../controller/project.controller";
+import { getAllProjects, createProject, patchProject, getProjectById,getAllProjectProposals, addProjectProposal } from "../controller/project.controller";
 import { validateRequest, requiredUser } from "../middleware";
 
 const router = express.Router();
@@ -28,6 +28,12 @@ router.patch(
 router.get(
     "/:id/proposals",
     getAllProjectProposals
+)
+
+router.post(
+    "/:id/proposals",
+    requiredUser,
+    addProjectProposal
 )
 
 export default router;

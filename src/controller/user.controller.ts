@@ -4,9 +4,11 @@ import { createUser } from "../service/user.service";
 import { BiographyDocument } from "../model/biography.model";
 import { ProfessionalDetailDocument } from "../model/professionalDetail.model"
 import { EducationalDetailDocument } from "../model/educationalDetail.model";
+import { ProjectDetailDocument } from "../model/projectDetail.model";
 import BiographyService from "../service/biography.service";
 import ProfessionalDetailService from "../service/professionalDetail.service";
 import EducationalDetailService from "../service/educationalDetail.service";
+import ProjectDetailService from "../service/projectDetail.service";
 
 import log from "../logger";
 import { get } from "lodash";
@@ -60,13 +62,27 @@ export async function addUserEducationalDetail(req: Request, res:Response){
     }
 }
 
+export async function addUserProjectDetail(req: Request, res:Response){
+    try{
+        const user = get(req, "user");
+        let data = req.body as ProjectDetailDocument;
+        data.user = user._id;
+        let projectDetail = await ProjectDetailService.baseApi.create(data);
+        res.send(projectDetail);
+    }catch (e) {
+        log.error(e);
+        return res.status(400).send(e)
+    }
+}
+
 export async function getUserDetails(req: Request, res: Response) {
     try{
         const user = get(req, "user");
         let biography = await BiographyService.getUserBiography(user._id);
         let professionalDetails = await ProfessionalDetailService.getUserProfessionalDetails(user._id);
         let educationalDetails = await EducationalDetailService.getUserEducationalDetails(user._id);
-        res.send({user, biography, professionalDetails, educationalDetails})
+        let projectDetails = await ProjectDetailService.getUserProjectDetails(user._id);
+        res.send({user, biography, professionalDetails, educationalDetails, projectDetails});
     }catch (e) {
         log.error(e);
         return res.status(400).send(e)
