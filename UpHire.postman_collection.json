@@ -2,9 +2,174 @@
 	"info": {
 		"_postman_id": "8ad61253-bf36-4f3a-ade2-7fb11bd3112d",
 		"name": "UpHire",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
+		{
+			"name": "Projects",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/api/projects?page=1&limit=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"projects"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjZlMWMyZjI1NDQ2N2ZlYzQxY2JjMjIiLCJpYXQiOjE2NTEzODMzNDMsImV4cCI6MTY1MTQ2OTc0M30.IMdmJs4EJtxirG-8jgTJHjpqgKJdsIgc1pYSkn1ApuI"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"showContactDetails\":false,\r\n    \"title\":\"Project 2\",\r\n    \"description\":\"Description\",\r\n    \"category\":\"Category\",\r\n    \"budget\":100000,\r\n    \"hourly\": 20,\r\n    \"timeline\":\"Timeline\",\r\n    \"amount\":1000,\r\n    \"rate\":10,\r\n    \"remainingAmount\":\"900\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:1337/api/projects"
+					},
+					"response": []
+				},
+				{
+					"name": "Patch",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"showContactDetails\":false,\r\n    \"title\":\"Project 3\",\r\n    \"description\":\"Description\",\r\n    \"category\":\"Category\",\r\n    \"budget\":100000,\r\n    \"hourly\": 20,\r\n    \"timeline\":\"Timeline\",\r\n    \"amount\":1000,\r\n    \"rate\":10,\r\n    \"remainingAmount\":\"900\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:1337/api/projects/626ab871078be83442ac026c"
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:1337/api/projects/626ab871078be83442ac026c"
+					},
+					"response": []
+				},
+				{
+					"name": "ProjectProposalsList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:1337/api/projects/626ab871078be83442ac026c/proposals"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Project Proposal",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjZlMWMyZjI1NDQ2N2ZlYzQxY2JjMjIiLCJpYXQiOjE2NTEzODMzNDMsImV4cCI6MTY1MTQ2OTc0M30.IMdmJs4EJtxirG-8jgTJHjpqgKJdsIgc1pYSkn1ApuI"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"showContactDetails\":false,\r\n    \"amount\":100000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:1337/api/projects/626ab871078be83442ac026c/proposals"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Proposals",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:1337/api/proposals/626e78b94633d3587e6656f8"
+					},
+					"response": []
+				},
+				{
+					"name": "Patch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjZlMWMyZjI1NDQ2N2ZlYzQxY2JjMjIiLCJpYXQiOjE2NTEzODMzNDMsImV4cCI6MTY1MTQ2OTc0M30.IMdmJs4EJtxirG-8jgTJHjpqgKJdsIgc1pYSkn1ApuI"
+							}
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"project\": \"626ab871078be83442ac026c\",\r\n    \"showContactDetails\": false,\r\n    \"amount\": 100000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:1337/api/proposals/626e78b94633d3587e6656f8"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
 		{
 			"name": "createUser",
 			"request": {
@@ -12,25 +177,14 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\":\"Jayatharan\",\r\n    \"email\":\"indranjayatharan3@gmail.com\",\r\n    \"password\":\"123456\",\r\n    \"passwordConfirmation\":\"123456\"\r\n}",
+					"raw": "{\r\n    \"name\":\"Jayatharan\",\r\n    \"email\":\"test@gmail.com\",\r\n    \"password\":\"1234\",\r\n    \"passwordConfirmation\":\"1234\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": {
-					"raw": "http://localhost:1337/api/users",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "1337",
-					"path": [
-						"api",
-						"users"
-					]
-				}
+				"url": "http://localhost:1337/api/users"
 			},
 			"response": []
 		},
@@ -48,24 +202,19 @@
 						}
 					}
 				},
-				"url": {
-					"raw": "http://localhost:1337/api/sessions",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "1337",
-					"path": [
-						"api",
-						"sessions"
-					]
-				}
+				"url": "http://localhost:1337/api/sessions"
 			},
 			"response": []
 		},
 		{
 			"name": "Get Sessions",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjU4MTk0MGE3YTEwYjc3MzMzYjQ3NDEiLCJlbWFpbCI6ImluZHJhbmpheWF0aGFyYW4zQGdtYWlsLmNvbSIsIm5hbWUiOiJKYXlhdGhhcmFuIiwiY3JlYXRlZEF0IjoiMjAyMi0wNC0xNFQxMjo1MzoyMC45NjhaIiwidXBkYXRlZEF0IjoiMjAyMi0wNC0xNFQxMjo1MzoyMC45NjhaIiwiX192IjowLCJzZXNzaW9uIjoiNjI1ZWQyZTFmOTNiZGMxZTAyMGI5ZjFjIiwiaWF0IjoxNjUwMzgxNTM3LCJleHAiOjE2NTA0Njc5Mzd9.nMJ673VR7nkX4JoJuUtro17BuVFIU3fzbv3V6J6PrOw"
+					}
+				},
 				"method": "GET",
 				"header": [
 					{
@@ -79,18 +228,7 @@
 						"type": "text"
 					}
 				],
-				"url": {
-					"raw": "http://localhost:1337/api/sessions",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "1337",
-					"path": [
-						"api",
-						"sessions"
-					]
-				}
+				"url": "http://localhost:1337/api/sessions"
 			},
 			"response": []
 		},
@@ -110,18 +248,7 @@
 						"type": "text"
 					}
 				],
-				"url": {
-					"raw": "http://localhost:1337/api/sessions",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "1337",
-					"path": [
-						"api",
-						"sessions"
-					]
-				}
+				"url": "http://localhost:1337/api/sessions"
 			},
 			"response": []
 		},
@@ -132,26 +259,203 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"tokenId\":\"eyJhbGciOiJSUzI1NiIsImtpZCI6ImYxMzM4Y2EyNjgzNTg2M2Y2NzE0MDhmNDE3MzhhN2I0OWU3NDBmYzAiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiNjg2MTc3MzM2NTg4LXFoaGFndXBvY2tlNXFzY2xrdDBuMDdoOXM2YzhiYnB1LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiNjg2MTc3MzM2NTg4LXFoaGFndXBvY2tlNXFzY2xrdDBuMDdoOXM2YzhiYnB1LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTAxNDc4NjYwODUxODczOTAxNTI2IiwiaGQiOiJjYWxjZXkuY29tIiwiZW1haWwiOiJpbmRyYW5AY2FsY2V5LmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhdF9oYXNoIjoiYWZPOGFSeG9IWi1scDJNRmxDSEJHZyIsIm5hbWUiOiJJbmRyYW4gSmF5YXRoYXJhbiIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQVRYQUp4WDBUdkFISWhMR2hoVDNHb1pqYjVPVE10UENuaHBYbnVBUXBubz1zOTYtYyIsImdpdmVuX25hbWUiOiJJbmRyYW4iLCJmYW1pbHlfbmFtZSI6IkpheWF0aGFyYW4iLCJsb2NhbGUiOiJlbiIsImlhdCI6MTY1MDAxMDE2MiwiZXhwIjoxNjUwMDEzNzYyLCJqdGkiOiIxZWNmZDNmODA5NjBmNzcyY2NmOTRlYjI0MjQ0MDRiMzlhZDU4YTY1In0.QxYQGebVBXMr4OifsUrKol3k3sI9suTd8iGfG8W1vdgng7Q3ic2YRDeb4jCFP9l-asJy04Eup8QBORHTdQ8xoIKlAK-nBcog879_wrhH5kWqj9EmXeteTtxLEp-6TnG58ulxHj99RuIh205ablbHoSbl_22xbkA1Juyxsc4y0Rb95oHydbD_UKrVo2pdfq9KSOoZvbsL96vyha-WEM-daCPekOG6jb0cGABlZXzdRT5y13gCbHwY9DfA9Xjld2ogoMPedSqDTi5j-p2uv4RZFEmlhopJFgF8OH-ho6cgIc4wyCU3eR4seZQJoyzUoUtwHJ9GwnZg6F2eFrOETkfujg\"\r\n}",
+					"raw": "{\r\n    \"tokenId\":\"eyJhbGciOiJSUzI1NiIsImtpZCI6ImQzMzJhYjU0NWNjMTg5ZGYxMzNlZmRkYjNhNmM0MDJlYmY0ODlhYzIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiNjg2MTc3MzM2NTg4LXFoaGFndXBvY2tlNXFzY2xrdDBuMDdoOXM2YzhiYnB1LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiNjg2MTc3MzM2NTg4LXFoaGFndXBvY2tlNXFzY2xrdDBuMDdoOXM2YzhiYnB1LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTEwMjc0NzAwODA2MjI1NzYwMjI4IiwiaGQiOiJzdHUuY21iLmFjLmxrIiwiZW1haWwiOiIyMDE3czE2NTI5QHN0dS5jbWIuYWMubGsiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6Ikt4d05FV0NlZWZneFpyLU9WOEJvU1EiLCJuYW1lIjoiSU5EUkFOIEpBWUFUSEFSQU4iLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EtL0FPaDE0R2pwWkVZdmNSeUtVdFAyYk12UFhNc05BaUljaWhXYlBlX1hYZlNmPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IklORFJBTiIsImZhbWlseV9uYW1lIjoiSkFZQVRIQVJBTiIsImxvY2FsZSI6ImVuIiwiaWF0IjoxNjUwMzgwOTE2LCJleHAiOjE2NTAzODQ1MTYsImp0aSI6IjMyNTU0MDhkYzkwNGJjNzUwZGU1YTgyNWYyZTRlMDFlNWQ4M2ExYTEifQ.OZJVhts5Z2982B4dFDIchoxZGxxOCatzVXq4jc8e0Jj4Cw_DfcUdTNPNAGn9X5M9Bv59DJaIyAujZ6v3YG2S1T-PoRsvTowfEex1B0duvC8xwMWwxpED4zRa7k6XJqR_bPMLkjEU1eUCaZbUZYvv2k3W2EBR1mVYtzmq_mJwQ6Hr1zuIpx0eh3M9R5teRfdORp6cGGvSmEQRodGz2LMkvyfi5RfBwGzvBvcZpIMqvAiycBGwmFjrGOJP-7T4j9mgWrObdFvT_InYop-djd20oZSSkWiyaCV1LvETUyMnvhUso4aYu_vYRxvDBT8eD87qpT0G91ZQ-AaBNgpTy17NSQ\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
+				"url": "http://localhost:1337/api/sessions/google"
+			},
+			"response": []
+		},
+		{
+			"name": "createAccessTokenWithRefreshToken",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"refreshToken\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiNjI1ODE5NDBhN2ExMGI3NzMzM2I0NzQxIiwidmFsaWQiOnRydWUsInVzZXJBZ2VudCI6IlBvc3RtYW5SdW50aW1lLzcuMjkuMCIsIl9pZCI6IjYyNWJhNDA1Yjc2M2E2NTc2YzJmY2I5YyIsImNyZWF0ZWRBdCI6IjIwMjItMDQtMTdUMDU6MjI6MTMuNjk0WiIsInVwZGF0ZWRBdCI6IjIwMjItMDQtMTdUMDU6MjI6MTMuNjk0WiIsIl9fdiI6MCwiaWF0IjoxNjUwMTcyOTMzLCJleHAiOjE2ODE3MzA1MzN9.br13ucd0-NxmZpJJI31Q3IrwdmANzyd6Er3J23fnpeg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:1337/api/sessions/token"
+			},
+			"response": []
+		},
+		{
+			"name": "Get SubSample By Id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjZoX0ZEV0h3eEMzLWZmTDJlSHJRTiJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOltdLCJpc3MiOiJodHRwczovL2Rldi11bmRvLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJnb29nbGUtb2F1dGgyfDEwMTQ3ODY2MDg1MTg3MzkwMTUyNiIsImF1ZCI6WyJodHRwczovL2xvY2FsaG9zdDo3MjkzLyIsImh0dHBzOi8vZGV2LXVuZG8udXMuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTY1MTAzOTk2MSwiZXhwIjoxNjUxMTI2MzYxLCJhenAiOiJmOWd0bGlLTUVDVjlzODZyWFlwUzh0eTBYVHBkcnZJcSIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJwZXJtaXNzaW9ucyI6W119.SPph5qzv19JLTX7Gm-u5xcGRu2WG0XBqD-cAUqK6iBuR_we4HBzVSwQHTHjq_FLYwaaUWPk12j2qCNnE7y36zot96lRdgDiNy1kbectlRqYcXdoWeW__wNkvNyVghNSY-bHwfWPrqfm3o_uRYaNHCN9Hbdq1tXvuakl4uebMh64hgxUJYiwkO7KMO5toIoV3xetpElTcHG5Dv68lksNZJ75wKgyDN5x7dJYwhLoTBJBcIawzmJx7EqYJLLMkABylj60jjxbyxo1chKEY5No3cZOSk1y1PcUTXDKc9KC_tcRz-U-mbxc70O98BtvDjzE8nmbv9vn-GFvW7kwhuKMvnw"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "https://api.un-do.com/RockSampleSub/787fbba0-101b-4037-879c-a01af198f8dc"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Sub Sample",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjZoX0ZEV0h3eEMzLWZmTDJlSHJRTiJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOltdLCJpc3MiOiJodHRwczovL2Rldi11bmRvLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJnb29nbGUtb2F1dGgyfDEwMTQ3ODY2MDg1MTg3MzkwMTUyNiIsImF1ZCI6WyJodHRwczovL2xvY2FsaG9zdDo3MjkzLyIsImh0dHBzOi8vZGV2LXVuZG8udXMuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTY1MTExMzk0NSwiZXhwIjoxNjUxMjAwMzQ1LCJhenAiOiJmOWd0bGlLTUVDVjlzODZyWFlwUzh0eTBYVHBkcnZJcSIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJwZXJtaXNzaW9ucyI6W119.iT82txedF4CvZTLx8IAJvRLUPLiixFux5RrAAevcIydgw4TfSa2XhUlPXv4jxET3YNbCLFtp-wXu0Kn-aIAjy5rVVve_6z1bQpKEKM8JrwVc7P-gu-Pa4sypgxjQzRxpAn8tPOkvPMHn_3UZ8VPxul9ItUNDU26Jf_bXJHoE1n_h2F0Wkh5APelSvF53a9yUkiZHAWL6ALtHbfOjttHJf7Wtf-iG0HKNUA13HLV4c_a_9DhA0we3P3zhvEr3mUS-7vOHLD49XGeRur3HSB1rQLbG8pBr-u6PXaN8J1Q-3kK4MabumNEND2bTXNctFGVVuVFxNVGVicl4b1dTEdpXXg"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sampleTypes\": [\r\n        \"088f19a7-6a1d-49e5-bed4-8185cb650107\",\r\n        \"088f19a7-6a1d-49e5-bed4-8185cb650108\"\r\n    ],\r\n    \"volume\": 2,\r\n    \"description\": \"XRF, XRD\",\r\n    \"mainSampleId\": \"74c2aebe-ca55-4506-aaf0-34658c3dd372\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://api.un-do.com/rocksamplesub"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Samples",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjZoX0ZEV0h3eEMzLWZmTDJlSHJRTiJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOltdLCJpc3MiOiJodHRwczovL2Rldi11bmRvLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJnb29nbGUtb2F1dGgyfDEwMTQ3ODY2MDg1MTg3MzkwMTUyNiIsImF1ZCI6WyJodHRwczovL2xvY2FsaG9zdDo3MjkzLyIsImh0dHBzOi8vZGV2LXVuZG8udXMuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTY1MTExODY0OCwiZXhwIjoxNjUxMjA1MDQ4LCJhenAiOiJmOWd0bGlLTUVDVjlzODZyWFlwUzh0eTBYVHBkcnZJcSIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJwZXJtaXNzaW9ucyI6W119.tObItp1lTUgf5rynDCRMLPns5L4znfSY5FJUwe0yp9Ut0KQuKTPTUzIvRfv4i8-lN1Xf0wutbpC03laLic5KkBxVM7J74g6O6DBncZqWoHbq4LgAqyQdcy6qxCalamlDFTaPRmL9KWSvnoGIX6SM50GI1xH7_wUESS5w-jnCJCicf0pUMeWfMIodB3nTXi-FJSaAbX_Ne0KpgTPQLIuxu0T1dg0M7Y_7w6geJYSGci5ORtHNPhNykPicHONciCse38YpRAekfBQnCywpgdGnOgJd7C-vSaihge-Lb11rPelw2O4xToOBgMTRmGCipYXzfFDHbFDvlmVWWeWMmx1xqA"
+					}
+				},
+				"method": "GET",
+				"header": [],
 				"url": {
-					"raw": "http://localhost:1337/api/sessions/google",
-					"protocol": "http",
+					"raw": "https://api.un-do.com/odata/rocksample?$expand=status,store&$orderby=sampleDate%20desc&$top=10&$count=true",
+					"protocol": "https",
 					"host": [
-						"localhost"
-					],
-					"port": "1337",
-					"path": [
 						"api",
-						"sessions",
-						"google"
+						"un-do",
+						"com"
+					],
+					"path": [
+						"odata",
+						"rocksample"
+					],
+					"query": [
+						{
+							"key": "$expand",
+							"value": "status,store"
+						},
+						{
+							"key": "$orderby",
+							"value": "sampleDate%20desc"
+						},
+						{
+							"key": "$top",
+							"value": "10"
+						},
+						{
+							"key": "$count",
+							"value": "true"
+						}
 					]
 				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User Biography",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjZlMWMyZjI1NDQ2N2ZlYzQxY2JjMjIiLCJpYXQiOjE2NTEzODMzNDMsImV4cCI6MTY1MTQ2OTc0M30.IMdmJs4EJtxirG-8jgTJHjpqgKJdsIgc1pYSkn1ApuI"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\":\"Jayathran\",\r\n    \"lastName\":\"Indran\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:1337/api/users/biography"
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Details",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjZlMWMyZjI1NDQ2N2ZlYzQxY2JjMjIiLCJpYXQiOjE2NTEzODMzNDMsImV4cCI6MTY1MTQ2OTc0M30.IMdmJs4EJtxirG-8jgTJHjpqgKJdsIgc1pYSkn1ApuI"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:1337/api/users"
+			},
+			"response": []
+		},
+		{
+			"name": "Add User Professional Detail",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjZlMWMyZjI1NDQ2N2ZlYzQxY2JjMjIiLCJpYXQiOjE2NTEzODMzNDMsImV4cCI6MTY1MTQ2OTc0M30.IMdmJs4EJtxirG-8jgTJHjpqgKJdsIgc1pYSkn1ApuI"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"company\":{\r\n        \"name\":\"Calcey Technologies\"\r\n    },\r\n    \"jobRole\":\"Associate software engineer\",\r\n    \"duration\":{\r\n        \"startDate\": \"2021-08-18T06:38:44.012Z\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:1337/api/users/professional-detail"
+			},
+			"response": []
+		},
+		{
+			"name": "Add User Educational Detail",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjZlMWMyZjI1NDQ2N2ZlYzQxY2JjMjIiLCJpYXQiOjE2NTEzODMzNDMsImV4cCI6MTY1MTQ2OTc0M30.IMdmJs4EJtxirG-8jgTJHjpqgKJdsIgc1pYSkn1ApuI"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"organizationName\":\"V/Vipulananda college\",\r\n    \"type\":\"School\",\r\n    \"fieldName\":\"High School\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:1337/api/users/educational-detail"
 			},
 			"response": []
 		}
