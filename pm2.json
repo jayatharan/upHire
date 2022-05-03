@@ -1,0 +1,11 @@
+{
+    "apps": [
+        {
+            "name": "uphire",
+            "exec_mode": "cluster",
+            "instances": "1",
+            "script": "./src/app.ts",
+            "interpreter": "ts-node"
+        }
+    ]
+}
