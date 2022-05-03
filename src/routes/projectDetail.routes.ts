@@ -1,5 +1,5 @@
 import express from "express";
-import { patchEducationalDetail, deleteEducationalDetail } from "../controller/educationalDetail.controller";
+import { patchProjectDetail, deleteProjectDetail } from "../controller/projectDetail.controller";
 import { requiredUser } from "../middleware";
 
 const router = express.Router();
@@ -7,13 +7,13 @@ const router = express.Router();
 router.patch(
     "/:id",
     requiredUser,
-    patchEducationalDetail
+    patchProjectDetail
 )
 
 router.delete(
     "/:id",
     requiredUser,
-    deleteEducationalDetail
+    deleteProjectDetail
 )
 
 export default router;

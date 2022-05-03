@@ -171,6 +171,111 @@
 			]
 		},
 		{
+			"name": "Educational Details",
+			"item": [
+				{
+					"name": "Patch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjcxMjk5OGU3Y2Y0MWMzMWI1ZTM2ZDEiLCJpYXQiOjE2NTE1ODMzODQsImV4cCI6MTY1MTY2OTc4NH0.yuLnVUmq6Z8YTC6tGPcPG-CpcS2WAnq7TnB8-OzpODQ"
+							}
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": \"62581940a7a10b77333b4741\",\r\n    \"organizationName\": \"V/Vipulananda college\",\r\n    \"type\": \"School\",\r\n    \"fieldName\": \"High School\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:1337/api/educational-details/62712ada7f32c7fc120d61b1"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjcxMjk5OGU3Y2Y0MWMzMWI1ZTM2ZDEiLCJpYXQiOjE2NTE1ODMzODQsImV4cCI6MTY1MTY2OTc4NH0.yuLnVUmq6Z8YTC6tGPcPG-CpcS2WAnq7TnB8-OzpODQ"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:1337/api/educational-details/626e6a96f8f977ffb12afd10"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Professional Details",
+			"item": [
+				{
+					"name": "Patch",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": "http://localhost:1337/api/educational-details/62712ada7f32c7fc120d61b1"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:1337/api/professional-details/626e2b690fd8f8c9dff961d7"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Project Details",
+			"item": [
+				{
+					"name": "Patch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjcxMjk5OGU3Y2Y0MWMzMWI1ZTM2ZDEiLCJpYXQiOjE2NTE1ODMzODQsImV4cCI6MTY1MTY2OTc4NH0.yuLnVUmq6Z8YTC6tGPcPG-CpcS2WAnq7TnB8-OzpODQ"
+							}
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": \"62581940a7a10b77333b4741\",\r\n    \"name\": \"Project name\",\r\n    \"category\": \"SE\",\r\n    \"images\": [],\r\n    \"skills\": [\r\n        \"NodeJs, ReactJs\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:1337/api/project-details/627130374131d68e6233c3e3"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:1337/api/project-details/626e2b690fd8f8c9dff961d7"
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "createUser",
 			"request": {
 				"method": "POST",
@@ -398,15 +503,22 @@
 		},
 		{
 			"name": "Get User Details",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
 			"request": {
 				"auth": {
 					"type": "bearer",
 					"bearer": {
-						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjZlMWMyZjI1NDQ2N2ZlYzQxY2JjMjIiLCJpYXQiOjE2NTEzODMzNDMsImV4cCI6MTY1MTQ2OTc0M30.IMdmJs4EJtxirG-8jgTJHjpqgKJdsIgc1pYSkn1ApuI"
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjcxMjk5OGU3Y2Y0MWMzMWI1ZTM2ZDEiLCJpYXQiOjE2NTE1ODMzODQsImV4cCI6MTY1MTY2OTc4NH0.yuLnVUmq6Z8YTC6tGPcPG-CpcS2WAnq7TnB8-OzpODQ"
 					}
 				},
 				"method": "GET",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": "http://localhost:1337/api/users"
 			},
 			"response": []
@@ -441,7 +553,7 @@
 				"auth": {
 					"type": "bearer",
 					"bearer": {
-						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjZlMWMyZjI1NDQ2N2ZlYzQxY2JjMjIiLCJpYXQiOjE2NTEzODMzNDMsImV4cCI6MTY1MTQ2OTc0M30.IMdmJs4EJtxirG-8jgTJHjpqgKJdsIgc1pYSkn1ApuI"
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjcxMjk5OGU3Y2Y0MWMzMWI1ZTM2ZDEiLCJpYXQiOjE2NTE1ODMzODQsImV4cCI6MTY1MTY2OTc4NH0.yuLnVUmq6Z8YTC6tGPcPG-CpcS2WAnq7TnB8-OzpODQ"
 					}
 				},
 				"method": "POST",
@@ -456,6 +568,30 @@
 					}
 				},
 				"url": "http://localhost:1337/api/users/educational-detail"
+			},
+			"response": []
+		},
+		{
+			"name": "Add User Project Detail",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjcxMjk5OGU3Y2Y0MWMzMWI1ZTM2ZDEiLCJpYXQiOjE2NTE1ODMzODQsImV4cCI6MTY1MTY2OTc4NH0.yuLnVUmq6Z8YTC6tGPcPG-CpcS2WAnq7TnB8-OzpODQ"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Project name 1\",\r\n    \"category\":\"SE\",\r\n    \"skills\":[\"NodeJs, React\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:1337/api/users/project-detail"
 			},
 			"response": []
 		}
