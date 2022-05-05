@@ -10,7 +10,7 @@ import ProjectDetail from "./projectDetail.routes";
 
 const router = express.Router();
 
-router.get("/health-check", (req: Request, res: Response) => res.send("Welcome to uphire server"));
+router.get("/", (req: Request, res: Response) => res.send("Welcome to uphire server"));
 router.get("/health-check", (req: Request, res: Response) => res.sendStatus(200));
 
 router.use("/api/users",user);
