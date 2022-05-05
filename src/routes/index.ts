@@ -13,12 +13,12 @@ const router = express.Router();
 router.get("/", (req: Request, res: Response) => res.send("Welcome to uphire server"));
 router.get("/health-check", (req: Request, res: Response) => res.sendStatus(200));
 
-router.use("/api/users",user);
-router.use("/api/sessions",session);
-router.use("/api/projects",project);
-router.use("/api/proposals",proposal);
-router.use("/api/educational-details",EducationalDetail);
-router.use("/api/professional-details",ProfessionalDetail);
-router.use("/api/project-details",ProjectDetail);
+router.use("/users",user);
+router.use("/sessions",session);
+router.use("/projects",project);
+router.use("/proposals",proposal);
+router.use("/educational-details",EducationalDetail);
+router.use("/professional-details",ProfessionalDetail);
+router.use("/project-details",ProjectDetail);
 
 export default router;
