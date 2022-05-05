@@ -1,12 +1,14 @@
 import mongoose from "mongoose";
 import bcrypt from "bcrypt";
 import config from "config";
+import uuid from "node-uuid";
 
 export interface UserDocument extends mongoose.Document {
     email: string;
     name: string;
     role?: string;
     emailVerified?:boolean;
+    emailVerificationGuid?:string;
     password?: string;
     createdAt: Date;
     updateAt: Date;
@@ -27,6 +29,10 @@ const UserSchema = new mongoose.Schema(
         emailVerified : {
             type:Boolean,
             default: false
+        },
+        emailVerificationGuid:{
+            type: String,
+            default:uuid.v1()
         },
         mobileNumber : {
             type: String

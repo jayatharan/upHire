@@ -20,5 +20,8 @@ export default {
     +0fk592vlHggCWYQ6QJANZzno1FwUOjtGLeKm83ZGdbo3K+00i25FmBgB2d0uAtk
     noxFVOjsY+eSXHZqNybrhWRAzutSnpz/QEf/7Vg97g==
     -----END CERTIFICATE-----`,
-    googleClientId:"686177336588-qhhagupocke5qsclkt0n07h9s6c8bbpu.apps.googleusercontent.com"
+    googleClientId:"686177336588-qhhagupocke5qsclkt0n07h9s6c8bbpu.apps.googleusercontent.com",
+    emailService:"gmail",
+    emailUsername:"noreply@uphire.com",
+    emailPassword:"uphire@1234"
 };

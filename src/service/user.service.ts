@@ -1,10 +1,13 @@
 import mongoose, { DocumentDefinition, FilterQuery } from "mongoose";
 import { omit } from "lodash";
 import User, { UserDocument } from "../model/user.model";
+import { sendUserVerificationMail } from "./email.service"
 
 export async function createUser(input: DocumentDefinition<UserDocument>) {
     try{
-        return await User.create(input);
+        const user = await User.create(input);
+        await sendUserVerificationMail(user.email, user.emailVerificationGuid!);
+        return user;
     } catch (error) {
         throw new Error("User create error");
     }

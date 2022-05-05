@@ -5,7 +5,9 @@
             "exec_mode": "cluster",
             "instances": "1",
             "script": "./src/app.ts",
-            "interpreter": "ts-node"
+            "interpreter": "ts-node",
+            "port": 1337,
+            "host": "0.0.0.0"
         }
     ]
 }
