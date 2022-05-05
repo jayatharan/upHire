@@ -294,20 +294,28 @@
 			"response": []
 		},
 		{
+			"name": "Health Check",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
 			"name": "createSession",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\":\"indranjayatharan3@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+					"raw": "{\r\n    \"email\":\"jaya@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
-				"url": "http://localhost:1337/api/sessions"
+				"url": "http://68.183.85.171/api/sessions"
 			},
 			"response": []
 		},
@@ -592,6 +600,14 @@
 					}
 				},
 				"url": "http://localhost:1337/api/users/project-detail"
+			},
+			"response": []
+		},
+		{
+			"name": "Upload File",
+			"request": {
+				"method": "GET",
+				"header": []
 			},
 			"response": []
 		}
