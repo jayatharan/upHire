@@ -22,6 +22,6 @@ export default {
     -----END CERTIFICATE-----`,
     googleClientId:"686177336588-qhhagupocke5qsclkt0n07h9s6c8bbpu.apps.googleusercontent.com",
     emailService:"gmail",
-    emailUsername:"noreply@uphire.com",
-    emailPassword:"uphire@1234"
+    emailUsername:"dev.uphire@gmail.com",
+    emailPassword:"devUphire@2022"
 };

@@ -35,6 +35,5 @@ app.use(router);
 
 app.listen(port, host, () => {
     log.info(`Server listing at http://${host}:${port}`);
-  
     connect();
 });
