@@ -42,3 +42,13 @@ export const refreshTokenSchema = object({
     .required("Refresh token is required")
   })
 })
+
+export const verifyEmailSchema = object({
+  body: object({
+    email: string()
+      .email("Must be a valid email")
+      .required("User is required."),
+    guid: string()
+      .required("Verification code is required.")
+  })
+})

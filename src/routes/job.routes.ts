@@ -1,45 +1,45 @@
 import express from "express";
-import { getAllProjects, createProject, patchProject, getProjectById,getAllProjectProposals, addProjectProposal, getMyProjects } from "../controller/project.controller";
+import { getAllJobs, createJob, patchJob, getJobById, getMyJobs, getAllJobProposals, addJobProposal } from "../controller/job.controller";
 import { validateRequest, requiredUser } from "../middleware";
 
 const router = express.Router();
 
 router.get(
     "/",
-    getAllProjects
+    getAllJobs
 );
 
 router.post(
     "/",
     requiredUser,
-    createProject
+    createJob
 )
 
 router.get(
-    "/my-projects",
+    "/my-jobs",
     requiredUser,
-    getMyProjects
+    getMyJobs
 )
 
 router.get(
     "/:id",
-    getProjectById
+    getJobById
 )
 
 router.patch(
     "/:id",
-    patchProject
+    patchJob
 )
 
 router.get(
     "/:id/proposals",
-    getAllProjectProposals
+    getAllJobProposals
 )
 
 router.post(
     "/:id/proposals",
     requiredUser,
-    addProjectProposal
+    addJobProposal
 )
 
 export default router;

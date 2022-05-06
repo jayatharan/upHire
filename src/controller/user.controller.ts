@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { omit } from "lodash";
-import { createUser } from "../service/user.service";
+import { createUser, verifyEmail } from "../service/user.service";
 import { BiographyDocument } from "../model/biography.model";
 import { ProfessionalDetailDocument } from "../model/professionalDetail.model"
 import { EducationalDetailDocument } from "../model/educationalDetail.model";
@@ -9,9 +9,15 @@ import BiographyService from "../service/biography.service";
 import ProfessionalDetailService from "../service/professionalDetail.service";
 import EducationalDetailService from "../service/educationalDetail.service";
 import ProjectDetailService from "../service/projectDetail.service";
+import mongoose from "mongoose";
 
 import log from "../logger";
 import { get } from "lodash";
+
+export interface EmailVerificationBody {
+    email:string,
+    guid:string
+} 
 
 export async function createUserHandler(req: Request, res: Response) {
     try{
@@ -83,6 +89,18 @@ export async function getUserDetails(req: Request, res: Response) {
         let educationalDetails = await EducationalDetailService.getUserEducationalDetails(user._id);
         let projectDetails = await ProjectDetailService.getUserProjectDetails(user._id);
         res.send({user, biography, professionalDetails, educationalDetails, projectDetails});
+    }catch (e) {
+        log.error(e);
+        return res.status(400).send(e)
+    }
+}
+
+export async function verifyEmailAddress(req: Request, res: Response) {
+    try{
+        const data = req.body as EmailVerificationBody;
+        const verified = await verifyEmail(data);
+        if(verified) return res.send({success: true})
+        return res.status(400).send({success: false})
     }catch (e) {
         log.error(e);
         return res.status(400).send(e)

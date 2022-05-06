@@ -5,9 +5,10 @@ import {
     getUserDetails, 
     addUserProfessionalDetail, 
     addUserEducationalDetail, 
-    addUserProjectDetail 
+    addUserProjectDetail,
+    verifyEmailAddress
 } from "../controller/user.controller";
-import { createUserSchema } from "../schema/user.schema";
+import { createUserSchema, verifyEmailSchema } from "../schema/user.schema";
 import { validateRequest, requiredUser } from "../middleware";
 
 const router = express.Router();
@@ -23,6 +24,12 @@ router.get(
     requiredUser,
     getUserDetails
 );
+
+router.post(
+    "/verify-email",
+    validateRequest(verifyEmailSchema),
+    verifyEmailAddress
+)
 
 router.post(
     "/biography",

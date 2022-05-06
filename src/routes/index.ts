@@ -7,18 +7,22 @@ import proposal from "./proposal.routes";
 import EducationalDetail from "./educationalDetail.routes";
 import ProfessionalDetail from "./professionalDetail.routes";
 import ProjectDetail from "./projectDetail.routes";
+import job from "./job.routes";
+import jobProposal from "./jobProposal.routes";
 
 const router = express.Router();
 
 router.get("/", (req: Request, res: Response) => res.send("Welcome to uphire server"));
 router.get("/health-check", (req: Request, res: Response) => res.sendStatus(200));
 
-router.use("/users",user);
-router.use("/sessions",session);
-router.use("/projects",project);
-router.use("/proposals",proposal);
-router.use("/educational-details",EducationalDetail);
-router.use("/professional-details",ProfessionalDetail);
-router.use("/project-details",ProjectDetail);
+router.use("/users", user);
+router.use("/sessions", session);
+router.use("/projects", project);
+router.use("/proposals", proposal);
+router.use("/educational-details", EducationalDetail);
+router.use("/professional-details", ProfessionalDetail);
+router.use("/project-details", ProjectDetail);
+router.use("/jobs", job);
+router.use("/job-proposals", jobProposal);
 
 export default router;

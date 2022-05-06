@@ -1,35 +1,35 @@
 import express from "express";
 import { 
-    getProposalById,
-    patchProposal,
-    deleteProposal,
-    getMyProposals
-} from "../controller/proposal.controller";
+    getJobProposalById,
+    patchJobProposal,
+    deleteJobProposal,
+    getMyJobProposals
+} from "../controller/jobProposal.controller";
 import { validateRequest, requiredUser } from "../middleware";
 
 const router = express.Router();
 
 router.get(
-    "/my-proposals",
+    "/my-job-proposals",
     requiredUser,
-    getMyProposals
+    getMyJobProposals
 )
 
 router.get(
     "/:id",
-    getProposalById
+    getJobProposalById
 )
 
 router.patch(
     "/:id",
     requiredUser,
-    patchProposal
+    patchJobProposal
 )
 
 router.delete(
     "/:id",
     requiredUser,
-    deleteProposal
+    deleteJobProposal
 )
 
 export default router;

@@ -74,3 +74,15 @@ export async function deleteProposal(req: Request, res: Response){
         return res.status(400).send(e);
     }
 }
+
+export async function getMyProposals(req: Request, res: Response) {
+    try{
+        const user = get(req, "user");
+        const pagination:Pagination = extractPagination(req);
+        const projects = await ProposalService.getMyProposals(user._id, pagination.limit, pagination.page);
+        return res.send(projects);
+    }catch (e) {
+        log.error(e);
+        return res.status(400).send(e);
+    }
+}

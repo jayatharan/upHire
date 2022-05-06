@@ -80,6 +80,18 @@ export async function addProjectProposal(req: Request, res: Response){
     }
 }
 
+export async function getMyProjects(req: Request, res: Response) {
+    try{
+        const user = get(req, "user");
+        const pagination:Pagination = extractPagination(req);
+        const projects = await ProjectService.getMyProjects(user._id, pagination.limit, pagination.page);
+        return res.send(projects);
+    }catch (e) {
+        log.error(e);
+        return res.status(400).send(e);
+    }
+}
+
 export async function getAllProjectProposals(req: Request, res: Response) {
     try{
         const id = req.params.id as unknown as mongoose.Types.ObjectId;
