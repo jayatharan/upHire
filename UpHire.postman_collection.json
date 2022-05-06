@@ -14,12 +14,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:1337/api/projects?page=1&limit=2",
+							"raw": "http://68.183.85.171/api/projects?page=1&limit=2",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"68",
+								"183",
+								"85",
+								"171"
 							],
-							"port": "1337",
 							"path": [
 								"api",
 								"projects"
@@ -121,6 +123,145 @@
 						"url": "http://localhost:1337/api/projects/626ab871078be83442ac026c/proposals"
 					},
 					"response": []
+				},
+				{
+					"name": "My Projects",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:1337/api/projects/my-projects"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Jobs",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://68.183.85.171/api/jobs?page=1&limit=2",
+							"protocol": "http",
+							"host": [
+								"68",
+								"183",
+								"85",
+								"171"
+							],
+							"path": [
+								"api",
+								"jobs"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjZlMWMyZjI1NDQ2N2ZlYzQxY2JjMjIiLCJpYXQiOjE2NTEzODMzNDMsImV4cCI6MTY1MTQ2OTc0M30.IMdmJs4EJtxirG-8jgTJHjpqgKJdsIgc1pYSkn1ApuI"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"showContactDetails\":false,\r\n    \"title\":\"Project 2\",\r\n    \"description\":\"Description\",\r\n    \"category\":\"Category\",\r\n    \"budget\":100000,\r\n    \"hourly\": 20,\r\n    \"timeline\":\"Timeline\",\r\n    \"amount\":1000,\r\n    \"rate\":10,\r\n    \"remainingAmount\":\"900\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:1337/api/jobs"
+					},
+					"response": []
+				},
+				{
+					"name": "Patch",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"showContactDetails\":false,\r\n    \"title\":\"Project 3\",\r\n    \"description\":\"Description\",\r\n    \"category\":\"Category\",\r\n    \"budget\":100000,\r\n    \"hourly\": 20,\r\n    \"timeline\":\"Timeline\",\r\n    \"amount\":1000,\r\n    \"rate\":10,\r\n    \"remainingAmount\":\"900\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:1337/api/jobs/626ab871078be83442ac026c"
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:1337/api/jobs/626ab871078be83442ac026c"
+					},
+					"response": []
+				},
+				{
+					"name": "ProjectProposalsList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:1337/api/jobs/626ab871078be83442ac026c/proposals"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Project Proposal",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjZlMWMyZjI1NDQ2N2ZlYzQxY2JjMjIiLCJpYXQiOjE2NTEzODMzNDMsImV4cCI6MTY1MTQ2OTc0M30.IMdmJs4EJtxirG-8jgTJHjpqgKJdsIgc1pYSkn1ApuI"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"showContactDetails\":false,\r\n    \"amount\":100000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:1337/api/jobs/626ab871078be83442ac026c/proposals"
+					},
+					"response": []
+				},
+				{
+					"name": "My Projects",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:1337/api/jobs/my-jobs"
+					},
+					"response": []
 				}
 			]
 		},
@@ -163,8 +304,74 @@
 				{
 					"name": "Delete",
 					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:1337/api/proposals/626e78b94633d3587e6656f8"
+					},
+					"response": []
+				},
+				{
+					"name": "My Proposals",
+					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": "http://localhost:1337/api/proposals/my-proposals"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Job-Proposals",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:1337/api/job-proposals/626e78b94633d3587e6656f8"
+					},
+					"response": []
+				},
+				{
+					"name": "Patch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjZlMWMyZjI1NDQ2N2ZlYzQxY2JjMjIiLCJpYXQiOjE2NTEzODMzNDMsImV4cCI6MTY1MTQ2OTc0M30.IMdmJs4EJtxirG-8jgTJHjpqgKJdsIgc1pYSkn1ApuI"
+							}
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"project\": \"626ab871078be83442ac026c\",\r\n    \"showContactDetails\": false,\r\n    \"amount\": 100000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:1337/api/job-proposals/626e78b94633d3587e6656f8"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:1337/api/job-proposals/626e78b94633d3587e6656f8"
+					},
+					"response": []
+				},
+				{
+					"name": "My Proposals",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:1337/api/job-proposals/my-job-proposals"
 					},
 					"response": []
 				}
@@ -282,7 +489,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\":\"Jayatharan\",\r\n    \"email\":\"test@gmail.com\",\r\n    \"password\":\"1234\",\r\n    \"passwordConfirmation\":\"1234\"\r\n}",
+					"raw": "{\r\n    \"name\":\"Jayatharan\",\r\n    \"email\":\"indranjayatharan1@gmail.com\",\r\n    \"password\":\"123456\",\r\n    \"passwordConfirmation\":\"123456\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -297,7 +504,8 @@
 			"name": "Health Check",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": "http://68.183.85.171/api/health-check"
 			},
 			"response": []
 		},
@@ -308,7 +516,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\":\"jaya@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+					"raw": "{\r\n    \"email\":\"indranjayatharan1@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -325,7 +533,7 @@
 				"auth": {
 					"type": "bearer",
 					"bearer": {
-						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjU4MTk0MGE3YTEwYjc3MzMzYjQ3NDEiLCJlbWFpbCI6ImluZHJhbmpheWF0aGFyYW4zQGdtYWlsLmNvbSIsIm5hbWUiOiJKYXlhdGhhcmFuIiwiY3JlYXRlZEF0IjoiMjAyMi0wNC0xNFQxMjo1MzoyMC45NjhaIiwidXBkYXRlZEF0IjoiMjAyMi0wNC0xNFQxMjo1MzoyMC45NjhaIiwiX192IjowLCJzZXNzaW9uIjoiNjI1ZWQyZTFmOTNiZGMxZTAyMGI5ZjFjIiwiaWF0IjoxNjUwMzgxNTM3LCJleHAiOjE2NTA0Njc5Mzd9.nMJ673VR7nkX4JoJuUtro17BuVFIU3fzbv3V6J6PrOw"
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjczYmUwNmYzYzI0YWEyMTUyNDhhODYiLCJlbWFpbCI6ImpheWFAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsImVtYWlsVmVyaWZpY2F0aW9uR3VpZCI6ImU2MGJjMjIwLWNjNmItMTFlYy1iNWMzLTJkMDNlMDI4ZDhkOSIsImNyZWF0ZWRBdCI6IjIwMjItMDUtMDVUMTI6MDc6MzQuMzg2WiIsInVwZGF0ZWRBdCI6IjIwMjItMDUtMDVUMTI6MDc6MzQuMzg2WiIsIl9fdiI6MCwic2Vzc2lvbiI6IjYyNzNiZTIzZjNjMjRhYTIxNTI0OGE4OSIsImlhdCI6MTY1MTc1MjQ4MywiZXhwIjoxNjUxODM4ODgzfQ.TuqY8uEuJl669lmrgGKn4OmKSYL7bhmJAgv8VGB3kAc"
 					}
 				},
 				"method": "GET",
@@ -341,7 +549,7 @@
 						"type": "text"
 					}
 				],
-				"url": "http://localhost:1337/api/sessions"
+				"url": "http://68.183.85.171/api/sessions"
 			},
 			"response": []
 		},
@@ -608,6 +816,24 @@
 			"request": {
 				"method": "GET",
 				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Verify E-Mail Address",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"indranjayatharan1@gmail.com\",\r\n    \"guid\":\"63b79b30-ccef-11ec-ba55-c7b97c384cbf\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:1337/users/verify-email"
 			},
 			"response": []
 		}
