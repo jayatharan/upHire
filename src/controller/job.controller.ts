@@ -60,6 +60,18 @@ export async function patchJob(req: Request, res: Response) {
     }
 }
 
+export async function deleteJob(req: Request, res: Response) {
+    try{
+        const id = req.params.id as unknown as mongoose.Types.ObjectId;
+        const Job = await JobService.baseApi.get(id);
+        await Job?.remove();
+        res.send(Job);
+    }catch (e) {
+        log.error(e);
+        return res.status(400).send(e);
+    }
+}
+
 export async function getMyJobs(req: Request, res: Response) {
     try{
         const user = get(req, "user");

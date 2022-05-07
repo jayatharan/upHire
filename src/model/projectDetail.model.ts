@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import { AddressSchema, CompanyBasicSchema, DateDuration, DateDurationSchema } from "./schemas";
 
-export interface ProjectDetailDocument {
+export interface ProjectDetailDocument extends mongoose.Document{
     user: mongoose.Types.ObjectId;
     name: string;
     category: string;

@@ -60,6 +60,18 @@ export async function patchTeam(req: Request, res: Response) {
     }
 }
 
+export async function deleteTeam(req: Request, res: Response) {
+    try{
+        const id = req.params.id as unknown as mongoose.Types.ObjectId;
+        const Team = await TeamService.baseApi.get(id);
+        await Team?.remove();
+        res.send(Team);
+    }catch (e) {
+        log.error(e);
+        return res.status(400).send(e);
+    }
+}
+
 export async function addTeamProposal(req: Request, res: Response){
     try{
         const user = get(req, "user");

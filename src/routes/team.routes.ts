@@ -1,5 +1,14 @@
 import express from "express";
-import { getAllTeams, createTeam, patchTeam, getTeamById, getMyTeams, getAllTeamProposals, addTeamProposal } from "../controller/team.controller";
+import { 
+    getAllTeams, 
+    createTeam, 
+    patchTeam, 
+    getTeamById, 
+    getMyTeams, 
+    getAllTeamProposals, 
+    addTeamProposal,
+    deleteTeam 
+} from "../controller/team.controller";
 import { validateRequest, requiredUser } from "../middleware";
 
 const router = express.Router();
@@ -29,6 +38,11 @@ router.get(
 router.patch(
     "/:id",
     patchTeam
+)
+
+router.delete(
+    "/:id",
+    deleteTeam
 )
 
 router.get(

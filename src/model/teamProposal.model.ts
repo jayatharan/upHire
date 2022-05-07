@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import { DateDurationSchema, UserBasicSchema, DateDuration, UserBasic } from "./schemas";
 
-export interface TeamProposalDocument {
+export interface TeamProposalDocument extends mongoose.Document{
     team:mongoose.Types.ObjectId;
     user:mongoose.Types.ObjectId;
     createBy?: UserBasic;

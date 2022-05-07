@@ -60,6 +60,18 @@ export async function patchProject(req: Request, res: Response) {
     }
 }
 
+export async function deleteProject(req: Request, res: Response) {
+    try{
+        const id = req.params.id as unknown as mongoose.Types.ObjectId;
+        const project = await ProjectService.baseApi.get(id);
+        await project?.remove();
+        res.send(project);
+    }catch (e) {
+        log.error(e);
+        return res.status(400).send(e);
+    }
+}
+
 export async function addProjectProposal(req: Request, res: Response){
     try{
         const user = get(req, "user");

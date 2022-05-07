@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
+import JobProposal from "./jobProposal.model";
 import { DateDurationSchema, UserBasicSchema, DateDuration, UserBasic, AddressSchema, Address } from "./schemas";
 
-export interface JobDocument {
+export interface JobDocument extends mongoose.Document{
     user?: mongoose.Types.ObjectId;
     createBy?: UserBasic;
     title?: string;
@@ -35,6 +36,12 @@ const JobSchema = new mongoose.Schema({
     }
 },{
     timestamps:true
+})
+
+JobSchema.pre('remove', async function (next) {
+    let job = this as JobDocument;
+    await JobProposal.deleteMany({job:job._id});
+    return next();
 })
 
 const Job = mongoose.model('Job', JobSchema);

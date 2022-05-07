@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import { AddressSchema, Address, CompanyBasicSchema, CompanyBasic, DateDurationSchema } from "./schemas";
 
-export interface BiographyDocument {
+export interface BiographyDocument extends mongoose.Document{
     user: mongoose.Types.ObjectId;
     firstName?: string;
     lastName?: string;

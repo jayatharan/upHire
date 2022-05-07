@@ -1,5 +1,14 @@
 import express from "express";
-import { getAllProjects, createProject, patchProject, getProjectById,getAllProjectProposals, addProjectProposal, getMyProjects } from "../controller/project.controller";
+import { 
+    getAllProjects, 
+    createProject, 
+    patchProject, 
+    getProjectById,
+    getAllProjectProposals, 
+    addProjectProposal, 
+    getMyProjects,
+    deleteProject
+} from "../controller/project.controller";
 import { validateRequest, requiredUser } from "../middleware";
 
 const router = express.Router();
@@ -29,6 +38,11 @@ router.get(
 router.patch(
     "/:id",
     patchProject
+)
+
+router.delete(
+    "/:id",
+    deleteProject
 )
 
 router.get(

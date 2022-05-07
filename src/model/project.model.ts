@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
 import { DateDurationSchema, UserBasicSchema, DateDuration, UserBasic } from "./schemas";
+import Proposal from "./proposal.model";
 
-export interface ProjectDocument {
+export interface ProjectDocument extends mongoose.Document {
     user?: mongoose.Types.ObjectId;
     createBy?: UserBasic;
     showContactDetails?: boolean;
@@ -63,8 +64,13 @@ const ProjectSchema = new mongoose.Schema({
     }
 },{
     timestamps:true
-}
-)
+})
+
+ProjectSchema.pre('remove', async function (next) {
+    let project = this as ProjectDocument;
+    const res = await Proposal.deleteMany({project:project._id});
+    return next()
+})
 
 const Project = mongoose.model<ProjectDocument>("Project", ProjectSchema);
 

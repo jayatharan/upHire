@@ -1,5 +1,14 @@
 import express from "express";
-import { getAllJobs, createJob, patchJob, getJobById, getMyJobs, getAllJobProposals, addJobProposal } from "../controller/job.controller";
+import { 
+    getAllJobs, 
+    createJob, 
+    patchJob, 
+    getJobById, 
+    getMyJobs, 
+    getAllJobProposals, 
+    addJobProposal, 
+    deleteJob 
+} from "../controller/job.controller";
 import { validateRequest, requiredUser } from "../middleware";
 
 const router = express.Router();
@@ -29,6 +38,11 @@ router.get(
 router.patch(
     "/:id",
     patchJob
+)
+
+router.delete(
+    "/:id",
+    deleteJob
 )
 
 router.get(

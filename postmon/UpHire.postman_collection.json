@@ -14,16 +14,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://68.183.85.171/api/projects?page=1&limit=2",
+							"raw": "http://localhost:1337/projects?page=1&limit=2",
 							"protocol": "http",
 							"host": [
-								"68",
-								"183",
-								"85",
-								"171"
+								"localhost"
 							],
+							"port": "1337",
 							"path": [
-								"api",
 								"projects"
 							],
 							"query": [
@@ -48,7 +45,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjZlMWMyZjI1NDQ2N2ZlYzQxY2JjMjIiLCJpYXQiOjE2NTEzODMzNDMsImV4cCI6MTY1MTQ2OTc0M30.IMdmJs4EJtxirG-8jgTJHjpqgKJdsIgc1pYSkn1ApuI",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mjc0OWU4MDBlMGZkYTg3MGMyNGQ4M2QiLCJlbWFpbCI6InVzZXJAZW1haWwuY29tIiwibmFtZSI6IlVzZXIiLCJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsImVtYWlsVmVyaWZpY2F0aW9uR3VpZCI6IjMxNzU2ZmMwLWNjZjAtMTFlYy1hYjljLTE1ZjQ2MzVhZDE4OCIsImNyZWF0ZWRBdCI6IjIwMjItMDUtMDZUMDQ6MDU6MjAuNjI4WiIsInVwZGF0ZWRBdCI6IjIwMjItMDUtMDZUMDQ6MDU6MjAuNjI4WiIsIl9fdiI6MCwic2Vzc2lvbiI6IjYyNzVlOWU5ODdkNzAwNjgxODFhYmU5MSIsImlhdCI6MTY1MTg5NDc2MSwiZXhwIjoxNjUxOTgxMTYxfQ.6dAsSeUkGFbbVUC676_AOP9q5lAZxwjR1c6jwOGE7b8",
 									"type": "string"
 								}
 							]
@@ -65,14 +62,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:1337/api/projects",
+							"raw": "http://localhost:1337/projects",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "1337",
 							"path": [
-								"api",
 								"projects"
 							]
 						}
@@ -136,16 +132,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:1337/api/projects/626ab871078be83442ac026c/proposals",
+							"raw": "http://localhost:1337/projects/6275ec31c83a670fd1312a5f/proposals",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "1337",
 							"path": [
-								"api",
 								"projects",
-								"626ab871078be83442ac026c",
+								"6275ec31c83a670fd1312a5f",
 								"proposals"
 							]
 						}
@@ -160,7 +155,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjZlMWMyZjI1NDQ2N2ZlYzQxY2JjMjIiLCJpYXQiOjE2NTEzODMzNDMsImV4cCI6MTY1MTQ2OTc0M30.IMdmJs4EJtxirG-8jgTJHjpqgKJdsIgc1pYSkn1ApuI",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mjc0OWU4MDBlMGZkYTg3MGMyNGQ4M2QiLCJlbWFpbCI6InVzZXJAZW1haWwuY29tIiwibmFtZSI6IlVzZXIiLCJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsImVtYWlsVmVyaWZpY2F0aW9uR3VpZCI6IjMxNzU2ZmMwLWNjZjAtMTFlYy1hYjljLTE1ZjQ2MzVhZDE4OCIsImNyZWF0ZWRBdCI6IjIwMjItMDUtMDZUMDQ6MDU6MjAuNjI4WiIsInVwZGF0ZWRBdCI6IjIwMjItMDUtMDZUMDQ6MDU6MjAuNjI4WiIsIl9fdiI6MCwic2Vzc2lvbiI6IjYyNzVlOWU5ODdkNzAwNjgxODFhYmU5MSIsImlhdCI6MTY1MTg5NDc2MSwiZXhwIjoxNjUxOTgxMTYxfQ.6dAsSeUkGFbbVUC676_AOP9q5lAZxwjR1c6jwOGE7b8",
 									"type": "string"
 								}
 							]
@@ -169,7 +164,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"showContactDetails\":false,\r\n    \"amount\":100000\r\n}",
+							"raw": "{\r\n    \"showContactDetails\":false,\r\n    \"amount\":100001\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -177,16 +172,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:1337/api/projects/626ab871078be83442ac026c/proposals",
+							"raw": "http://localhost:1337/projects/6275ed8838e9b010dcf6c5d2/proposals",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "1337",
 							"path": [
-								"api",
 								"projects",
-								"626ab871078be83442ac026c",
+								"6275ed8838e9b010dcf6c5d2",
 								"proposals"
 							]
 						}
@@ -209,6 +203,36 @@
 								"api",
 								"projects",
 								"my-projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mjc0OWU4MDBlMGZkYTg3MGMyNGQ4M2QiLCJlbWFpbCI6InVzZXJAZW1haWwuY29tIiwibmFtZSI6IlVzZXIiLCJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsImVtYWlsVmVyaWZpY2F0aW9uR3VpZCI6IjMxNzU2ZmMwLWNjZjAtMTFlYy1hYjljLTE1ZjQ2MzVhZDE4OCIsImNyZWF0ZWRBdCI6IjIwMjItMDUtMDZUMDQ6MDU6MjAuNjI4WiIsInVwZGF0ZWRBdCI6IjIwMjItMDUtMDZUMDQ6MDU6MjAuNjI4WiIsIl9fdiI6MCwic2Vzc2lvbiI6IjYyNzVlOWU5ODdkNzAwNjgxODFhYmU5MSIsImlhdCI6MTY1MTg5NDc2MSwiZXhwIjoxNjUxOTgxMTYxfQ.6dAsSeUkGFbbVUC676_AOP9q5lAZxwjR1c6jwOGE7b8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/projects/6275ed8838e9b010dcf6c5d2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"projects",
+								"6275ed8838e9b010dcf6c5d2"
 							]
 						}
 					},
@@ -324,6 +348,27 @@
 					"name": "Get",
 					"request": {
 						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/api/jobs/626ab871078be83442ac026c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"jobs",
+								"626ab871078be83442ac026c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
 						"header": [],
 						"url": {
 							"raw": "http://localhost:1337/api/jobs/626ab871078be83442ac026c",
@@ -535,6 +580,27 @@
 					"name": "Get",
 					"request": {
 						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/api/teams/626ab871078be83442ac026c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"teams",
+								"626ab871078be83442ac026c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
 						"header": [],
 						"url": {
 							"raw": "http://localhost:1337/api/teams/626ab871078be83442ac026c",
@@ -1417,11 +1483,21 @@
 				{
 					"name": "createSession",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjZoX0ZEV0h3eEMzLWZmTDJlSHJRTiJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOltdLCJpc3MiOiJodHRwczovL2Rldi11bmRvLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJnb29nbGUtb2F1dGgyfDEwMTQ3ODY2MDg1MTg3MzkwMTUyNiIsImF1ZCI6WyJodHRwczovL2xvY2FsaG9zdDo3MjkzLyIsImh0dHBzOi8vZGV2LXVuZG8udXMuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTY1MTgxODIzOCwiZXhwIjoxNjUxOTA0NjM4LCJhenAiOiJmOWd0bGlLTUVDVjlzODZyWFlwUzh0eTBYVHBkcnZJcSIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJwZXJtaXNzaW9ucyI6W119.OdD5T2yzXrhns2ykW5AztXo1Qq_pfJ8lZOuJJDkdOOmB7SGXP8n48i6IHKaytJ_y0rllS7RkLcdC_BlxXoL5V-DMeNGvH3Y6pMSXxWsbFYgZA7YI9iCKKgJNXv7g_RKdfe9gx1b_obxUAfqvfE22ox9vCQwTQoEyBx6aDbtRKtVurud7EcQzif6THEAEOQ8fXE2AuKp28lQwadEKPMssAx6WJurAxH4Le5wMBKUzB5mZ1xhvTL6uNMgk8UVYIFsqCW43StP6x0xRTMct5fOxhYVO_xd98bMIVtS_Z53DLIbWQOwzWVxJDYr6seFeu6iO6kb06t_7oxNxwiUrL0RqTw",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\":\"indranjayatharan1@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"raw": "{\r\n    \"email\":\"user@email.com\",\r\n    \"password\":\"123456\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1429,16 +1505,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://68.183.85.171/api/sessions",
+							"raw": "http://localhost:1337/users/sessions",
 							"protocol": "http",
 							"host": [
-								"68",
-								"183",
-								"85",
-								"171"
+								"localhost"
 							],
+							"port": "1337",
 							"path": [
-								"api",
+								"users",
 								"sessions"
 							]
 						}
@@ -1615,7 +1689,19 @@
 			"name": "Get Postmon File",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1337/postmon/UpHire.postman_collection.json",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1337",
+					"path": [
+						"postmon",
+						"UpHire.postman_collection.json"
+					]
+				}
 			},
 			"response": []
 		}
