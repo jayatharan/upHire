@@ -11,15 +11,24 @@
 				{
 					"name": "List",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:1337/projects?page=1&limit=2",
+							"raw": "http://{{server}}/projects?page=1&limit=2",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
 								"projects"
 							],
@@ -45,7 +54,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mjc0OWU4MDBlMGZkYTg3MGMyNGQ4M2QiLCJlbWFpbCI6InVzZXJAZW1haWwuY29tIiwibmFtZSI6IlVzZXIiLCJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsImVtYWlsVmVyaWZpY2F0aW9uR3VpZCI6IjMxNzU2ZmMwLWNjZjAtMTFlYy1hYjljLTE1ZjQ2MzVhZDE4OCIsImNyZWF0ZWRBdCI6IjIwMjItMDUtMDZUMDQ6MDU6MjAuNjI4WiIsInVwZGF0ZWRBdCI6IjIwMjItMDUtMDZUMDQ6MDU6MjAuNjI4WiIsIl9fdiI6MCwic2Vzc2lvbiI6IjYyNzVlOWU5ODdkNzAwNjgxODFhYmU5MSIsImlhdCI6MTY1MTg5NDc2MSwiZXhwIjoxNjUxOTgxMTYxfQ.6dAsSeUkGFbbVUC676_AOP9q5lAZxwjR1c6jwOGE7b8",
+									"value": "{{access-token}}",
 									"type": "string"
 								}
 							]
@@ -62,12 +71,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:1337/projects",
+							"raw": "http://{{server}}/projects",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
 								"projects"
 							]
@@ -78,6 +86,16 @@
 				{
 					"name": "Patch",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PATCH",
 						"header": [],
 						"body": {
@@ -90,14 +108,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:1337/api/projects/626ab871078be83442ac026c",
+							"raw": "http://{{server}}/projects/626ab871078be83442ac026c",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"projects",
 								"626ab871078be83442ac026c"
 							]
@@ -108,17 +124,25 @@
 				{
 					"name": "Get",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:1337/api/projects/626ab871078be83442ac026c",
+							"raw": "http://{{server}}/projects/626ab871078be83442ac026c",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"projects",
 								"626ab871078be83442ac026c"
 							]
@@ -129,15 +153,24 @@
 				{
 					"name": "ProjectProposalsList",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:1337/projects/6275ec31c83a670fd1312a5f/proposals",
+							"raw": "http://{{server}}/projects/6275ec31c83a670fd1312a5f/proposals",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
 								"projects",
 								"6275ec31c83a670fd1312a5f",
@@ -155,7 +188,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mjc0OWU4MDBlMGZkYTg3MGMyNGQ4M2QiLCJlbWFpbCI6InVzZXJAZW1haWwuY29tIiwibmFtZSI6IlVzZXIiLCJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsImVtYWlsVmVyaWZpY2F0aW9uR3VpZCI6IjMxNzU2ZmMwLWNjZjAtMTFlYy1hYjljLTE1ZjQ2MzVhZDE4OCIsImNyZWF0ZWRBdCI6IjIwMjItMDUtMDZUMDQ6MDU6MjAuNjI4WiIsInVwZGF0ZWRBdCI6IjIwMjItMDUtMDZUMDQ6MDU6MjAuNjI4WiIsIl9fdiI6MCwic2Vzc2lvbiI6IjYyNzVlOWU5ODdkNzAwNjgxODFhYmU5MSIsImlhdCI6MTY1MTg5NDc2MSwiZXhwIjoxNjUxOTgxMTYxfQ.6dAsSeUkGFbbVUC676_AOP9q5lAZxwjR1c6jwOGE7b8",
+									"value": "{{access-token}}",
 									"type": "string"
 								}
 							]
@@ -172,12 +205,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:1337/projects/6275ed8838e9b010dcf6c5d2/proposals",
+							"raw": "http://{{server}}/projects/6275ed8838e9b010dcf6c5d2/proposals",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
 								"projects",
 								"6275ed8838e9b010dcf6c5d2",
@@ -190,17 +222,25 @@
 				{
 					"name": "My Projects",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:1337/api/projects/my-projects",
+							"raw": "http://{{server}}/projects/my-projects",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"projects",
 								"my-projects"
 							]
@@ -216,7 +256,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mjc0OWU4MDBlMGZkYTg3MGMyNGQ4M2QiLCJlbWFpbCI6InVzZXJAZW1haWwuY29tIiwibmFtZSI6IlVzZXIiLCJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsImVtYWlsVmVyaWZpY2F0aW9uR3VpZCI6IjMxNzU2ZmMwLWNjZjAtMTFlYy1hYjljLTE1ZjQ2MzVhZDE4OCIsImNyZWF0ZWRBdCI6IjIwMjItMDUtMDZUMDQ6MDU6MjAuNjI4WiIsInVwZGF0ZWRBdCI6IjIwMjItMDUtMDZUMDQ6MDU6MjAuNjI4WiIsIl9fdiI6MCwic2Vzc2lvbiI6IjYyNzVlOWU5ODdkNzAwNjgxODFhYmU5MSIsImlhdCI6MTY1MTg5NDc2MSwiZXhwIjoxNjUxOTgxMTYxfQ.6dAsSeUkGFbbVUC676_AOP9q5lAZxwjR1c6jwOGE7b8",
+									"value": "{{access-token}}",
 									"type": "string"
 								}
 							]
@@ -224,12 +264,11 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:1337/projects/6275ed8838e9b010dcf6c5d2",
+							"raw": "http://{{server}}/projects/6275ed8838e9b010dcf6c5d2",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
 								"projects",
 								"6275ed8838e9b010dcf6c5d2"
@@ -246,19 +285,25 @@
 				{
 					"name": "List",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://68.183.85.171/api/jobs?page=1&limit=2",
+							"raw": "http://{{server}}/jobs?page=1&limit=2",
 							"protocol": "http",
 							"host": [
-								"68",
-								"183",
-								"85",
-								"171"
+								"{{server}}"
 							],
 							"path": [
-								"api",
 								"jobs"
 							],
 							"query": [
@@ -283,7 +328,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjZlMWMyZjI1NDQ2N2ZlYzQxY2JjMjIiLCJpYXQiOjE2NTEzODMzNDMsImV4cCI6MTY1MTQ2OTc0M30.IMdmJs4EJtxirG-8jgTJHjpqgKJdsIgc1pYSkn1ApuI",
+									"value": "{{access-token}}",
 									"type": "string"
 								}
 							]
@@ -300,14 +345,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:1337/api/jobs",
+							"raw": "http://{{server}}/jobs",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"jobs"
 							]
 						}
@@ -317,6 +360,16 @@
 				{
 					"name": "Patch",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PATCH",
 						"header": [],
 						"body": {
@@ -329,14 +382,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:1337/api/jobs/626ab871078be83442ac026c",
+							"raw": "http://{{server}}/jobs/626ab871078be83442ac026c",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"jobs",
 								"626ab871078be83442ac026c"
 							]
@@ -347,17 +398,25 @@
 				{
 					"name": "Get",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:1337/api/jobs/626ab871078be83442ac026c",
+							"raw": "http://{{server}}/jobs/626ab871078be83442ac026c",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"jobs",
 								"626ab871078be83442ac026c"
 							]
@@ -368,17 +427,25 @@
 				{
 					"name": "Delete",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:1337/api/jobs/626ab871078be83442ac026c",
+							"raw": "http://{{server}}/jobs/626ab871078be83442ac026c",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"jobs",
 								"626ab871078be83442ac026c"
 							]
@@ -389,17 +456,25 @@
 				{
 					"name": "ProjectProposalsList",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:1337/api/jobs/626ab871078be83442ac026c/proposals",
+							"raw": "http://{{server}}/jobs/626ab871078be83442ac026c/proposals",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"jobs",
 								"626ab871078be83442ac026c",
 								"proposals"
@@ -416,7 +491,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjZlMWMyZjI1NDQ2N2ZlYzQxY2JjMjIiLCJpYXQiOjE2NTEzODMzNDMsImV4cCI6MTY1MTQ2OTc0M30.IMdmJs4EJtxirG-8jgTJHjpqgKJdsIgc1pYSkn1ApuI",
+									"value": "{{access-token}}",
 									"type": "string"
 								}
 							]
@@ -433,14 +508,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:1337/api/jobs/626ab871078be83442ac026c/proposals",
+							"raw": "http://{{server}}/jobs/626ab871078be83442ac026c/proposals",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"jobs",
 								"626ab871078be83442ac026c",
 								"proposals"
@@ -452,17 +525,25 @@
 				{
 					"name": "My Projects",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:1337/api/jobs/my-jobs",
+							"raw": "http://{{server}}/jobs/my-jobs",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"jobs",
 								"my-jobs"
 							]
@@ -478,19 +559,25 @@
 				{
 					"name": "List",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://68.183.85.171/api/teams?page=1&limit=2",
+							"raw": "http://{{server}}/teams?page=1&limit=2",
 							"protocol": "http",
 							"host": [
-								"68",
-								"183",
-								"85",
-								"171"
+								"{{server}}"
 							],
 							"path": [
-								"api",
 								"teams"
 							],
 							"query": [
@@ -515,7 +602,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjZlMWMyZjI1NDQ2N2ZlYzQxY2JjMjIiLCJpYXQiOjE2NTEzODMzNDMsImV4cCI6MTY1MTQ2OTc0M30.IMdmJs4EJtxirG-8jgTJHjpqgKJdsIgc1pYSkn1ApuI",
+									"value": "{{access-token}}",
 									"type": "string"
 								}
 							]
@@ -532,14 +619,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:1337/api/teams",
+							"raw": "http://{{server}}/teams",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"teams"
 							]
 						}
@@ -549,6 +634,16 @@
 				{
 					"name": "Patch",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PATCH",
 						"header": [],
 						"body": {
@@ -561,14 +656,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:1337/api/teams/626ab871078be83442ac026c",
+							"raw": "http://{{server}}/teams/626ab871078be83442ac026c",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"teams",
 								"626ab871078be83442ac026c"
 							]
@@ -579,17 +672,25 @@
 				{
 					"name": "Get",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:1337/api/teams/626ab871078be83442ac026c",
+							"raw": "http://{{server}}/teams/626ab871078be83442ac026c",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"teams",
 								"626ab871078be83442ac026c"
 							]
@@ -600,17 +701,25 @@
 				{
 					"name": "Delete",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:1337/api/teams/626ab871078be83442ac026c",
+							"raw": "http://{{server}}/teams/626ab871078be83442ac026c",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"teams",
 								"626ab871078be83442ac026c"
 							]
@@ -621,17 +730,25 @@
 				{
 					"name": "ProjectProposalsList",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:1337/api/teams/626ab871078be83442ac026c/proposals",
+							"raw": "http://{{server}}/teams/626ab871078be83442ac026c/proposals",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"teams",
 								"626ab871078be83442ac026c",
 								"proposals"
@@ -648,7 +765,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjZlMWMyZjI1NDQ2N2ZlYzQxY2JjMjIiLCJpYXQiOjE2NTEzODMzNDMsImV4cCI6MTY1MTQ2OTc0M30.IMdmJs4EJtxirG-8jgTJHjpqgKJdsIgc1pYSkn1ApuI",
+									"value": "{{access-token}}",
 									"type": "string"
 								}
 							]
@@ -665,14 +782,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:1337/api/teams/626ab871078be83442ac026c/proposals",
+							"raw": "http://{{server}}/teams/626ab871078be83442ac026c/proposals",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"teams",
 								"626ab871078be83442ac026c",
 								"proposals"
@@ -684,17 +799,25 @@
 				{
 					"name": "My Projects",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:1337/api/teams/my-jobs",
+							"raw": "http://{{server}}/teams/my-jobs",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"teams",
 								"my-jobs"
 							]
@@ -710,17 +833,25 @@
 				{
 					"name": "Get",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:1337/api/proposals/626e78b94633d3587e6656f8",
+							"raw": "http://{{server}}/proposals/626e78b94633d3587e6656f8",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"proposals",
 								"626e78b94633d3587e6656f8"
 							]
@@ -736,7 +867,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjZlMWMyZjI1NDQ2N2ZlYzQxY2JjMjIiLCJpYXQiOjE2NTEzODMzNDMsImV4cCI6MTY1MTQ2OTc0M30.IMdmJs4EJtxirG-8jgTJHjpqgKJdsIgc1pYSkn1ApuI",
+									"value": "{{access-token}}",
 									"type": "string"
 								}
 							]
@@ -753,14 +884,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:1337/api/proposals/626e78b94633d3587e6656f8",
+							"raw": "http://{{server}}/proposals/626e78b94633d3587e6656f8",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"proposals",
 								"626e78b94633d3587e6656f8"
 							]
@@ -771,17 +900,25 @@
 				{
 					"name": "Delete",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:1337/api/proposals/626e78b94633d3587e6656f8",
+							"raw": "http://{{server}}/proposals/626e78b94633d3587e6656f8",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"proposals",
 								"626e78b94633d3587e6656f8"
 							]
@@ -792,17 +929,25 @@
 				{
 					"name": "My Proposals",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:1337/api/proposals/my-proposals",
+							"raw": "http://{{server}}/proposals/my-proposals",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"proposals",
 								"my-proposals"
 							]
@@ -818,17 +963,25 @@
 				{
 					"name": "Get",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:1337/api/job-proposals/626e78b94633d3587e6656f8",
+							"raw": "http://{{server}}/job-proposals/626e78b94633d3587e6656f8",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"job-proposals",
 								"626e78b94633d3587e6656f8"
 							]
@@ -844,7 +997,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjZlMWMyZjI1NDQ2N2ZlYzQxY2JjMjIiLCJpYXQiOjE2NTEzODMzNDMsImV4cCI6MTY1MTQ2OTc0M30.IMdmJs4EJtxirG-8jgTJHjpqgKJdsIgc1pYSkn1ApuI",
+									"value": "{{access-token}}",
 									"type": "string"
 								}
 							]
@@ -861,14 +1014,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:1337/api/job-proposals/626e78b94633d3587e6656f8",
+							"raw": "http://{{server}}/job-proposals/626e78b94633d3587e6656f8",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"job-proposals",
 								"626e78b94633d3587e6656f8"
 							]
@@ -879,17 +1030,25 @@
 				{
 					"name": "Delete",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:1337/api/job-proposals/626e78b94633d3587e6656f8",
+							"raw": "http://{{server}}/job-proposals/626e78b94633d3587e6656f8",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"job-proposals",
 								"626e78b94633d3587e6656f8"
 							]
@@ -900,17 +1059,25 @@
 				{
 					"name": "My Proposals",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:1337/api/job-proposals/my-job-proposals",
+							"raw": "http://{{server}}/job-proposals/my-job-proposals",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"job-proposals",
 								"my-job-proposals"
 							]
@@ -926,17 +1093,25 @@
 				{
 					"name": "Get",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:1337/api/team-proposals/626e78b94633d3587e6656f8",
+							"raw": "http://{{server}}/team-proposals/626e78b94633d3587e6656f8",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"team-proposals",
 								"626e78b94633d3587e6656f8"
 							]
@@ -952,7 +1127,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjZlMWMyZjI1NDQ2N2ZlYzQxY2JjMjIiLCJpYXQiOjE2NTEzODMzNDMsImV4cCI6MTY1MTQ2OTc0M30.IMdmJs4EJtxirG-8jgTJHjpqgKJdsIgc1pYSkn1ApuI",
+									"value": "{{access-token}}",
 									"type": "string"
 								}
 							]
@@ -969,14 +1144,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:1337/api/team-proposals/626e78b94633d3587e6656f8",
+							"raw": "http://{{server}}/team-proposals/626e78b94633d3587e6656f8",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"team-proposals",
 								"626e78b94633d3587e6656f8"
 							]
@@ -987,17 +1160,25 @@
 				{
 					"name": "Delete",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:1337/api/team-proposals/626e78b94633d3587e6656f8",
+							"raw": "http://{{server}}/team-proposals/626e78b94633d3587e6656f8",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"team-proposals",
 								"626e78b94633d3587e6656f8"
 							]
@@ -1008,17 +1189,25 @@
 				{
 					"name": "My Proposals",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:1337/api/team-proposals/my-job-proposals",
+							"raw": "http://{{server}}/team-proposals/my-job-proposals",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"team-proposals",
 								"my-job-proposals"
 							]
@@ -1039,7 +1228,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjcxMjk5OGU3Y2Y0MWMzMWI1ZTM2ZDEiLCJpYXQiOjE2NTE1ODMzODQsImV4cCI6MTY1MTY2OTc4NH0.yuLnVUmq6Z8YTC6tGPcPG-CpcS2WAnq7TnB8-OzpODQ",
+									"value": "{{access-token}}",
 									"type": "string"
 								}
 							]
@@ -1056,14 +1245,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:1337/api/educational-details/62712ada7f32c7fc120d61b1",
+							"raw": "http://{{server}}/educational-details/62712ada7f32c7fc120d61b1",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"educational-details",
 								"62712ada7f32c7fc120d61b1"
 							]
@@ -1079,7 +1266,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjcxMjk5OGU3Y2Y0MWMzMWI1ZTM2ZDEiLCJpYXQiOjE2NTE1ODMzODQsImV4cCI6MTY1MTY2OTc4NH0.yuLnVUmq6Z8YTC6tGPcPG-CpcS2WAnq7TnB8-OzpODQ",
+									"value": "{{access-token}}",
 									"type": "string"
 								}
 							]
@@ -1087,14 +1274,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:1337/api/educational-details/626e6a96f8f977ffb12afd10",
+							"raw": "http://{{server}}/educational-details/626e6a96f8f977ffb12afd10",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"educational-details",
 								"626e6a96f8f977ffb12afd10"
 							]
@@ -1110,19 +1295,36 @@
 				{
 					"name": "Patch",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PATCH",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": \"62581940a7a10b77333b4741\",\r\n    \"company\": {\r\n        \"name\": \"Calcey Technologies\"\r\n    },\r\n    \"jobRole\": \"Associate software engineer\",\r\n    \"duration\": {\r\n    \"startDate\": \"2021-08-18T06:38:44.012Z\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://localhost:1337/api/educational-details/62712ada7f32c7fc120d61b1",
+							"raw": "http://{{server}}/professional-details/626e2b690fd8f8c9dff961d7",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
-								"educational-details",
-								"62712ada7f32c7fc120d61b1"
+								"professional-details",
+								"626e2b690fd8f8c9dff961d7"
 							]
 						}
 					},
@@ -1131,17 +1333,25 @@
 				{
 					"name": "Delete",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:1337/api/professional-details/626e2b690fd8f8c9dff961d7",
+							"raw": "http://{{server}}/professional-details/626e2b690fd8f8c9dff961d7",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"professional-details",
 								"626e2b690fd8f8c9dff961d7"
 							]
@@ -1162,7 +1372,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjcxMjk5OGU3Y2Y0MWMzMWI1ZTM2ZDEiLCJpYXQiOjE2NTE1ODMzODQsImV4cCI6MTY1MTY2OTc4NH0.yuLnVUmq6Z8YTC6tGPcPG-CpcS2WAnq7TnB8-OzpODQ",
+									"value": "{{access-token}}",
 									"type": "string"
 								}
 							]
@@ -1179,14 +1389,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:1337/api/project-details/627130374131d68e6233c3e3",
+							"raw": "http://{{server}}/project-details/627130374131d68e6233c3e3",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"project-details",
 								"627130374131d68e6233c3e3"
 							]
@@ -1197,17 +1405,25 @@
 				{
 					"name": "Delete",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:1337/api/project-details/626e2b690fd8f8c9dff961d7",
+							"raw": "http://{{server}}/project-details/626e2b690fd8f8c9dff961d7",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"project-details",
 								"626e2b690fd8f8c9dff961d7"
 							]
@@ -1223,11 +1439,21 @@
 				{
 					"name": "createUser",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"Jayatharan\",\r\n    \"email\":\"indranjayatharan1@gmail.com\",\r\n    \"password\":\"123456\",\r\n    \"passwordConfirmation\":\"123456\"\r\n}",
+							"raw": "{\r\n    \"name\":\"User\",\r\n    \"email\":\"user@email.com\",\r\n    \"password\":\"123456\",\r\n    \"passwordConfirmation\":\"123456\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1235,14 +1461,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:1337/api/users",
+							"raw": "http://{{server}}/users",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"users"
 							]
 						}
@@ -1257,7 +1481,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjZlMWMyZjI1NDQ2N2ZlYzQxY2JjMjIiLCJpYXQiOjE2NTEzODMzNDMsImV4cCI6MTY1MTQ2OTc0M30.IMdmJs4EJtxirG-8jgTJHjpqgKJdsIgc1pYSkn1ApuI",
+									"value": "{{access-token}}",
 									"type": "string"
 								}
 							]
@@ -1274,14 +1498,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:1337/api/users/biography",
+							"raw": "http://{{server}}/users/biography",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"users",
 								"biography"
 							]
@@ -1300,7 +1522,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjcxMjk5OGU3Y2Y0MWMzMWI1ZTM2ZDEiLCJpYXQiOjE2NTE1ODMzODQsImV4cCI6MTY1MTY2OTc4NH0.yuLnVUmq6Z8YTC6tGPcPG-CpcS2WAnq7TnB8-OzpODQ",
+									"value": "{{access-token}}",
 									"type": "string"
 								}
 							]
@@ -1312,14 +1534,12 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "http://localhost:1337/api/users",
+							"raw": "http://{{server}}/users",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"users"
 							]
 						}
@@ -1334,7 +1554,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjZlMWMyZjI1NDQ2N2ZlYzQxY2JjMjIiLCJpYXQiOjE2NTEzODMzNDMsImV4cCI6MTY1MTQ2OTc0M30.IMdmJs4EJtxirG-8jgTJHjpqgKJdsIgc1pYSkn1ApuI",
+									"value": "{{access-token}}",
 									"type": "string"
 								}
 							]
@@ -1351,14 +1571,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:1337/api/users/professional-detail",
+							"raw": "http://{{server}}/users/professional-detail",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"users",
 								"professional-detail"
 							]
@@ -1374,7 +1592,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjcxMjk5OGU3Y2Y0MWMzMWI1ZTM2ZDEiLCJpYXQiOjE2NTE1ODMzODQsImV4cCI6MTY1MTY2OTc4NH0.yuLnVUmq6Z8YTC6tGPcPG-CpcS2WAnq7TnB8-OzpODQ",
+									"value": "{{access-token}}",
 									"type": "string"
 								}
 							]
@@ -1391,14 +1609,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:1337/api/users/educational-detail",
+							"raw": "http://{{server}}/users/educational-detail",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"users",
 								"educational-detail"
 							]
@@ -1414,7 +1630,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjcxMjk5OGU3Y2Y0MWMzMWI1ZTM2ZDEiLCJpYXQiOjE2NTE1ODMzODQsImV4cCI6MTY1MTY2OTc4NH0.yuLnVUmq6Z8YTC6tGPcPG-CpcS2WAnq7TnB8-OzpODQ",
+									"value": "{{access-token}}",
 									"type": "string"
 								}
 							]
@@ -1431,14 +1647,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:1337/api/users/project-detail",
+							"raw": "http://{{server}}/users/project-detail",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"users",
 								"project-detail"
 							]
@@ -1449,6 +1663,16 @@
 				{
 					"name": "Verify E-Mail Address",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -1461,12 +1685,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:1337/users/verify-email",
+							"raw": "http://{{server}}/users/verify-email",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
 								"users",
 								"verify-email"
@@ -1488,7 +1711,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IjZoX0ZEV0h3eEMzLWZmTDJlSHJRTiJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOltdLCJpc3MiOiJodHRwczovL2Rldi11bmRvLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJnb29nbGUtb2F1dGgyfDEwMTQ3ODY2MDg1MTg3MzkwMTUyNiIsImF1ZCI6WyJodHRwczovL2xvY2FsaG9zdDo3MjkzLyIsImh0dHBzOi8vZGV2LXVuZG8udXMuYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTY1MTgxODIzOCwiZXhwIjoxNjUxOTA0NjM4LCJhenAiOiJmOWd0bGlLTUVDVjlzODZyWFlwUzh0eTBYVHBkcnZJcSIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwiLCJwZXJtaXNzaW9ucyI6W119.OdD5T2yzXrhns2ykW5AztXo1Qq_pfJ8lZOuJJDkdOOmB7SGXP8n48i6IHKaytJ_y0rllS7RkLcdC_BlxXoL5V-DMeNGvH3Y6pMSXxWsbFYgZA7YI9iCKKgJNXv7g_RKdfe9gx1b_obxUAfqvfE22ox9vCQwTQoEyBx6aDbtRKtVurud7EcQzif6THEAEOQ8fXE2AuKp28lQwadEKPMssAx6WJurAxH4Le5wMBKUzB5mZ1xhvTL6uNMgk8UVYIFsqCW43StP6x0xRTMct5fOxhYVO_xd98bMIVtS_Z53DLIbWQOwzWVxJDYr6seFeu6iO6kb06t_7oxNxwiUrL0RqTw",
+									"value": "{{access-token}}",
 									"type": "string"
 								}
 							]
@@ -1505,14 +1728,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:1337/users/sessions",
+							"raw": "http://{{server}}/sessions",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"users",
 								"sessions"
 							]
 						}
@@ -1527,7 +1748,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjczYmUwNmYzYzI0YWEyMTUyNDhhODYiLCJlbWFpbCI6ImpheWFAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsImVtYWlsVmVyaWZpY2F0aW9uR3VpZCI6ImU2MGJjMjIwLWNjNmItMTFlYy1iNWMzLTJkMDNlMDI4ZDhkOSIsImNyZWF0ZWRBdCI6IjIwMjItMDUtMDVUMTI6MDc6MzQuMzg2WiIsInVwZGF0ZWRBdCI6IjIwMjItMDUtMDVUMTI6MDc6MzQuMzg2WiIsIl9fdiI6MCwic2Vzc2lvbiI6IjYyNzNiZTIzZjNjMjRhYTIxNTI0OGE4OSIsImlhdCI6MTY1MTc1MjQ4MywiZXhwIjoxNjUxODM4ODgzfQ.TuqY8uEuJl669lmrgGKn4OmKSYL7bhmJAgv8VGB3kAc",
+									"value": "{{access-token}}",
 									"type": "string"
 								}
 							]
@@ -1546,16 +1767,12 @@
 							}
 						],
 						"url": {
-							"raw": "http://68.183.85.171/api/sessions",
+							"raw": "http://{{server}}/sessions",
 							"protocol": "http",
 							"host": [
-								"68",
-								"183",
-								"85",
-								"171"
+								"{{server}}"
 							],
 							"path": [
-								"api",
 								"sessions"
 							]
 						}
@@ -1565,6 +1782,16 @@
 				{
 					"name": "delete Session",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "DELETE",
 						"header": [
 							{
@@ -1579,14 +1806,12 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:1337/api/sessions",
+							"raw": "http://{{server}}/sessions",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"sessions"
 							]
 						}
@@ -1596,6 +1821,16 @@
 				{
 					"name": "CreateSessionWithGoogle",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -1608,14 +1843,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:1337/api/sessions/google",
+							"raw": "http://{{server}}/sessions/google",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"sessions",
 								"google"
 							]
@@ -1626,6 +1859,16 @@
 				{
 					"name": "createAccessTokenWithRefreshToken",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -1638,14 +1881,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:1337/api/sessions/token",
+							"raw": "http://{{server}}/sessions/token",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"{{server}}"
 							],
-							"port": "1337",
 							"path": [
-								"api",
 								"sessions",
 								"token"
 							]
@@ -1658,16 +1899,23 @@
 		{
 			"name": "Health Check",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access-token}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://68.183.85.171/api/health-check",
+					"raw": "http://{{server}}/api/health-check",
 					"protocol": "http",
 					"host": [
-						"68",
-						"183",
-						"85",
-						"171"
+						"{{server}}"
 					],
 					"path": [
 						"api",
@@ -1680,23 +1928,62 @@
 		{
 			"name": "Upload File",
 			"request": {
-				"method": "GET",
-				"header": []
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access-token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/D:/DEV/NodeJs/Express-TypeScript/UpHire.postman_collection.json"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{server}}/upload-file",
+					"protocol": "http",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"upload-file"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "Get Postmon File",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access-token}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:1337/postmon/UpHire.postman_collection.json",
+					"raw": "http://{{server}}/postmon/UpHire.postman_collection.json",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"{{server}}"
 					],
-					"port": "1337",
 					"path": [
 						"postmon",
 						"UpHire.postman_collection.json"
@@ -1704,6 +1991,48 @@
 				}
 			},
 			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "server",
+			"value": "68.183.85.171/api",
+			"type": "string"
+		},
+		{
+			"key": "access-token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mjc0OWU4MDBlMGZkYTg3MGMyNGQ4M2QiLCJlbWFpbCI6InVzZXJAZW1haWwuY29tIiwibmFtZSI6IlVzZXIiLCJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsImVtYWlsVmVyaWZpY2F0aW9uR3VpZCI6IjMxNzU2ZmMwLWNjZjAtMTFlYy1hYjljLTE1ZjQ2MzVhZDE4OCIsImNyZWF0ZWRBdCI6IjIwMjItMDUtMDZUMDQ6MDU6MjAuNjI4WiIsInVwZGF0ZWRBdCI6IjIwMjItMDUtMDZUMDQ6MDU6MjAuNjI4WiIsIl9fdiI6MCwic2Vzc2lvbiI6IjYyNzVlOWU5ODdkNzAwNjgxODFhYmU5MSIsImlhdCI6MTY1MTg5NDc2MSwiZXhwIjoxNjUxOTgxMTYxfQ.6dAsSeUkGFbbVUC676_AOP9q5lAZxwjR1c6jwOGE7b8",
+			"type": "string"
+		},
+		{
+			"key": "localhost",
+			"value": "localhost:1337",
+			"type": "string"
+		},
+		{
+			"key": "digital-ocean",
+			"value": "68.183.85.171/api",
+			"type": "string"
 		}
 	]
 }
