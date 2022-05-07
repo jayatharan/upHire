@@ -6,7 +6,10 @@ import {
     addUserProfessionalDetail, 
     addUserEducationalDetail, 
     addUserProjectDetail,
-    verifyEmailAddress
+    verifyEmailAddress,
+    subscribeService,
+    getMySubscriptions,
+    unSubscribe
 } from "../controller/user.controller";
 import { createUserSchema, verifyEmailSchema } from "../schema/user.schema";
 import { validateRequest, requiredUser } from "../middleware";
@@ -53,6 +56,24 @@ router.post(
     "/project-detail",
     requiredUser,
     addUserProjectDetail
+)
+
+router.get(
+    "/subscriptions",
+    requiredUser,
+    getMySubscriptions
+)
+
+router.post(
+    "/subscriptions",
+    requiredUser,
+    subscribeService
+)
+
+router.delete(
+    "/subscriptions/:service",
+    requiredUser,
+    unSubscribe
 )
 
 export default router;

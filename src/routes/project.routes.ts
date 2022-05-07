@@ -9,7 +9,7 @@ import {
     getMyProjects,
     deleteProject
 } from "../controller/project.controller";
-import { validateRequest, requiredUser } from "../middleware";
+import { validateRequest, requiredUser, isUserSubscribed } from "../middleware";
 
 const router = express.Router();
 
@@ -21,6 +21,7 @@ router.get(
 router.post(
     "/",
     requiredUser,
+    isUserSubscribed("Project"),
     createProject
 )
 

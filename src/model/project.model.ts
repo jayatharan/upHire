@@ -68,8 +68,8 @@ const ProjectSchema = new mongoose.Schema({
 
 ProjectSchema.pre('remove', async function (next) {
     let project = this as ProjectDocument;
-    const res = await Proposal.deleteMany({project:project._id});
-    return next()
+    await Proposal.deleteMany({project:project._id});
+    return next();
 })
 
 const Project = mongoose.model<ProjectDocument>("Project", ProjectSchema);

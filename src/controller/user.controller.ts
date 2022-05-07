@@ -5,11 +5,12 @@ import { BiographyDocument } from "../model/biography.model";
 import { ProfessionalDetailDocument } from "../model/professionalDetail.model"
 import { EducationalDetailDocument } from "../model/educationalDetail.model";
 import { ProjectDetailDocument } from "../model/projectDetail.model";
+import { SubscriptionDocument } from "../model/subscription.model";
 import BiographyService from "../service/biography.service";
 import ProfessionalDetailService from "../service/professionalDetail.service";
 import EducationalDetailService from "../service/educationalDetail.service";
 import ProjectDetailService from "../service/projectDetail.service";
-import mongoose from "mongoose";
+import SubscriptionService  from "../service/subscription.service";
 
 import log from "../logger";
 import { get } from "lodash";
@@ -99,10 +100,47 @@ export async function verifyEmailAddress(req: Request, res: Response) {
     try{
         const data = req.body as EmailVerificationBody;
         const verified = await verifyEmail(data);
-        if(verified) return res.send({success: true})
-        return res.status(400).send({success: false})
+        if(verified) return res.send({success: true});
+        return res.status(400).send({success: false});
     }catch (e) {
         log.error(e);
-        return res.status(400).send(e)
+        return res.status(400).send(e);
     }
 }
+
+export async function subscribeService(req: Request, res: Response) {
+    try{
+        const user = get(req, "user");
+        let data = req.body as SubscriptionDocument;
+        data.user = user._id;
+        const subscription = await SubscriptionService.subscribeService(data);
+        return res.send(subscription);
+    }catch (e){
+        log.error(e);
+        return res.status(400).send(e);
+    }
+}
+
+export async function unSubscribe(req: Request, res: Response) {
+    try{
+        const service = req.params.service as unknown as string;
+        const user = get(req, "user");
+        const result = await SubscriptionService.unSubscribe(user._id, service);
+        return res.send(result);
+    }catch (e){
+        log.error(e);
+        return res.status(400).send(e);
+    }
+}
+
+export async function getMySubscriptions(req: Request, res: Response) {
+    try{
+        const user = get(req, "user");
+        const subscriptions = await SubscriptionService.getUserSubscriptions(user._id);
+        return res.send(subscriptions);
+    }catch (e){
+        log.error(e);
+        return res.status(400).send(e);
+    }
+}
+
