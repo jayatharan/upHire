@@ -266,6 +266,136 @@
 			]
 		},
 		{
+			"name": "Teams",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://68.183.85.171/api/teams?page=1&limit=2",
+							"protocol": "http",
+							"host": [
+								"68",
+								"183",
+								"85",
+								"171"
+							],
+							"path": [
+								"api",
+								"teams"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjZlMWMyZjI1NDQ2N2ZlYzQxY2JjMjIiLCJpYXQiOjE2NTEzODMzNDMsImV4cCI6MTY1MTQ2OTc0M30.IMdmJs4EJtxirG-8jgTJHjpqgKJdsIgc1pYSkn1ApuI"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"showContactDetails\":false,\r\n    \"title\":\"Project 2\",\r\n    \"description\":\"Description\",\r\n    \"category\":\"Category\",\r\n    \"budget\":100000,\r\n    \"hourly\": 20,\r\n    \"timeline\":\"Timeline\",\r\n    \"amount\":1000,\r\n    \"rate\":10,\r\n    \"remainingAmount\":\"900\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:1337/api/teams"
+					},
+					"response": []
+				},
+				{
+					"name": "Patch",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"showContactDetails\":false,\r\n    \"title\":\"Project 3\",\r\n    \"description\":\"Description\",\r\n    \"category\":\"Category\",\r\n    \"budget\":100000,\r\n    \"hourly\": 20,\r\n    \"timeline\":\"Timeline\",\r\n    \"amount\":1000,\r\n    \"rate\":10,\r\n    \"remainingAmount\":\"900\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:1337/api/teams/626ab871078be83442ac026c"
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:1337/api/teams/626ab871078be83442ac026c"
+					},
+					"response": []
+				},
+				{
+					"name": "ProjectProposalsList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:1337/api/teams/626ab871078be83442ac026c/proposals"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Project Proposal",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjZlMWMyZjI1NDQ2N2ZlYzQxY2JjMjIiLCJpYXQiOjE2NTEzODMzNDMsImV4cCI6MTY1MTQ2OTc0M30.IMdmJs4EJtxirG-8jgTJHjpqgKJdsIgc1pYSkn1ApuI"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"showContactDetails\":false,\r\n    \"amount\":100000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:1337/api/teams/626ab871078be83442ac026c/proposals"
+					},
+					"response": []
+				},
+				{
+					"name": "My Projects",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:1337/api/teams/my-jobs"
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Proposals",
 			"item": [
 				{
@@ -372,6 +502,62 @@
 						"method": "GET",
 						"header": [],
 						"url": "http://localhost:1337/api/job-proposals/my-job-proposals"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Team-Proposals",
+			"item": [
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:1337/api/team-proposals/626e78b94633d3587e6656f8"
+					},
+					"response": []
+				},
+				{
+					"name": "Patch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsIl9pZCI6IjYyNTgxOTQwYTdhMTBiNzczMzNiNDc0MSIsImVtYWlsIjoiaW5kcmFuamF5YXRoYXJhbjNAZ21haWwuY29tIiwibmFtZSI6IkpheWF0aGFyYW4iLCJjcmVhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJ1cGRhdGVkQXQiOiIyMDIyLTA0LTE0VDEyOjUzOjIwLjk2OFoiLCJfX3YiOjAsInNlc3Npb24iOiI2MjZlMWMyZjI1NDQ2N2ZlYzQxY2JjMjIiLCJpYXQiOjE2NTEzODMzNDMsImV4cCI6MTY1MTQ2OTc0M30.IMdmJs4EJtxirG-8jgTJHjpqgKJdsIgc1pYSkn1ApuI"
+							}
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"project\": \"626ab871078be83442ac026c\",\r\n    \"showContactDetails\": false,\r\n    \"amount\": 100000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:1337/api/team-proposals/626e78b94633d3587e6656f8"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:1337/api/team-proposals/626e78b94633d3587e6656f8"
+					},
+					"response": []
+				},
+				{
+					"name": "My Proposals",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:1337/api/team-proposals/my-job-proposals"
 					},
 					"response": []
 				}
