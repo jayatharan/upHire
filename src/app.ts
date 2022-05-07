@@ -13,6 +13,7 @@ const host = config.get("host") as string;
 
 const app = express();
 app.use('/static', express.static('static'));
+app.use('/postmon', express.static('postmon'));
 
 app.post('/upload-file',upload.single('file'),async (req:Request, res:Response) => {
     try{
