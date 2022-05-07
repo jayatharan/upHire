@@ -1697,6 +1697,103 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Get My Subscriptions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{server}}/users/subscriptions",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"subscriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Subscribe Service",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"service\":\"Team\",\r\n    \"type\":\"Unlimited\",\r\n    \"amount\":1000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{server}}/users/subscriptions",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"subscriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UnSubscribe Service",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{server}}/users/subscriptions/Project",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"subscriptions",
+								"Project"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -2016,12 +2113,12 @@
 	"variable": [
 		{
 			"key": "server",
-			"value": "68.183.85.171/api",
+			"value": "localhost:1337",
 			"type": "string"
 		},
 		{
 			"key": "access-token",
-			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mjc0OWU4MDBlMGZkYTg3MGMyNGQ4M2QiLCJlbWFpbCI6InVzZXJAZW1haWwuY29tIiwibmFtZSI6IlVzZXIiLCJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsImVtYWlsVmVyaWZpY2F0aW9uR3VpZCI6IjMxNzU2ZmMwLWNjZjAtMTFlYy1hYjljLTE1ZjQ2MzVhZDE4OCIsImNyZWF0ZWRBdCI6IjIwMjItMDUtMDZUMDQ6MDU6MjAuNjI4WiIsInVwZGF0ZWRBdCI6IjIwMjItMDUtMDZUMDQ6MDU6MjAuNjI4WiIsIl9fdiI6MCwic2Vzc2lvbiI6IjYyNzVlOWU5ODdkNzAwNjgxODFhYmU5MSIsImlhdCI6MTY1MTg5NDc2MSwiZXhwIjoxNjUxOTgxMTYxfQ.6dAsSeUkGFbbVUC676_AOP9q5lAZxwjR1c6jwOGE7b8",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mjc0OWU4MDBlMGZkYTg3MGMyNGQ4M2QiLCJlbWFpbCI6InVzZXJAZW1haWwuY29tIiwibmFtZSI6IlVzZXIiLCJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsImVtYWlsVmVyaWZpY2F0aW9uR3VpZCI6IjMxNzU2ZmMwLWNjZjAtMTFlYy1hYjljLTE1ZjQ2MzVhZDE4OCIsImNyZWF0ZWRBdCI6IjIwMjItMDUtMDZUMDQ6MDU6MjAuNjI4WiIsInVwZGF0ZWRBdCI6IjIwMjItMDUtMDZUMDQ6MDU6MjAuNjI4WiIsIl9fdiI6MCwic2Vzc2lvbiI6IjYyNzYxZjYxZTVmY2RlODU5YzllOTg5ZSIsImlhdCI6MTY1MTkwODQ0OSwiZXhwIjoxNjUxOTk0ODQ5fQ.Say7hn9q1gIBqwz3o1bhWawI2DAguC8DGgNc00435tY",
 			"type": "string"
 		},
 		{
