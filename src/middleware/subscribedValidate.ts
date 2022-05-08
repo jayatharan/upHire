@@ -24,7 +24,6 @@ const isUserSubscribed = (service: String) => async (
                     const projects = await Project.find({user:user._id});
                     count = projects.length;
                     break;
-                
                 case "Job":
                     const jobs = await Job.find({user:user._id});
                     count = jobs.length;

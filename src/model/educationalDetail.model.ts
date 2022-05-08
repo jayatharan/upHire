@@ -36,6 +36,8 @@ const EducationalDetailSchema =  new mongoose.Schema(
         description: {
             type: String
         }
+    },{
+        timestamps:true
     }
 )
 

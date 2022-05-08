@@ -16,8 +16,9 @@ export default class BaseCRUDApi<T> {
         this.model = model;
     }
 
-    public async list(limit: number, page: number) {
-        return (await this.model.find().limit(limit).skip((page-1)*1));
+    public async list(limit: number, page: number, sort?:any) {
+        const sortOrder = sort??{'createdAt': -1}
+        return (await this.model.find().limit(limit).skip((page-1)*1).sort(sortOrder));
     }
 
     public async get(id: mongoose.Types.ObjectId) {

@@ -34,6 +34,8 @@ const ProjectDetailSchema = new mongoose.Schema(
         skills: {
             type: [String]
         }
+    },{
+        timestamps:true
     }
 )
 

@@ -31,6 +31,8 @@ const BiographySchema = new mongoose.Schema({
     image: {
         type: String
     }
+},{
+    timestamps:true
 })
 
 const Biography = mongoose.model<BiographyDocument>("Biography", BiographySchema);

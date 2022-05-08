@@ -28,6 +28,8 @@ const SubscriptionSchema = new mongoose.Schema({
         type:Number,
         required:true
     }
+},{
+    timestamps:true
 })
 
 const Subscription = mongoose.model("Subscription", SubscriptionSchema);

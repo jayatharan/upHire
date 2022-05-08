@@ -20,6 +20,8 @@ const ProfessionalDetailSchema = new mongoose.Schema(
             type: String
         },
         duration: DateDurationSchema 
+    },{
+        timestamps:true
     }
 )
 
