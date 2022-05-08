@@ -3,6 +3,7 @@ import config from "config";
 import log from "./logger";
 import connect from "./db/connect";
 import router from "./routes";
+import cors from "cors";
 import { deserializeUser } from "./middleware";
 import { upload } from "./utils/file.util";
 import { Request, Response } from "express";
@@ -12,6 +13,8 @@ const port = config.get("port") as number;
 const host = config.get("host") as string;
 
 const app = express();
+app.use(express.urlencoded({extended: true}));
+app.use(cors())
 app.use('/static', express.static('static'));
 app.use('/postmon', express.static('postmon'));
 
