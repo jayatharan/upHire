@@ -5,7 +5,10 @@ export interface Address {
 }
 
 const AddressSchema = new mongoose.Schema({
-    address: { type: String}
+    address: { type: String},
+    city:{type: String},
+    country:{type: String},
+    postCode:{type: String}
 })
 
 export default AddressSchema;

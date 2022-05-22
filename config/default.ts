@@ -23,5 +23,8 @@ export default {
     googleClientId:"686177336588-qhhagupocke5qsclkt0n07h9s6c8bbpu.apps.googleusercontent.com",
     emailService:"gmail",
     emailUsername:"dev.uphire@gmail.com",
-    emailPassword:"devUphire@2022"
+    emailPassword:"devUphire@2022",
+    tazapayAccessKey: "E8AERX00X8LQDY1PUJ86",
+    tazapaySecretKey: "IxBDVxftgXdmBk85Qop4PnkyZ0PnovOOWtbJ6bs1Sep68upDZ5XzMmxSJpy9nAj0",
+    tazapayBaseUrl: "api-sandbox.tazapay.com"
 };

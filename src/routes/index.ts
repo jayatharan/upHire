@@ -9,7 +9,7 @@ import ProfessionalDetail from "./professionalDetail.routes";
 import ProjectDetail from "./projectDetail.routes";
 import job from "./job.routes";
 import jobProposal from "./jobProposal.routes";
-
+import tazapayRouter from "./tazapayRoutes";
 const router = express.Router();
 
 router.get("/", (req: Request, res: Response) => res.send("Welcome to uphire server"));
@@ -24,5 +24,6 @@ router.use("/professional-details", ProfessionalDetail);
 router.use("/project-details", ProjectDetail);
 router.use("/jobs", job);
 router.use("/job-proposals", jobProposal);
+router.use("/tazapay", tazapayRouter);
 
 export default router;
