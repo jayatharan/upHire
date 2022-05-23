@@ -25,8 +25,8 @@ const UserSchema = new mongoose.Schema(
         password: { type: String, require: false },
         role: { 
             type: String,
-            enum: ["client", "admin"],
-            default: "client"
+            enum: ["client", "admin", "student", "freelancer", "general"],
+            default: "general"
         },
         emailVerified : {
             type:Boolean,
