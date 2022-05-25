@@ -9,9 +9,10 @@ import {
     verifyEmailAddress,
     subscribeService,
     getMySubscriptions,
-    unSubscribe
+    unSubscribe,
+    updateUserHandler
 } from "../controller/user.controller";
-import { createUserSchema, verifyEmailSchema } from "../schema/user.schema";
+import { createUserSchema, verifyEmailSchema, updateUserSchema } from "../schema/user.schema";
 import { validateRequest, requiredUser } from "../middleware";
 
 const router = express.Router();
@@ -27,6 +28,13 @@ router.get(
     requiredUser,
     getUserDetails
 );
+
+router.patch(
+    "/",
+    requiredUser,
+    validateRequest(updateUserSchema),
+    updateUserHandler
+)
 
 router.post(
     "/verify-email",

@@ -2,7 +2,8 @@
 	"info": {
 		"_postman_id": "8ad61253-bf36-4f3a-ade2-7fb11bd3112d",
 		"name": "UpHire",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15506082"
 	},
 	"item": [
 		{
@@ -1794,6 +1795,43 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access-token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"jaya1@gmail.com\",\r\n    \"name\" : \"IJayathran\",\r\n    \"password\":\"password\",\r\n    \"role\": \"student\",\r\n    \"alternativeEmail\": \"t@t.com\",\r\n    \"mobileNumber\":\"0123456789\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{server}}/users",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -1817,7 +1855,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\":\"user@email.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"raw": "{\r\n    \"email\":\"jaya1@gmail.com\",\r\n    \"password\":\"password\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1994,6 +2032,43 @@
 			]
 		},
 		{
+			"name": "Tazapay",
+			"item": [
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "Create User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://{{server}}/tazapay/user",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"tazapay",
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get User By Id",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
 			"name": "Health Check",
 			"request": {
 				"auth": {
@@ -2009,13 +2084,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://{{server}}/api/health-check",
+					"raw": "http://{{server}}/health-check",
 					"protocol": "http",
 					"host": [
 						"{{server}}"
 					],
 					"path": [
-						"api",
 						"health-check"
 					]
 				}
@@ -2118,7 +2192,7 @@
 		},
 		{
 			"key": "access-token",
-			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Mjc2MmI2ZjI5YTMyYjdhZmEwOTE3MDQiLCJlbWFpbCI6InVzZXJAZW1haWwuY29tIiwibmFtZSI6IlVzZXIiLCJyb2xlIjoiY2xpZW50IiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsImVtYWlsVmVyaWZpY2F0aW9uR3VpZCI6IjNiOTc3YzIwLWNkZGUtMTFlYy05MTk2LTJkY2IyN2NkYzlkMCIsImNyZWF0ZWRBdCI6IjIwMjItMDUtMDdUMDg6MTg6NTUuODc4WiIsInVwZGF0ZWRBdCI6IjIwMjItMDUtMDdUMDg6MTg6NTUuODc4WiIsIl9fdiI6MCwic2Vzc2lvbiI6IjYyNzYyYjdlMjlhMzJiN2FmYTA5MTcwNyIsImlhdCI6MTY1MTkxMTU1MCwiZXhwIjoxNjUxOTk3OTUwfQ.lXsmgblqv8-DiMjBiSl28919oq-sBGn7wqA-CmpGsp8",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjhlNWNkNDVhNWY3MzUwNThkM2Y0OWQiLCJlbWFpbCI6ImpheWExQGdtYWlsLmNvbSIsImFsdGVybmF0aXZlRW1haWwiOiJ0ZXN0QGdtYWlsLmNvbSIsIm5hbWUiOiJKYXlhIiwicm9sZSI6ImNsaWVudCIsImVtYWlsVmVyaWZpZWQiOmZhbHNlLCJlbWFpbFZlcmlmaWNhdGlvbkd1aWQiOiJkNzIxNzQ2MC1kYzQ5LTExZWMtOTQ2Zi00ZjIxZjQ4MjdjMDQiLCJtb2JpbGVOdW1iZXIiOiIwNzc3MTIzNDU2IiwiY3JlYXRlZEF0IjoiMjAyMi0wNS0yNVQxNjo0NDowNC41ODFaIiwidXBkYXRlZEF0IjoiMjAyMi0wNS0yNVQxNjo0NDowNC41ODFaIiwiX192IjowLCJzZXNzaW9uIjoiNjI4ZTVjZWY1YTVmNzM1MDU4ZDNmNGEwIiwiaWF0IjoxNjUzNDk3MDcxLCJleHAiOjE2NTM1ODM0NzF9.XCixLe2cRL5XNRgXVn2wsimR4G5rcbTo_buHJ2CRWTw",
 			"type": "string"
 		},
 		{

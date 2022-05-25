@@ -2,7 +2,7 @@ import mongoose, { DocumentDefinition, FilterQuery } from "mongoose";
 import { omit } from "lodash";
 import User, { UserDocument } from "../model/user.model";
 import { sendUserVerificationMail } from "./email.service"
-import { EmailVerificationBody } from "../controller/user.controller";
+import { EmailVerificationBody, UserDetailsUpdateBody } from "../controller/user.controller";
 
 export async function createUser(input: DocumentDefinition<UserDocument>) {
     try{
@@ -11,6 +11,27 @@ export async function createUser(input: DocumentDefinition<UserDocument>) {
         return user;
     } catch (error) {
         throw new Error("User create error");
+    }
+}
+
+export async function updateUser(user:UserDocument, input:UserDetailsUpdateBody){
+    try{
+        const existingUser = await User.findById(user._id);
+        if(!existingUser) throw new Error("User update error");
+        if(input.email){
+            existingUser.email = input.email;
+        }
+        if(input.name) existingUser.name = input.name
+        if(input.role) existingUser.role = input.role
+        if(input.password) existingUser.password = input.password
+        if(input.alternativeEmail) existingUser.alternativeEmail = input.alternativeEmail
+        if(input.mobileNumber) existingUser.mobileNumber = input.mobileNumber
+        await existingUser.save();
+        const newUser = await User.findById(user._id);
+        if(!newUser) throw new Error("User update error");
+        return newUser;
+    }catch (error) {
+        throw new Error("User update error");
     }
 }
 

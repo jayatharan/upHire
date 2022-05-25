@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { omit } from "lodash";
-import { createUser, verifyEmail } from "../service/user.service";
+import { createUser, verifyEmail, updateUser } from "../service/user.service";
 import { BiographyDocument } from "../model/biography.model";
 import { ProfessionalDetailDocument } from "../model/professionalDetail.model"
 import { EducationalDetailDocument } from "../model/educationalDetail.model";
@@ -14,17 +14,38 @@ import SubscriptionService  from "../service/subscription.service";
 
 import log from "../logger";
 import { get } from "lodash";
+import User from "../model/user.model";
 
 export interface EmailVerificationBody {
     email:string,
     guid:string
 } 
 
+export interface UserDetailsUpdateBody {
+    email?:string;
+    name?:string;
+    role?:string;
+    password?:string;
+    alternativeEmail?:string;
+    mobileNumber?:string;
+}
+
 export async function createUserHandler(req: Request, res: Response) {
     try{
         const user = await createUser(req.body);
         return res.send(omit(user.toJSON(), "password"));
     } catch (e) {
+        log.error(e);
+        return res.status(409).send(e)
+    }
+}
+
+export async function updateUserHandler(req: Request, res: Response){
+    try{
+        const user = get(req, "user");
+        const updatedUser = await updateUser(user, req.body);
+        return res.send(omit(updatedUser.toJSON(), "password"))
+    } catch (e){
         log.error(e);
         return res.status(409).send(e)
     }
@@ -85,11 +106,12 @@ export async function addUserProjectDetail(req: Request, res:Response){
 export async function getUserDetails(req: Request, res: Response) {
     try{
         const user = get(req, "user");
+        let currentUser = await User.findById(user._id);
         let biography = await BiographyService.getUserBiography(user._id);
         let professionalDetails = await ProfessionalDetailService.getUserProfessionalDetails(user._id);
         let educationalDetails = await EducationalDetailService.getUserEducationalDetails(user._id);
         let projectDetails = await ProjectDetailService.getUserProjectDetails(user._id);
-        res.send({user, biography, professionalDetails, educationalDetails, projectDetails});
+        res.send({user:currentUser, biography, professionalDetails, educationalDetails, projectDetails});
     }catch (e) {
         log.error(e);
         return res.status(400).send(e)
