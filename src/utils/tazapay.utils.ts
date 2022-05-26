@@ -34,7 +34,6 @@ export async function makeRequest(method:string, urlPath:string, body = null) {
         accessKey,
       },
     };
-
     return await httpRequest(options, body);
   } catch (error) {
     console.error("Error generating request options");

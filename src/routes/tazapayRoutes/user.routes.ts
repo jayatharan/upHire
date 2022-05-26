@@ -1,7 +1,8 @@
 import express from "express";
 import {
   createTazapayUser,
-  getTazapayUserById
+  getTazapayUserById,
+  updateTazapayUser
 } from "../../controller/tazapay.controller"
 
 const router = express.Router();
@@ -9,6 +10,11 @@ const router = express.Router();
 router.post(
   "/",
   createTazapayUser
+)
+
+router.put(
+  "/",
+  updateTazapayUser
 )
 
 router.get(

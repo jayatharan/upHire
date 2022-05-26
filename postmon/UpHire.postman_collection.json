@@ -138,14 +138,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://{{server}}/projects/626ab871078be83442ac026c",
+							"raw": "http://{{server}}/projects/627bec2d708d66df6708d33d",
 							"protocol": "http",
 							"host": [
 								"{{server}}"
 							],
 							"path": [
 								"projects",
-								"626ab871078be83442ac026c"
+								"627bec2d708d66df6708d33d"
 							]
 						}
 					},
@@ -1454,7 +1454,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"User\",\r\n    \"email\":\"user@email.com\",\r\n    \"password\":\"123456\",\r\n    \"passwordConfirmation\":\"123456\"\r\n}",
+							"raw": "{\r\n    \"name\":\"Jaya\",\r\n    \"email\":\"jaya1@gmail.com\",\r\n    \"password\":\"123456\",\r\n    \"passwordConfirmation\":\"123456\",\r\n    \"alternativeEmail\":\"test@gmail.com\",\r\n    \"mobileNumber\":\"0777123456\",\r\n    \"role\":\"client\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1491,7 +1491,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"firstName\":\"Jayathran\",\r\n    \"lastName\":\"Indran\"\r\n}",
+							"raw": "{\r\n    \"firstName\":\"User\",\r\n    \"lastName\":\"User\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1813,7 +1813,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\": \"jaya1@gmail.com\",\r\n    \"name\" : \"IJayathran\",\r\n    \"password\":\"password\",\r\n    \"role\": \"student\",\r\n    \"alternativeEmail\": \"t@t.com\",\r\n    \"mobileNumber\":\"0123456789\"\r\n    \r\n}",
+							"raw": "{\r\n    \"email\": \"jaya1@gmail.com\",\r\n    \"name\" : \"IJayathran\",\r\n    \"password\":\"password\",\r\n    \"role\": \"student\",\r\n    \"alternativeEmail\": \"t@t.com\",\r\n    \"mobileNumber\":\"0123456789\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -2040,8 +2040,27 @@
 						{
 							"name": "Create User",
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access-token}}",
+											"type": "string"
+										}
+									]
+								},
 								"method": "POST",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"indran1112@gmail.com\",\r\n    \"country\": \"LK\",\r\n    \"ind_bus_type\": \"Individual\",\r\n    \"first_name\": \"Indran\",\r\n    \"last_name\": \"Iyasamy\",\r\n    \"contact_code\": \"G101\",\r\n    \"contact_number\": \"+94772882707\",\r\n    \"partners_customer_id\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
 									"raw": "http://{{server}}/tazapay/user",
 									"protocol": "http",
@@ -2059,8 +2078,324 @@
 						{
 							"name": "Get User By Id",
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access-token}}",
+											"type": "string"
+										}
+									]
+								},
 								"method": "GET",
-								"header": []
+								"header": [],
+								"url": {
+									"raw": "http://{{server}}/tazapay/user/08bbab3d-c57e-4709-af85-c74939f70796",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"tazapay",
+										"user",
+										"08bbab3d-c57e-4709-af85-c74939f70796"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update User",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access-token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"account_id\": \"08bbab3d-c57e-4709-af85-c74939f70796\",\r\n    \"first_name\": \"\",\r\n    \"last_name\": \"\",\r\n    \"contact_code\": \"\",\r\n    \"contact_number\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{server}}/tazapay/user",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"tazapay",
+										"user"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Business",
+					"item": [
+						{
+							"name": "Create Business",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access-token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"\",\r\n    \"country\": \"\",\r\n    \"ind_bus_type\": \"Business\",\r\n    \"business_name\": \"\",\r\n    \"contact_code\": \"\",\r\n    \"contact_number\": \"\",\r\n    \"partners_customer_id\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{server}}/tazapay/user",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"tazapay",
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Business By Id",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access-token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{server}}/tazapay/user/95ceabbf-e78e-4e41-a200-e6bcb4c02cf6",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"tazapay",
+										"user",
+										"95ceabbf-e78e-4e41-a200-e6bcb4c02cf6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Business",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access-token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"account_id\": \"\",\r\n    \"business_name\": \"\",\r\n    \"contact_code\": \"\",\r\n    \"contact_number\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{server}}/tazapay/user",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"tazapay",
+										"user"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Escrow",
+					"item": [
+						{
+							"name": "Create Escrow",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"txn_type\": \"\",\r\n    \"release_mechanism\": \"\",\r\n    \"reference_id\": \"\",\r\n    \"initiated_by\": \"\",\r\n    \"buyer_id\": \"\",\r\n    \"seller_id\": \"\",\r\n    \"txn_description\": \"\",\r\n    \"txn_docs\": [\r\n        {\r\n            \"type\": \"Proforma Invoice\",\r\n            \"url\": \"https://direct.download.link\"\r\n        },\r\n        {\r\n            \"type\": \"Others\",\r\n            \"name\": \"Order Form\",\r\n            \"url\": \"https://direct.download.link\"\r\n        }\r\n    ],\r\n    \"attributes\": {},\r\n    \"invoice_currency\": \"\",\r\n    \"invoice_amount\": 1000,\r\n    \"fee_tier\": \"\",\r\n    \"fee_paid_by\": \"\",\r\n    \"fee_percentage\": 100,\r\n    \"release_docs\": [\r\n        {\r\n            \"type\": \"Bill of Lading/ Airway Bill\"\r\n        },\r\n        {\r\n            \"type\": \"Others\",\r\n            \"name\": \"Packing List\"\r\n        }\r\n    ],\r\n    \"flat_fee\": {\r\n        \"amount\": 10,\r\n        \"label\": \"\",\r\n        \"paid_by\": \"\",\r\n        \"payer_percentage\": 100\r\n    },\r\n    \"milestone_scheme\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{server}}/tazapay/escrow",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"tazapay",
+										"escrow"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Escrow Status",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{server}}/tazapay/escrow/:txn_no",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"tazapay",
+										"escrow",
+										":txn_no"
+									],
+									"variable": [
+										{
+											"key": "txn_no",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Escrow Summary",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{server}}/tazapay/escrow/:txn_no/summary",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"tazapay",
+										"escrow",
+										":txn_no",
+										"summary"
+									],
+									"variable": [
+										{
+											"key": "txn_no",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Bank",
+					"item": [
+						{
+							"name": "Add bank",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"account_id\": \"\",\r\n    \"currency\": \"\",\r\n    \"bank_name\": \"\",\r\n    \"legal_name\": \"\",\r\n    \"account_number\": \"\",\r\n    \"bank_codes\": {},\r\n    \"country_code\": \"\",\r\n    \"contact_number\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://{{server}}/tazapay/bank",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"tazapay",
+										"bank"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Bank List",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{server}}/tazapay/bank/:account_id",
+									"protocol": "http",
+									"host": [
+										"{{server}}"
+									],
+									"path": [
+										"tazapay",
+										"bank",
+										":account_id"
+									],
+									"variable": [
+										{
+											"key": "account_id",
+											"value": null
+										}
+									]
+								}
 							},
 							"response": []
 						}
