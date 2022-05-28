@@ -31,9 +31,7 @@ export const createUserSchema = object({
 export const updateUserSchema =  object({
   body: object({
     name: string(),
-    password: string()
-      .min(6, "Password is too short - should be 6 chars minimum.")
-      .matches(/^[a-zA-Z0-9_.-]*$/, "Password can only contain Latin letters."),
+    password: string(),
     email: string()
       .email("Must be a valid email"),
     alternativeEmail: string()
