@@ -26,6 +26,7 @@ export async function updateUser(user:UserDocument, input:UserDetailsUpdateBody)
         if(input.password) existingUser.password = input.password
         if(input.alternativeEmail) existingUser.alternativeEmail = input.alternativeEmail
         if(input.mobileNumber) existingUser.mobileNumber = input.mobileNumber
+        if(input.image) existingUser.image = input.image
         await existingUser.save();
         const newUser = await User.findById(user._id);
         if(!newUser) throw new Error("User update error");

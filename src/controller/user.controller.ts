@@ -28,6 +28,7 @@ export interface UserDetailsUpdateBody {
     password?:string;
     alternativeEmail?:string;
     mobileNumber?:string;
+    image?:string;
 }
 
 export async function createUserHandler(req: Request, res: Response) {

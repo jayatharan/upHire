@@ -23,6 +23,7 @@ export const createUserSchema = object({
       alternativeEmail: string()
         .email("Must be a valid email"),
       mobileNumber:string(),
+      image:string(),
       role:string().oneOf(["client", "student", "freelancer", "general"], "User role is not valid")
     }),
 });
@@ -38,6 +39,7 @@ export const updateUserSchema =  object({
     alternativeEmail: string()
       .email("Must be a valid email"),
     mobileNumber:string(),
+    image:string(),
     role:string().oneOf(["client", "student", "freelancer", "general"], "User role is not valid")
   })
 })

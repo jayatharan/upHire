@@ -3,7 +3,7 @@ import {
   createTazapayUser,
   getTazapayUserById,
   updateTazapayUser
-} from "../../controller/tazapay.controller"
+} from "../../controller/tazapay.controller";
 
 const router = express.Router();
 

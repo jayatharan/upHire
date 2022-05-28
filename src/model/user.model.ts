@@ -14,6 +14,7 @@ export interface UserDocument extends mongoose.Document {
     updateAt: Date;
     alternativeEmail:string;
     mobileNumber:string;
+    image:string;
     comparePassword(candidatePassword: string): Promise<boolean>;
 }
 
@@ -37,6 +38,9 @@ const UserSchema = new mongoose.Schema(
             default:uuid.v1()
         },
         mobileNumber : {
+            type: String
+        },
+        image: {
             type: String
         }
     },
