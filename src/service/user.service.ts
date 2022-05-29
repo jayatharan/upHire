@@ -4,7 +4,7 @@ import User, { UserDocument } from "../model/user.model";
 import { sendUserVerificationMail } from "./email.service"
 import { EmailVerificationBody, UserDetailsUpdateBody } from "../controller/user.controller";
 
-export async function createUser(input: DocumentDefinition<UserDocument>) {
+export async function createUser(input: Omit<DocumentDefinition<UserDocument>, "comparePassword">) {
     try{
         const user = await User.create(input);
         await sendUserVerificationMail(user.email, user.emailVerificationGuid!);
@@ -70,3 +70,8 @@ export async function verifyEmail(data: EmailVerificationBody) {
     }
     return false;
 }
+
+export async function findUserById(id: mongoose.Types.ObjectId){
+    return await User.findById(id);
+}
+

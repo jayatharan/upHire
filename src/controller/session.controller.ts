@@ -1,6 +1,6 @@
 import config from "config";
 import { Request, Response } from "express";
-import { validatePassword } from "../service/user.service";
+import { validatePassword, findUserById, findUser, createUser } from "../service/user.service";
 import {
     createSession,
     createAccessToken,
@@ -11,7 +11,6 @@ import {
 import { sign } from "../utils/jwt.utils";
 import { get } from "lodash";
 import log from "../logger";
-import User from "../model/user.model";
 
 const { OAuth2Client } = require('google-auth-library')
 
@@ -48,12 +47,12 @@ export async function createSessionWithGoogle(req:Request, res:Response) {
             audience: googleClientId
         })
 
-        const { name, email } = ticket.getPayload();
+        const { name, email }:{name:string, email:string} = ticket.getPayload();
 
-        var user = await User.findOne({email})
+        var user = await findUser({email})
 
         if(!user) {
-            user = await User.create({username:name, email})
+            user = await createUser({name:name, email:email})
         }
 
         const session = await createSession(user._id, req.get("user-agent") || "unknown");

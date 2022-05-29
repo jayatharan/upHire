@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { omit } from "lodash";
-import { createUser, verifyEmail, updateUser } from "../service/user.service";
+import { createUser, verifyEmail, updateUser, findUserById } from "../service/user.service";
 import { BiographyDocument } from "../model/biography.model";
 import { ProfessionalDetailDocument } from "../model/professionalDetail.model"
 import { EducationalDetailDocument } from "../model/educationalDetail.model";
@@ -14,7 +14,6 @@ import SubscriptionService  from "../service/subscription.service";
 
 import log from "../logger";
 import { get } from "lodash";
-import User from "../model/user.model";
 
 export interface EmailVerificationBody {
     email:string,
@@ -107,7 +106,7 @@ export async function addUserProjectDetail(req: Request, res:Response){
 export async function getUserDetails(req: Request, res: Response) {
     try{
         const user = get(req, "user");
-        let currentUser = await User.findById(user._id);
+        let currentUser = await findUserById(user._id);
         let biography = await BiographyService.getUserBiography(user._id);
         let professionalDetails = await ProfessionalDetailService.getUserProfessionalDetails(user._id);
         let educationalDetails = await EducationalDetailService.getUserEducationalDetails(user._id);

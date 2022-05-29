@@ -10,11 +10,11 @@ export interface UserDocument extends mongoose.Document {
     emailVerified?:boolean;
     emailVerificationGuid?:string;
     password?: string;
-    createdAt: Date;
-    updateAt: Date;
-    alternativeEmail:string;
-    mobileNumber:string;
-    image:string;
+    createdAt?: Date;
+    updateAt?: Date;
+    alternativeEmail?:string;
+    mobileNumber?:string;
+    image?:string;
     comparePassword(candidatePassword: string): Promise<boolean>;
 }
 
