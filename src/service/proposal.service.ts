@@ -9,6 +9,10 @@ class ProposalService {
     public async getMyProposals( userId:mongoose.Types.ObjectId, limit: number, page: number ) {
         return (await Proposal.find({userId}).limit(limit).skip((page-1)*1));
     }
+
+    public async getAllProjectProposals(limit: number, page: number, projectId: mongoose.Types.ObjectId){
+        return (await Proposal.find({projectId}).limit(limit).skip((page-1)*1));
+    }
 }
 
 const instance = new ProposalService();

@@ -9,6 +9,10 @@ class TeamProposalService {
     public async getMyTeamProposals( userId:mongoose.Types.ObjectId, limit: number, page: number ) {
         return (await TeamProposal.find({userId}).limit(limit).skip((page-1)*1));
     }
+
+    public async getAllTeamProposals(limit: number, page: number, TeamId: mongoose.Types.ObjectId){
+        return (await TeamProposal.find({TeamId}).limit(limit).skip((page-1)*1));
+    }
 }
 
 const instance = new TeamProposalService();

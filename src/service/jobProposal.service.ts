@@ -10,6 +10,10 @@ class JobProposalService {
         return (await JobProposal.find({userId}).limit(limit).skip((page-1)*1));
     }
 
+    public async getAllJobProposals(limit: number, page: number, jobId: mongoose.Types.ObjectId){
+        return (await JobProposal.find({jobId}).limit(limit).skip((page-1)*1));
+    }
+
 }
 
 const instance = new JobProposalService();
