@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import BaseCRUDApi from "./baseCRUD.service";
 import Job,{JobDocument} from "../model/job.model";
-import JobProposal from "../model/jobProposal.model";
+import JobProposalService from './jobProposal.service';
 
 class JobService {
 
@@ -12,7 +12,7 @@ class JobService {
     }
 
     public async getAllJobProposals(limit: number, page: number, jobId: mongoose.Types.ObjectId){
-        return (await JobProposal.find({jobId}).limit(limit).skip((page-1)*1));
+        return (await JobProposalService.getAllJobProposals(limit, page, jobId));
     }
 
 }

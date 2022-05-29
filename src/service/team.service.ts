@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import BaseCRUDApi from "./baseCRUD.service";
 import Team,{TeamDocument} from "../model/team.model";
-import TeamProposal,{TeamProposalDocument} from "../model/teamProposal.model";
+import TeamProposalService from './teamProposal.service';
 
 class TeamService {
 
@@ -12,7 +12,7 @@ class TeamService {
     }
 
     public async getAllTeamProposals(limit: number, page: number, TeamId: mongoose.Types.ObjectId){
-        return (await TeamProposal.find({TeamId}).limit(limit).skip((page-1)*1));
+        return (await TeamProposalService.getAllTeamProposals(limit, page, TeamId));
     }
 }
 

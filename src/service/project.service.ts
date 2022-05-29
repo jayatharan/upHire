@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import BaseCRUDApi from "./baseCRUD.service";
 import Project,{ProjectDocument} from "../model/project.model";
-import Proposal,{ProposalDocument} from "../model/proposal.model";
+import ProposalService from './proposal.service';
 
 class ProjectService {
 
@@ -12,7 +12,7 @@ class ProjectService {
     }
 
     public async getAllProjectProposals(limit: number, page: number, projectId: mongoose.Types.ObjectId){
-        return (await Proposal.find({projectId}).limit(limit).skip((page-1)*1));
+        return (await ProposalService.getAllProjectProposals(limit, page, projectId));
     }
 }
 
