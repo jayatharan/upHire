@@ -2,17 +2,18 @@ import mongoose from "mongoose";
 import { AddressSchema, Address, CompanyBasicSchema, CompanyBasic, DateDurationSchema } from "./schemas";
 
 export interface BiographyDocument extends mongoose.Document{
-    user: mongoose.Types.ObjectId;
+    userId: mongoose.Types.ObjectId;
     firstName?: string;
     lastName?: string;
     company?: CompanyBasic;
     jobRole?:string;
     address?:Address;
+    postCode?:string;
     image?:string;
 }
 
 const BiographySchema = new mongoose.Schema({
-    user: { 
+    userId: { 
         type: mongoose.Schema.Types.ObjectId, 
         ref: "User",
         required: true

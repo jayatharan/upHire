@@ -23,7 +23,7 @@ export async function createProject(req: Request, res: Response) {
     try{
         const user = get(req, "user");
         let data = req.body as ProjectDocument;
-        data.user = user._id;
+        data.userId = user._id;
         data.createBy = {
             user:user._id,
             name:user.name,
@@ -77,13 +77,13 @@ export async function addProjectProposal(req: Request, res: Response){
         const user = get(req, "user");
         const id = req.params.id as unknown as mongoose.Types.ObjectId;
         let data = req.body as ProposalDocument;
-        data.user = user._id;
+        data.userId = user._id;
         data.createBy = {
             user:user._id,
             name:user.name,
             email:user.email
         }
-        data.project = id;
+        data.projectId = id;
         const proposal = await ProposalService.baseApi.create(data);
         res.send(proposal);
     }catch (e) {

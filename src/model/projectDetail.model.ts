@@ -2,18 +2,19 @@ import mongoose from "mongoose";
 import { AddressSchema, CompanyBasicSchema, DateDuration, DateDurationSchema } from "./schemas";
 
 export interface ProjectDetailDocument extends mongoose.Document{
-    user: mongoose.Types.ObjectId;
+    userId: mongoose.Types.ObjectId;
     name: string;
     category: string;
     description: string;
-    duration: DateDuration;
+    startDate?: Date;
+    endDate?: Date;
     images: string[];
     skills: string[];
 }
 
 const ProjectDetailSchema = new mongoose.Schema(
     {
-        user: { 
+        userId: { 
             type: mongoose.Schema.Types.ObjectId, 
             ref: "User",
             required: true
@@ -27,7 +28,12 @@ const ProjectDetailSchema = new mongoose.Schema(
         description: {
             type: String
         },
-        duration: DateDurationSchema,
+        startDate: {
+            type: Date
+        },
+        endDate: {
+            type: Date
+        },
         images: {
             type: [String]
         },

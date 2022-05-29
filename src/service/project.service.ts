@@ -7,12 +7,12 @@ class ProjectService {
 
     baseApi = new BaseCRUDApi<ProjectDocument>(Project);
 
-    public async getMyProjects( user:mongoose.Types.ObjectId, limit: number, page: number ) {
-        return (await Project.find({user}).limit(limit).skip((page-1)*1));
+    public async getMyProjects( userId:mongoose.Types.ObjectId, limit: number, page: number ) {
+        return (await Project.find({userId}).limit(limit).skip((page-1)*1));
     }
 
     public async getAllProjectProposals(limit: number, page: number, projectId: mongoose.Types.ObjectId){
-        return (await Proposal.find({project:projectId}).limit(limit).skip((page-1)*1));
+        return (await Proposal.find({projectId}).limit(limit).skip((page-1)*1));
     }
 }
 

@@ -3,8 +3,8 @@ import { DateDurationSchema, UserBasicSchema, DateDuration, UserBasic } from "./
 import TeamProposal from "./teamProposal.model";
 
 export interface TeamDocument extends mongoose.Document{
-    project:mongoose.Types.ObjectId;
-    user:mongoose.Types.ObjectId;
+    projectId:mongoose.Types.ObjectId;
+    userId:mongoose.Types.ObjectId;
     createBy?: UserBasic;
     showContactDetails?:boolean;
     createdAt: Date;
@@ -12,7 +12,7 @@ export interface TeamDocument extends mongoose.Document{
 }
 
 const TeamSchema = new mongoose.Schema({
-    user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
     createBy: UserBasicSchema,
     showContactDetails: {
         type: Boolean
@@ -24,7 +24,7 @@ const TeamSchema = new mongoose.Schema({
     description: {
         type: String
     },
-    project:{
+    projectId:{
         type: mongoose.Schema.Types.ObjectId, 
         ref: "Project",
         required:true
@@ -35,7 +35,7 @@ const TeamSchema = new mongoose.Schema({
 
 TeamSchema.pre('remove', async function (next) {
     let team = this as TeamDocument;
-    await TeamProposal.deleteMany({project:team._id});
+    await TeamProposal.deleteMany({projectId:team._id});
     return next();
 })
 

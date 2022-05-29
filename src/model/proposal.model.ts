@@ -2,24 +2,25 @@ import mongoose from "mongoose";
 import { DateDurationSchema, UserBasicSchema, DateDuration, UserBasic } from "./schemas";
 
 export interface ProposalDocument extends mongoose.Document{
-    project:mongoose.Types.ObjectId;
-    user:mongoose.Types.ObjectId;
+    projectId:mongoose.Types.ObjectId;
+    userId:mongoose.Types.ObjectId;
     createBy?: UserBasic;
     showContactDetails?:boolean;
     amount?:number;
-    duration?:DateDuration;
+    startDate?: Date;
+    endDate?: Date;
     status?:string;
     createdAt: Date;
     updateAt: Date;
 }
 
 const ProposalSchema = new mongoose.Schema({
-    project:{
+    projectId:{
         type: mongoose.Schema.Types.ObjectId, 
         ref: "Project",
         required:true
     },
-    user: { 
+    userId: { 
         type: mongoose.Schema.Types.ObjectId, 
         ref: "User",
         required:true
@@ -31,7 +32,12 @@ const ProposalSchema = new mongoose.Schema({
     amount: {
         type:Number
     },
-    duration: DateDurationSchema,
+    startDate: {
+        type: Date
+    },
+    endDate: {
+        type: Date
+    },
     status: {
         type: String
     }

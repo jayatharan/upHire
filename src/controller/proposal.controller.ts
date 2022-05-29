@@ -21,7 +21,7 @@ export async function createProposal(req: Request, res: Response) {
     try{
         const user = get(req, "user");
         let data = req.body as ProposalDocument;
-        data.user = user._id;
+        data.userId = user._id;
         data.createBy = {
             user:user._id,
             name:user.name,
@@ -52,7 +52,7 @@ export async function patchProposal(req: Request, res: Response) {
         const user = get(req, "user");
         let data = req.body as ProposalDocument;
         const existingProposal = await ProposalService.baseApi.get(id);
-        if(existingProposal === null || existingProposal.user.toString() !== user._id) return res.status(403).send();
+        if(existingProposal === null || existingProposal.userId.toString() !== user._id) return res.status(403).send();
         const proposal = await ProposalService.baseApi.patch(id, data);
         return res.send(proposal);
     }catch (e) {
@@ -66,7 +66,7 @@ export async function deleteProposal(req: Request, res: Response){
         const id = req.params.id as unknown as mongoose.Types.ObjectId;
         const user = get(req, "user");
         const proposal = await ProposalService.baseApi.get(id);
-        if(proposal === null || proposal.user.toString() === user._id) return res.status(403).send();
+        if(proposal === null || proposal.userId.toString() === user._id) return res.status(403).send();
         await ProposalService.baseApi.delete(id);
         return res.send(proposal);
     }catch (e) {

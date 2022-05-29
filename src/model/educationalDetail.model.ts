@@ -2,19 +2,20 @@ import mongoose from "mongoose";
 import { CompanyBasicSchema, CompanyBasic, DateDurationSchema, DateDuration, AddressSchema, Address } from "./schemas";
 
 export interface EducationalDetailDocument extends mongoose.Document{
-    user: mongoose.Types.ObjectId;
+    userId: mongoose.Types.ObjectId;
     organizationName:string;
     address:Address;
     type:string;
     fieldName:string;
     courseName:string;
-    duration:DateDuration;
+    startDate?: Date;
+    endDate?: Date;
     description:string;
 }
 
 const EducationalDetailSchema =  new mongoose.Schema(
     {
-        user: { 
+        userId: { 
             type: mongoose.Schema.Types.ObjectId, 
             ref: "User",
             required: true
@@ -32,7 +33,12 @@ const EducationalDetailSchema =  new mongoose.Schema(
         courseName: {
             type: String
         },
-        duration: DateDurationSchema,
+        startDate: {
+            type: Date
+        },
+        endDate: {
+            type: Date
+        },
         description: {
             type: String
         }

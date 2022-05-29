@@ -6,8 +6,8 @@ class ProposalService {
 
     baseApi = new BaseCRUDApi<ProposalDocument>(Proposal);
 
-    public async getMyProposals( user:mongoose.Types.ObjectId, limit: number, page: number ) {
-        return (await Proposal.find({user}).limit(limit).skip((page-1)*1));
+    public async getMyProposals( userId:mongoose.Types.ObjectId, limit: number, page: number ) {
+        return (await Proposal.find({userId}).limit(limit).skip((page-1)*1));
     }
 }
 

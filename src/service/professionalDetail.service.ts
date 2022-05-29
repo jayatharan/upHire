@@ -7,7 +7,7 @@ class ProfessionalDetailService {
     baseApi = new BaseCRUDApi<ProfessionalDetailDocument>(ProfessionalDetail);
 
     public async getUserProfessionalDetails(id: mongoose.Types.ObjectId){
-        return await ProfessionalDetail.find({user:id});
+        return await ProfessionalDetail.find({userId:id});
     }
 
 }

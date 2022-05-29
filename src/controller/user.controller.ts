@@ -55,7 +55,7 @@ export async function updateUserBiography(req: Request, res: Response) {
     try{
         const user = get(req, "user");
         let data = req.body as BiographyDocument;
-        data.user = user._id;
+        data.userId = user._id;
         let biography = await BiographyService.updateBiography(data)
         res.send(biography);
     }catch (e) {
@@ -68,7 +68,7 @@ export async function addUserProfessionalDetail(req: Request, res: Response){
     try{
         const user = get(req, "user");
         let data = req.body as ProfessionalDetailDocument;
-        data.user = user._id;
+        data.userId = user._id;
         let professionalDetail = await ProfessionalDetailService.baseApi.create(data);
         res.send(professionalDetail);
     }catch (e) {
@@ -81,7 +81,7 @@ export async function addUserEducationalDetail(req: Request, res:Response){
     try{
         const user = get(req, "user");
         let data = req.body as EducationalDetailDocument;
-        data.user = user._id;
+        data.userId = user._id;
         let educationalDetail = await EducationalDetailService.baseApi.create(data);
         res.send(educationalDetail);
     }catch (e) {
@@ -94,7 +94,7 @@ export async function addUserProjectDetail(req: Request, res:Response){
     try{
         const user = get(req, "user");
         let data = req.body as ProjectDetailDocument;
-        data.user = user._id;
+        data.userId = user._id;
         let projectDetail = await ProjectDetailService.baseApi.create(data);
         res.send(projectDetail);
     }catch (e) {
@@ -134,7 +134,7 @@ export async function subscribeService(req: Request, res: Response) {
     try{
         const user = get(req, "user");
         let data = req.body as SubscriptionDocument;
-        data.user = user._id;
+        data.userId = user._id;
         const subscription = await SubscriptionService.subscribeService(data);
         return res.send(subscription);
     }catch (e){

@@ -2,8 +2,8 @@ import mongoose from "mongoose";
 import { DateDurationSchema, UserBasicSchema, DateDuration, UserBasic } from "./schemas";
 
 export interface JobProposalDocument extends mongoose.Document {
-    job:mongoose.Types.ObjectId,
-    user:mongoose.Types.ObjectId;
+    jobId:mongoose.Types.ObjectId,
+    userId:mongoose.Types.ObjectId;
     createBy?: UserBasic;
     showContactDetails?:boolean;
     status?:string;
@@ -12,12 +12,12 @@ export interface JobProposalDocument extends mongoose.Document {
 }
 
 const JobProposalSchema = new mongoose.Schema({
-    job:{
+    jobId:{
         type: mongoose.Schema.Types.ObjectId, 
         ref: "Job",
         required:true
     },
-    user: { 
+    userId: { 
         type: mongoose.Schema.Types.ObjectId, 
         ref: "User",
         required:true

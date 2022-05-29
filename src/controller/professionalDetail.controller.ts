@@ -11,7 +11,7 @@ export async function patchProfessionalDetail(req: Request, res: Response) {
         const user = get(req, "user");
         let data = req.body as ProfessionalDetailDocument;
         const existingDetail = await ProfessionalDetailService.baseApi.get(id);
-        if(existingDetail === null || existingDetail.user.toString() !== user._id) return res.status(403).send();
+        if(existingDetail === null || existingDetail.userId.toString() !== user._id) return res.status(403).send();
         const professionalDetail = await ProfessionalDetailService.baseApi.patch(id, data);
         res.send(professionalDetail);
     }catch (e) {
@@ -25,7 +25,7 @@ export async function deleteProfessionalDetail(req: Request, res: Response) {
         const id = req.params.id as unknown as mongoose.Types.ObjectId;
         const user = get(req, "user");
         const existingDetail = await ProfessionalDetailService.baseApi.get(id);
-        if(existingDetail === null || existingDetail.user.toString() !== user._id) return res.status(403).send();
+        if(existingDetail === null || existingDetail.userId.toString() !== user._id) return res.status(403).send();
         const professionalDetail = await ProfessionalDetailService.baseApi.delete(id);
         res.send(professionalDetail);
     }catch (e) {

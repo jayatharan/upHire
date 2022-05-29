@@ -2,8 +2,8 @@ import mongoose from "mongoose";
 import { DateDurationSchema, UserBasicSchema, DateDuration, UserBasic } from "./schemas";
 
 export interface TeamProposalDocument extends mongoose.Document{
-    team:mongoose.Types.ObjectId;
-    user:mongoose.Types.ObjectId;
+    teamId:mongoose.Types.ObjectId;
+    userId:mongoose.Types.ObjectId;
     createBy?: UserBasic;
     showContactDetails?:boolean;
     status?:string;
@@ -12,12 +12,12 @@ export interface TeamProposalDocument extends mongoose.Document{
 }
 
 const TeamProposalSchema = new mongoose.Schema({
-    team:{
+    teamId:{
         type: mongoose.Schema.Types.ObjectId, 
         ref: "Team",
         required:true
     },
-    user: { 
+    userId: { 
         type: mongoose.Schema.Types.ObjectId, 
         ref: "User",
         required:true

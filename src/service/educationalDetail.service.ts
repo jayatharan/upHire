@@ -7,7 +7,7 @@ class EducationalDetailService {
     baseApi = new BaseCRUDApi<EducationalDetailDocument>(EducationalDetail);
 
     public async getUserEducationalDetails(id: mongoose.Types.ObjectId){
-        return await EducationalDetail.find({user:id})
+        return await EducationalDetail.find({userId:id})
     }
 
 }

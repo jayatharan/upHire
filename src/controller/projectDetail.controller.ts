@@ -11,7 +11,7 @@ export async function patchProjectDetail(req: Request, res: Response) {
         const user = get(req, "user");
         let data = req.body as ProjectDetailDocument;
         const existingDetail = await ProjectDetailService.baseApi.get(id);
-        if(existingDetail === null || existingDetail.user.toString() !== user._id) return res.status(403).send();
+        if(existingDetail === null || existingDetail.userId.toString() !== user._id) return res.status(403).send();
         const projectDetail = await ProjectDetailService.baseApi.patch(id, data);
         res.send(projectDetail);
     }catch (e) {
@@ -25,7 +25,7 @@ export async function deleteProjectDetail(req: Request, res: Response) {
         const id = req.params.id as unknown as mongoose.Types.ObjectId;
         const user = get(req, "user");
         const existingDetail = await ProjectDetailService.baseApi.get(id);
-        if(existingDetail === null || existingDetail.user.toString() !== user._id) return res.status(403).send();
+        if(existingDetail === null || existingDetail.userId.toString() !== user._id) return res.status(403).send();
         const projectDetail = await ProjectDetailService.baseApi.delete(id);
         res.send(projectDetail);
     }catch (e) {

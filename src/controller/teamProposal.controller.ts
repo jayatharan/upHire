@@ -21,7 +21,7 @@ export async function createTeamProposal(req: Request, res: Response) {
     try{
         const user = get(req, "user");
         let data = req.body as TeamProposalDocument;
-        data.user = user._id;
+        data.userId = user._id;
         data.createBy = {
             user:user._id,
             name:user.name,
@@ -52,7 +52,7 @@ export async function patchTeamProposal(req: Request, res: Response) {
         const user = get(req, "user");
         let data = req.body as TeamProposalDocument;
         const existingTeamProposal = await TeamProposalService.baseApi.get(id);
-        if(existingTeamProposal === null || existingTeamProposal.user.toString() !== user._id) return res.status(403).send();
+        if(existingTeamProposal === null || existingTeamProposal.userId.toString() !== user._id) return res.status(403).send();
         const teamProposal = await TeamProposalService.baseApi.patch(id, data);
         return res.send(teamProposal);
     }catch (e) {
@@ -66,7 +66,7 @@ export async function deleteTeamProposal(req: Request, res: Response){
         const id = req.params.id as unknown as mongoose.Types.ObjectId;
         const user = get(req, "user");
         const teamProposal = await TeamProposalService.baseApi.get(id);
-        if(teamProposal === null || teamProposal.user.toString() === user._id) return res.status(403).send();
+        if(teamProposal === null || teamProposal.userId.toString() === user._id) return res.status(403).send();
         await TeamProposalService.baseApi.delete(id);
         return res.send(teamProposal);
     }catch (e) {

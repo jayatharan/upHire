@@ -11,7 +11,7 @@ export async function patchEducationalDetail(req: Request, res: Response) {
         const user = get(req, "user");
         let data = req.body as EducationalDetailDocument;
         const existingDetail = await EducationalDetailService.baseApi.get(id);
-        if(existingDetail === null || existingDetail.user.toString() !== user._id) return res.status(403).send();
+        if(existingDetail === null || existingDetail.userId.toString() !== user._id) return res.status(403).send();
         const educationalDetail = await EducationalDetailService.baseApi.patch(id, data);
         res.send(educationalDetail);
     }catch (e) {
@@ -25,7 +25,7 @@ export async function deleteEducationalDetail(req: Request, res: Response) {
         const id = req.params.id as unknown as mongoose.Types.ObjectId;
         const user = get(req, "user");
         const existingDetail = await EducationalDetailService.baseApi.get(id);
-        if(existingDetail === null || existingDetail.user.toString() !== user._id) return res.status(403).send();
+        if(existingDetail === null || existingDetail.userId.toString() !== user._id) return res.status(403).send();
         const educationalDetail = await EducationalDetailService.baseApi.delete(id);
         res.send(educationalDetail);
     }catch (e) {

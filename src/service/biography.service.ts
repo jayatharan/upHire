@@ -7,7 +7,7 @@ class BiographyService {
     baseApi = new BaseCRUDApi<BiographyDocument>(Biography);
 
     public async updateBiography(data:BiographyDocument){
-        let biography = await Biography.findOne({user:data.user})
+        let biography = await Biography.findOne({userId:data.userId})
         if(biography){
             biography = await this.baseApi.patch(biography._id, data);
         }else{
@@ -17,7 +17,7 @@ class BiographyService {
     }
 
     public async getUserBiography(id: mongoose.Types.ObjectId){
-        return (await Biography.findOne({user:id}))
+        return (await Biography.findOne({userId:id}))
     }
 
 }

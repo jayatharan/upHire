@@ -23,7 +23,7 @@ export async function createJob(req: Request, res: Response) {
     try{
         const user = get(req, "user");
         let data = req.body as JobDocument;
-        data.user = user._id;
+        data.userId = user._id;
         data.createBy = {
             user:user._id,
             name:user.name,
@@ -90,13 +90,13 @@ export async function addJobProposal(req: Request, res: Response){
         const user = get(req, "user");
         const id = req.params.id as unknown as mongoose.Types.ObjectId;
         let data = req.body as JobProposalDocument;
-        data.user = user._id;
+        data.userId = user._id;
         data.createBy = {
             user:user._id,
             name:user.name,
             email:user.email
         }
-        data.job = id;
+        data.jobId = id;
         const proposal = await JobProposalService.baseApi.create(data);
         res.send(proposal);
     }catch (e) {

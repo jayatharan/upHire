@@ -23,7 +23,7 @@ export async function createTeam(req: Request, res: Response) {
     try{
         const user = get(req, "user");
         let data = req.body as TeamDocument;
-        data.user = user._id;
+        data.userId = user._id;
         data.createBy = {
             user:user._id,
             name:user.name,
@@ -77,13 +77,13 @@ export async function addTeamProposal(req: Request, res: Response){
         const user = get(req, "user");
         const id = req.params.id as unknown as mongoose.Types.ObjectId;
         let data = req.body as TeamProposalDocument;
-        data.user = user._id;
+        data.userId = user._id;
         data.createBy = {
             user:user._id,
             name:user.name,
             email:user.email
         }
-        data.team = id;
+        data.teamId = id;
         const Teamproposal = await TeamProposalService.baseApi.create(data);
         res.send(Teamproposal);
     }catch (e) {

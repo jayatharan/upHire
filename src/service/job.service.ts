@@ -7,12 +7,12 @@ class JobService {
 
     baseApi = new BaseCRUDApi<JobDocument>(Job);
 
-    public async getMyJobs(user:mongoose.Types.ObjectId, limit: number, page: number ){
-        return (await Job.find({user}).limit(limit).skip((page-1)*1));
+    public async getMyJobs(userId:mongoose.Types.ObjectId, limit: number, page: number ){
+        return (await Job.find({userId}).limit(limit).skip((page-1)*1));
     }
 
     public async getAllJobProposals(limit: number, page: number, jobId: mongoose.Types.ObjectId){
-        return (await JobProposal.find({job:jobId}).limit(limit).skip((page-1)*1));
+        return (await JobProposal.find({jobId}).limit(limit).skip((page-1)*1));
     }
 
 }

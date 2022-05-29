@@ -6,8 +6,8 @@ class TeamProposalService {
 
     baseApi = new BaseCRUDApi<TeamProposalDocument>(TeamProposal);
 
-    public async getMyTeamProposals( user:mongoose.Types.ObjectId, limit: number, page: number ) {
-        return (await TeamProposal.find({user}).limit(limit).skip((page-1)*1));
+    public async getMyTeamProposals( userId:mongoose.Types.ObjectId, limit: number, page: number ) {
+        return (await TeamProposal.find({userId}).limit(limit).skip((page-1)*1));
     }
 }
 

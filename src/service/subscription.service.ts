@@ -7,7 +7,7 @@ class SubscriptionService {
     baseApi =  new BaseCRUDApi<SubscriptionDocument>(Subscription) 
 
     public async subscribeService(data: SubscriptionDocument) {
-        let existingSubscription = await Subscription.findOne({user:data.user, service:data.service});
+        let existingSubscription = await Subscription.findOne({userId:data.userId, service:data.service});
         let subscription;
         if(existingSubscription) {
             subscription = await this.baseApi.patch(existingSubscription._id, data);
@@ -23,7 +23,7 @@ class SubscriptionService {
     }
 
     public async getUserSubscriptions(id: mongoose.Types.ObjectId) {
-        return await Subscription.find({user:id});
+        return await Subscription.find({userId:id});
     }
 
 }

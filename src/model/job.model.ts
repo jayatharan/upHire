@@ -3,19 +3,21 @@ import JobProposal from "./jobProposal.model";
 import { DateDurationSchema, UserBasicSchema, DateDuration, UserBasic, AddressSchema, Address } from "./schemas";
 
 export interface JobDocument extends mongoose.Document{
-    user?: mongoose.Types.ObjectId;
+    userId?: mongoose.Types.ObjectId;
     createBy?: UserBasic;
     title?: string;
     description?: string;
     salary?: number;
     type?:string;
     location:Address;
+    startDate?: Date;
+    endDate?: Date;
     createdAt: Date;
     updateAt: Date;
 }
 
 const JobSchema = new mongoose.Schema({
-    user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
     createBy: UserBasicSchema,
     title: {
         type: String,
@@ -24,7 +26,12 @@ const JobSchema = new mongoose.Schema({
     description: {
         type: String
     },
-    duration: DateDurationSchema,
+    startDate: {
+        type: Date
+    },
+    endDate: {
+        type: Date
+    },
     salary: {
         type:Number
     },
@@ -40,7 +47,7 @@ const JobSchema = new mongoose.Schema({
 
 JobSchema.pre('remove', async function (next) {
     let job = this as JobDocument;
-    await JobProposal.deleteMany({job:job._id});
+    await JobProposal.deleteMany({jobId:job._id});
     return next();
 })
 

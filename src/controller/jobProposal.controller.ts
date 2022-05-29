@@ -21,7 +21,7 @@ export async function createJobProposal(req: Request, res: Response) {
     try{
         const user = get(req, "user");
         let data = req.body as JobProposalDocument;
-        data.user = user._id;
+        data.userId = user._id;
         data.createBy = {
             user:user._id,
             name:user.name,
@@ -52,7 +52,7 @@ export async function patchJobProposal(req: Request, res: Response) {
         const user = get(req, "user");
         let data = req.body as JobProposalDocument;
         const existingJobProposal = await JobProposalService.baseApi.get(id);
-        if(existingJobProposal === null || existingJobProposal.user.toString() !== user._id) return res.status(403).send();
+        if(existingJobProposal === null || existingJobProposal.userId.toString() !== user._id) return res.status(403).send();
         const jobproposal = await JobProposalService.baseApi.patch(id, data);
         return res.send(jobproposal);
     }catch (e) {
@@ -66,7 +66,7 @@ export async function deleteJobProposal(req: Request, res: Response){
         const id = req.params.id as unknown as mongoose.Types.ObjectId;
         const user = get(req, "user");
         const jobproposal = await JobProposalService.baseApi.get(id);
-        if(jobproposal === null || jobproposal.user.toString() === user._id) return res.status(403).send();
+        if(jobproposal === null || jobproposal.userId.toString() === user._id) return res.status(403).send();
         await JobProposalService.baseApi.delete(id);
         return res.send(jobproposal);
     }catch (e) {

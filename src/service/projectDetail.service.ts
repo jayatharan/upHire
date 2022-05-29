@@ -7,7 +7,7 @@ class ProjectDetailService {
     baseApi = new BaseCRUDApi<ProjectDetailDocument>(ProjectDetail);
 
     public async getUserProjectDetails(id: mongoose.Types.ObjectId){
-        return await ProjectDetail.find({user:id});
+        return await ProjectDetail.find({userId:id});
     }
 
 }

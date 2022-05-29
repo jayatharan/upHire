@@ -3,7 +3,7 @@ import { DateDurationSchema, UserBasicSchema, DateDuration, UserBasic } from "./
 import Proposal from "./proposal.model";
 
 export interface ProjectDocument extends mongoose.Document {
-    user?: mongoose.Types.ObjectId;
+    userId?: mongoose.Types.ObjectId;
     createBy?: UserBasic;
     showContactDetails?: boolean;
     title?: string;
@@ -12,7 +12,8 @@ export interface ProjectDocument extends mongoose.Document {
     budget?: number;
     hourly?: number;
     timeline?: string;
-    duration?: DateDuration;
+    startDate?: Date;
+    endDate?: Date;
     amount?: number;
     rate?: number;
     remainingAmount?: number;
@@ -22,7 +23,7 @@ export interface ProjectDocument extends mongoose.Document {
 }
 
 const ProjectSchema = new mongoose.Schema({
-    user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
     createBy: UserBasicSchema,
     showContactDetails: {
         type: Boolean
@@ -46,7 +47,12 @@ const ProjectSchema = new mongoose.Schema({
     timeline: {
         type: String
     },
-    duration: DateDurationSchema,
+    startDate: {
+        type: Date
+    },
+    endDate: {
+        type: Date
+    },
     amount: {
         type: Number
     },
@@ -68,7 +74,7 @@ const ProjectSchema = new mongoose.Schema({
 
 ProjectSchema.pre('remove', async function (next) {
     let project = this as ProjectDocument;
-    await Proposal.deleteMany({project:project._id});
+    await Proposal.deleteMany({projectId:project._id});
     return next();
 })
 

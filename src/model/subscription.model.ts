@@ -2,22 +2,26 @@ import mongoose from "mongoose";
 import { DateDurationSchema, UserBasicSchema, DateDuration, UserBasic, AddressSchema, Address } from "./schemas";
 
 export interface SubscriptionDocument extends mongoose.Document {
-    user: mongoose.Types.ObjectId;
+    userId: mongoose.Types.ObjectId;
     service:string;
-    duration?: DateDuration;
+    startDate?: Date;
+    endDate?: Date;
     type: string;
     amount: number;
 }
 
 const SubscriptionSchema = new mongoose.Schema({
-    user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
     service: {
         type: String,
         enum:["Project", "Job", "Team"],
         required: true
     },
-    duration: {
-        type: DateDurationSchema
+    startDate: {
+        type: Date
+    },
+    endDate: {
+        type: Date
     },
     type: {
         type:String,

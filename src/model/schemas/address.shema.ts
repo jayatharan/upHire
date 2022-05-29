@@ -1,7 +1,10 @@
 import mongoose from "mongoose";
 
 export interface Address {
-    address?:string
+    address?:string;
+    city?:string;
+    country?:string;
+    postCode?:string;
 }
 
 const AddressSchema = new mongoose.Schema({

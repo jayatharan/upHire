@@ -2,15 +2,16 @@ import mongoose from "mongoose";
 import { CompanyBasicSchema, CompanyBasic, DateDurationSchema, DateDuration } from "./schemas";
 
 export interface ProfessionalDetailDocument extends mongoose.Document {
-    user: mongoose.Types.ObjectId;
+    userId: mongoose.Types.ObjectId;
     company: CompanyBasic;
     jobRole: string;
-    duration: DateDuration;
+    startDate?: Date;
+    endDate?: Date;
 }
 
 const ProfessionalDetailSchema = new mongoose.Schema(
     {
-        user: { 
+        userId: { 
             type: mongoose.Schema.Types.ObjectId, 
             ref: "User",
             required: true
@@ -19,7 +20,12 @@ const ProfessionalDetailSchema = new mongoose.Schema(
         jobRole: {
             type: String
         },
-        duration: DateDurationSchema 
+        startDate: {
+            type: Date
+        },
+        endDate: {
+            type: Date
+        }
     },{
         timestamps:true
     }
