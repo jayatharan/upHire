@@ -42,6 +42,13 @@ const BiographySchema = new mongoose.Schema({
     timestamps:true
 })
 
+BiographySchema.virtual('address', {
+    ref:'Address',
+    localField:'addressId',
+    foreignField:'_id',
+    justOne:true
+})
+
 const Biography = mongoose.model<BiographyDocument>("Biography", BiographySchema);
 
 export default Biography;

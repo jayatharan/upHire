@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import BaseCRUDApi from "./baseCRUD.service";
 import Biography, {BiographyDocument} from "../model/biography.model";
+import AddressService from "./address.service";
 
 class BiographyService {
 
@@ -17,7 +18,13 @@ class BiographyService {
     }
 
     public async getUserBiography(id: mongoose.Types.ObjectId){
-        return (await Biography.findOne({userId:id}))
+        const data = await Biography.findOne({userId:id});
+        let biography = data?.toJSON();
+        if(biography?.addressId){
+            const address = await AddressService.baseApi.get(biography.addressId)
+            if(address) biography = {...biography, address}
+        }
+        return biography;
     }
 
 }
