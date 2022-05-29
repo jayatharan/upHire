@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
-import { AddressSchema, Address, CompanyBasicSchema, CompanyBasic, DateDurationSchema } from "./schemas";
+import { CompanyBasicSchema, CompanyBasic } from "./schemas";
+import {AddressDocument} from "./address.model";
+
 
 export interface BiographyDocument extends mongoose.Document{
     userId: mongoose.Types.ObjectId;
@@ -7,7 +9,8 @@ export interface BiographyDocument extends mongoose.Document{
     lastName?: string;
     company?: CompanyBasic;
     jobRole?:string;
-    address?:Address;
+    addressId?:mongoose.Types.ObjectId;
+    address?:AddressDocument;
     postCode?:string;
     image?:string;
 }
@@ -28,7 +31,10 @@ const BiographySchema = new mongoose.Schema({
     jobRole: {
         type: String
     },
-    address: AddressSchema,
+    addressId: { 
+        type: mongoose.Schema.Types.ObjectId, 
+        ref: "Address"
+    },
     image: {
         type: String
     }

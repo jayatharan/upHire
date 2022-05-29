@@ -36,7 +36,8 @@ export default class BaseCRUDApi<T> {
     }
 
     public async patch(id: mongoose.Types.ObjectId, data:T){
-        return (await this.model.findByIdAndUpdate(id, data, { new: true }))
+        await this.model.findByIdAndUpdate(id, data, { new: true })
+        return (await this.model.findById(id))
     }
 
     public async delete(id: mongoose.Types.ObjectId){
