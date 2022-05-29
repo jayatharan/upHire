@@ -47,12 +47,12 @@ export async function createSessionWithGoogle(req: Request, res: Response) {
             audience: googleClientId
         })
 
-        const { name, email }: { name: string, email: string } = ticket.getPayload();
+        const { name, email, picture }: { name: string, email: string, picture: string } = ticket.getPayload();
 
         var user = await findUser({ email })
 
         if (!user) {
-            user = await createUser({ name: name, email: email })
+            user = await createUser({ name: name, email: email, image:picture })
         }
 
         const session = await createSession(user._id, req.get("user-agent") || "unknown");
