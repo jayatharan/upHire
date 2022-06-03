@@ -1,37 +1,12 @@
 import express from "express";
 import { 
     createUserSessionHandler,
-    getUserSessionsHandler,
-    invalidateUserSessionHandler,
+    createAccessTokenWithRefreshToken,
     createSessionWithGoogle,
-    createAccessTokenWithRefreshToken
-} from "../controller/session.controller";
-import { 
-    createUserSessionSchema, 
-    googleLoginSchema,
-    refreshTokenSchema
-} from "../schema/user.schema";
-import { validateRequest, requiredUser } from "../middleware";
-
+    getUserSessionsHandler
+} from "../controllers/session.controller";
+import { requiredUser } from "../middleware";
 const router = express.Router();
-
-router.post(
-    "/",
-    validateRequest(createUserSessionSchema),
-    createUserSessionHandler
-);
-
-router.post(
-    "/google",
-    validateRequest(googleLoginSchema),
-    createSessionWithGoogle
-);
-
-router.post(
-    "/token",
-    validateRequest(refreshTokenSchema),
-    createAccessTokenWithRefreshToken
-)
 
 router.get(
     "/",
@@ -39,10 +14,19 @@ router.get(
     getUserSessionsHandler
 );
 
-router.delete(
-    "/", 
-    requiredUser, 
-    invalidateUserSessionHandler
+router.post(
+    "/",
+    createUserSessionHandler
 );
+
+router.post(
+    "/google",
+    createSessionWithGoogle
+);
+
+router.post(
+    "/token",
+    createAccessTokenWithRefreshToken
+)
 
 export default router;

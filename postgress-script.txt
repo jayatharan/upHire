@@ -1,0 +1,4 @@
+sudo -u postgres psql
+
+\c uphire
+\dt

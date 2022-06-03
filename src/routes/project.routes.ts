@@ -1,27 +1,27 @@
 import express from "express";
+import {
+    getAllProject, 
+    createProject,
+    updateProject,
+    getProject,
+    deleteProject,
+    getMyProjects
+} from "../controllers/project.controller";
 import { 
-    getAllProjects, 
-    createProject, 
-    patchProject, 
-    getProjectById,
-    getAllProjectProposals, 
-    addProjectProposal, 
-    getMyProjects,
-    deleteProject
-} from "../controller/project.controller";
-import { validateRequest, requiredUser, isUserSubscribed } from "../middleware";
+    requiredUser
+} from "../middleware";
 
 const router = express.Router();
 
 router.get(
     "/",
-    getAllProjects
-);
+    requiredUser,
+    getAllProject
+)
 
 router.post(
     "/",
     requiredUser,
-    isUserSubscribed("Project"),
     createProject
 )
 
@@ -31,30 +31,22 @@ router.get(
     getMyProjects
 )
 
-router.get(
-    "/:id",
-    getProjectById
-)
-
 router.patch(
     "/:id",
-    patchProject
+    requiredUser,
+    updateProject
+)
+
+router.get(
+    "/:id",
+    requiredUser,
+    getProject
 )
 
 router.delete(
     "/:id",
-    deleteProject
-)
-
-router.get(
-    "/:id/proposals",
-    getAllProjectProposals
-)
-
-router.post(
-    "/:id/proposals",
     requiredUser,
-    addProjectProposal
+    deleteProject
 )
 
 export default router;

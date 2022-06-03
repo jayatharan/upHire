@@ -1,13 +1,39 @@
 import express from "express";
-import { patchEducationalDetail, deleteEducationalDetail } from "../controller/educationalDetail.controller";
-import { requiredUser } from "../middleware";
+import {
+    getAllEducationalDetail, 
+    createEducationalDetail,
+    updateEducationalDetail,
+    getEducationalDetail,
+    deleteEducationalDetail
+} from "../controllers/educationalDetail.controller";
+import { 
+    requiredUser 
+} from "../middleware";
 
 const router = express.Router();
+
+router.get(
+    "/",
+    requiredUser,
+    getAllEducationalDetail
+)
+
+router.post(
+    "/",
+    requiredUser,
+    createEducationalDetail
+)
 
 router.patch(
     "/:id",
     requiredUser,
-    patchEducationalDetail
+    updateEducationalDetail
+)
+
+router.get(
+    "/:id",
+    requiredUser,
+    getEducationalDetail
 )
 
 router.delete(

@@ -1,0 +1,1215 @@
+{
+	"info": {
+		"_postman_id": "9117324c-a10d-491e-a49b-64ddaee14fa2",
+		"name": "UPHIRE_PERN",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15506082"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Jayatharan\",\r\n    \"email\":\"indran@uphire.com\",\r\n    \"password\":\"123456\",\r\n    \"alternativeEmail\":\"test@uphire.com\",\r\n    \"mobileNumber\":\"0777123456\",\r\n    \"role\":\"client\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{server}}/users",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Jaya\",\r\n    \"email\":\"jaya1@gmail.com\",\r\n    \"password\":\"123456\",\r\n    \"alternativeEmail\":\"test1@gmail.com\",\r\n    \"mobileNumber\":\"0777123456\",\r\n    \"role\":\"client\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{server}}/users",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Biography",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Jayatharan\",\r\n    \"lastName\": \"Indran\",\r\n    \"jobRole\": \"Associate Software Engineer\",\r\n    \"addressId\":\"f9a455de-7a6a-44c3-b562-83c7f66051fc\",\r\n    \"companyId\":\"7c1dfb92-b7bc-4d7c-8421-4dbb2839bdd7\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{server}}/users/biography",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"biography"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{server}}/users",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get My Subscriptions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{server}}/users/subscriptions",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"subscriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Subscribe Service",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"service\":\"Team\",\r\n    \"type\":\"Unlimited\",\r\n    \"amount\":1000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{server}}/users/subscriptions",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"subscriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add User Project Detail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Uphire\",\r\n    \"category\":\"Project Manager\",\r\n    \"description\":\"Test\",\r\n    \"images\":[\"test\",\"test1\",\"test2\",\"test3\"],\r\n    \"technologies\":[\"React Js\", \"Node\", \"Express\", \"Postgresql\", \"Sequelize\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{server}}/users/project-detail",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"project-detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Project Detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Uphire\",\r\n    \"category\":\"Project Manager\",\r\n    \"description\":\"Test\",\r\n    \"images\":[\"test\",\"test1\",\"test2\",\"test3\"],\r\n    \"technologies\":[\"React Js\", \"Node\", \"Express\", \"Postgresql\", \"Sequelize\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{server}}/users/project-detail",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"project-detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add User Educational Detail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"courseName\":\"Uphire\",\r\n    \"type\":\"Project Manager\",\r\n    \"description\":\"Test\",\r\n    \"image\":\"test\",\r\n    \"organizationName\":\"Test\",\r\n    \"address\":{\r\n        \"address\":\"259, 2nd Lane, Ukkulankulam\",\r\n        \"city\":\"Vavuniya\",\r\n        \"country\":\"SriLanka\",\r\n        \"postCode\":\"43000\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{server}}/users/educational-detail",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"educational-detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Educational Detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"courseName\":\"Uphire\",\r\n    \"type\":\"Project Manager\",\r\n    \"description\":\"Test\",\r\n    \"image\":\"test\",\r\n    \"organizationName\":\"Test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{server}}/users/educational-detail",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"educational-detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add User Professional Detail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\":\"Test\",\r\n    \"image\":\"test\",\r\n    \"jobRole\":\"Test\",\r\n    \"company\":{\r\n        \"name\": \"Calcey Technologies\",\r\n        \"description\": \"Software Company\",\r\n        \"addressId\": \"0dd331c9-717e-4713-8d97-8be3f8b6f937\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{server}}/users/professional-detail",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"professional-detail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Professional Detail",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\":\"Test\",\r\n    \"image\":\"test\",\r\n    \"jobRole\":\"Test\",\r\n    \"companyId\":\"7c1dfb92-b7bc-4d7c-8421-4dbb2839bdd7\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{server}}/users/professional-detail",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"users",
+								"professional-detail"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Session",
+			"item": [
+				{
+					"name": "Create Session",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"indran@uphire.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{server}}/sessions",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"sessions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refreshToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImViZDg2YmNkLTMzNDYtNDMwNy05MmU1LTc2ZDllNzJkODU2YyIsInZhbGlkIjp0cnVlLCJ1c2VySWQiOiI4NzEwY2FhNy1kNTZkLTRmNzUtOGZhZC0zOTU0YjY1ZmExN2MiLCJ1c2VyQWdlbnQiOiJQb3N0bWFuUnVudGltZS83LjI5LjAiLCJ1cGRhdGVkQXQiOiIyMDIyLTA1LTMwVDAyOjI0OjE5LjE5OFoiLCJjcmVhdGVkQXQiOiIyMDIyLTA1LTMwVDAyOjI0OjE5LjE5OFoiLCJpYXQiOjE2NTM4Nzc0NTksImV4cCI6MTY4NTQzNTA1OX0.a5jDKXdSRLO-quErDVqhL4zFp20dSs0p33pPYL7cSsw\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{server}}/sessions/token",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"sessions",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sessions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{server}}/sessions",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"sessions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Address",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{server}}/address?page=1&limit=100",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"address"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"address\":\"259, 2nd Lane, Ukkulankulam\",\r\n    \"city\":\"Vavuniya\",\r\n    \"country\":\"SriLanka\",\r\n    \"postCode\":\"43000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{server}}/address",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://{{server}}/address/95250944-47f9-4181-ba01-e97aa06a19de",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"address",
+								"95250944-47f9-4181-ba01-e97aa06a19de"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{server}}/address/95250944-47f9-4181-ba01-e97aa06a19de",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"address",
+								"95250944-47f9-4181-ba01-e97aa06a19de"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{server}}/address/95250944-47f9-4181-ba01-e97aa06a19de",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"address",
+								"95250944-47f9-4181-ba01-e97aa06a19de"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Company",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{server}}/company?page=1&limit=10",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"company"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Calcey Technologies\",\r\n    \"description\": \"Software Company\",\r\n    \"addressId\": \"2ac692a3-66dc-4423-bb3d-253a46441911\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{server}}/company",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"72d113c5-bdc5-4251-be76-f993f18028a9\",\r\n    \"name\": \"Calcey Technologies\",\r\n    \"description\": \"Software Company\",\r\n    \"addressId\": \"4bd503c3-d214-4b1b-8060-7131323506e4\",\r\n    \"createdAt\": \"2022-05-31T07:46:32.343Z\",\r\n    \"updatedAt\": \"2022-05-31T09:15:00.076Z\",\r\n    \"address\": {\r\n        \"id\": \"4bd503c3-d214-4b1b-8060-7131323506e4\",\r\n        \"userId\": \"72d113c5-bdc5-4251-be76-f993f18028a9\",\r\n        \"address\": \"Test Address\",\r\n        \"city\": \"Vavuniya\",\r\n        \"country\": \"SriLanka\",\r\n        \"postCode\": \"43000\",\r\n        \"createdAt\": \"2022-05-31T07:45:30.241Z\",\r\n        \"updatedAt\": \"2022-05-31T08:59:42.374Z\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{server}}/company/53697ed2-1888-4840-a42c-859bc65b0e02",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"company",
+								"53697ed2-1888-4840-a42c-859bc65b0e02"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{server}}/company/52859d9c-2de8-4044-a9da-6fe81f9ad2f4",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"company",
+								"52859d9c-2de8-4044-a9da-6fe81f9ad2f4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{server}}/company/53697ed2-1888-4840-a42c-859bc65b0e02",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"company",
+								"53697ed2-1888-4840-a42c-859bc65b0e02"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Project",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Calcey Technologies\",\r\n    \"description\": \"Software Company\",\r\n    \"addressId\": \"059b5278-6e5e-4687-82ee-edbb1c31175e\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{server}}/company",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"53697ed2-1888-4840-a42c-859bc65b0e02\",\r\n    \"userId\": \"72d113c5-bdc5-4251-be76-f993f18028a9\",\r\n    \"name\": \"Calcey Technologies\",\r\n    \"description\": \"Software Company\",\r\n    \"addressId\": \"4bd503c3-d214-4b1b-8060-7131323506e4\",\r\n    \"createdAt\": \"2022-05-31T07:46:32.343Z\",\r\n    \"updatedAt\": \"2022-05-31T09:15:00.076Z\",\r\n    \"address\": {\r\n        \"id\": \"4bd503c3-d214-4b1b-8060-7131323506e4\",\r\n        \"userId\": \"72d113c5-bdc5-4251-be76-f993f18028a9\",\r\n        \"address\": \"Test Address1\",\r\n        \"city\": \"Vavuniya\",\r\n        \"country\": \"SriLanka\",\r\n        \"postCode\": \"43000\",\r\n        \"createdAt\": \"2022-05-31T07:45:30.241Z\",\r\n        \"updatedAt\": \"2022-05-31T08:59:42.374Z\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{server}}/company/53697ed2-1888-4840-a42c-859bc65b0e02",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"company",
+								"53697ed2-1888-4840-a42c-859bc65b0e02"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{server}}/company",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{server}}/company/53697ed2-1888-4840-a42c-859bc65b0e02",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"company",
+								"53697ed2-1888-4840-a42c-859bc65b0e02"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User ProjectDetail",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{server}}/project-details",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"project-details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Calcey Technologies\",\r\n    \"description\": \"Software Company\",\r\n    \"addressId\": \"059b5278-6e5e-4687-82ee-edbb1c31175e\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{server}}/project-details",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"project-details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"53697ed2-1888-4840-a42c-859bc65b0e02\",\r\n    \"userId\": \"72d113c5-bdc5-4251-be76-f993f18028a9\",\r\n    \"name\": \"Calcey Technologies\",\r\n    \"description\": \"Software Company\",\r\n    \"addressId\": \"4bd503c3-d214-4b1b-8060-7131323506e4\",\r\n    \"createdAt\": \"2022-05-31T07:46:32.343Z\",\r\n    \"updatedAt\": \"2022-05-31T09:15:00.076Z\",\r\n    \"address\": {\r\n        \"id\": \"4bd503c3-d214-4b1b-8060-7131323506e4\",\r\n        \"userId\": \"72d113c5-bdc5-4251-be76-f993f18028a9\",\r\n        \"address\": \"Test Address1\",\r\n        \"city\": \"Vavuniya\",\r\n        \"country\": \"SriLanka\",\r\n        \"postCode\": \"43000\",\r\n        \"createdAt\": \"2022-05-31T07:45:30.241Z\",\r\n        \"updatedAt\": \"2022-05-31T08:59:42.374Z\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{server}}/project-details/53697ed2-1888-4840-a42c-859bc65b0e02",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"project-details",
+								"53697ed2-1888-4840-a42c-859bc65b0e02"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{server}}/project-details/:id",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"project-details",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{server}}/project-details/53697ed2-1888-4840-a42c-859bc65b0e02",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"project-details",
+								"53697ed2-1888-4840-a42c-859bc65b0e02"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User EducationalDetail",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{server}}/projects",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Calcey Technologies\",\r\n    \"description\": \"Software Company\",\r\n    \"addressId\": \"059b5278-6e5e-4687-82ee-edbb1c31175e\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{server}}/projects",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"53697ed2-1888-4840-a42c-859bc65b0e02\",\r\n    \"userId\": \"72d113c5-bdc5-4251-be76-f993f18028a9\",\r\n    \"name\": \"Calcey Technologies\",\r\n    \"description\": \"Software Company\",\r\n    \"addressId\": \"4bd503c3-d214-4b1b-8060-7131323506e4\",\r\n    \"createdAt\": \"2022-05-31T07:46:32.343Z\",\r\n    \"updatedAt\": \"2022-05-31T09:15:00.076Z\",\r\n    \"address\": {\r\n        \"id\": \"4bd503c3-d214-4b1b-8060-7131323506e4\",\r\n        \"userId\": \"72d113c5-bdc5-4251-be76-f993f18028a9\",\r\n        \"address\": \"Test Address1\",\r\n        \"city\": \"Vavuniya\",\r\n        \"country\": \"SriLanka\",\r\n        \"postCode\": \"43000\",\r\n        \"createdAt\": \"2022-05-31T07:45:30.241Z\",\r\n        \"updatedAt\": \"2022-05-31T08:59:42.374Z\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{server}}/projects/53697ed2-1888-4840-a42c-859bc65b0e02",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"projects",
+								"53697ed2-1888-4840-a42c-859bc65b0e02"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{server}}/projects/:id",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"projects",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{server}}/projects/53697ed2-1888-4840-a42c-859bc65b0e02",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"projects",
+								"53697ed2-1888-4840-a42c-859bc65b0e02"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get My Projects",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{server}}/projects/my-projects",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"projects",
+								"my-projects"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User ProfessionalDetail",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{server}}/professional-details",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"professional-details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Calcey Technologies\",\r\n    \"description\": \"Software Company\",\r\n    \"addressId\": \"059b5278-6e5e-4687-82ee-edbb1c31175e\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{server}}/professional-details",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"professional-details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"53697ed2-1888-4840-a42c-859bc65b0e02\",\r\n    \"userId\": \"72d113c5-bdc5-4251-be76-f993f18028a9\",\r\n    \"name\": \"Calcey Technologies\",\r\n    \"description\": \"Software Company\",\r\n    \"addressId\": \"4bd503c3-d214-4b1b-8060-7131323506e4\",\r\n    \"createdAt\": \"2022-05-31T07:46:32.343Z\",\r\n    \"updatedAt\": \"2022-05-31T09:15:00.076Z\",\r\n    \"address\": {\r\n        \"id\": \"4bd503c3-d214-4b1b-8060-7131323506e4\",\r\n        \"userId\": \"72d113c5-bdc5-4251-be76-f993f18028a9\",\r\n        \"address\": \"Test Address1\",\r\n        \"city\": \"Vavuniya\",\r\n        \"country\": \"SriLanka\",\r\n        \"postCode\": \"43000\",\r\n        \"createdAt\": \"2022-05-31T07:45:30.241Z\",\r\n        \"updatedAt\": \"2022-05-31T08:59:42.374Z\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{server}}/professional-details/53697ed2-1888-4840-a42c-859bc65b0e02",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"professional-details",
+								"53697ed2-1888-4840-a42c-859bc65b0e02"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{server}}/professional-details/:id",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"professional-details",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{server}}/professional-details/53697ed2-1888-4840-a42c-859bc65b0e02",
+							"protocol": "http",
+							"host": [
+								"{{server}}"
+							],
+							"path": [
+								"professional-details",
+								"53697ed2-1888-4840-a42c-859bc65b0e02"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{server}}/health-check",
+					"protocol": "http",
+					"host": [
+						"{{server}}"
+					],
+					"path": [
+						"health-check"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM5NGNiYjIzLWNlNGEtNGE1Ni1iMmQ1LWUzODUzMDAyYmNlNSIsIm5hbWUiOiJKYXlhdGhhcmFuIiwiZW1haWwiOiJpbmRyYW5AdXBoaXJlLmNvbSIsInJvbGUiOiJnZW5lcmFsIiwiZW1haWxWZXJpZmljYXRpb25HdWlkIjoiOGYzNTBmY2ItMTY2Yy00MDhmLTgzN2QtMzZjZmFhNWM5YTcyIiwiZW1haWxWZXJpZmllZCI6ZmFsc2UsImFsdGVybmF0aXZlRW1haWwiOiJqYXlhdGhhcmFuQHVwaGlyZS5jb20iLCJtb2JpbGVOdW1iZXIiOiIwNzcxMjM0NTY3IiwiaW1hZ2UiOm51bGwsImNyZWF0ZWRBdCI6IjIwMjItMDYtMDJUMTU6MTM6NDQuNDM3WiIsInVwZGF0ZWRBdCI6IjIwMjItMDYtMDJUMTU6MTM6NDQuNDM3WiIsInNlc3Npb24iOiIwNzNlYmVmOS05ZjdiLTRiZTYtOWM3MC04ZWRlMmJlNjUxZjYiLCJpYXQiOjE2NTQxODU3MDcsImV4cCI6MTY1NDI3MjEwN30.BZdjg_gnxubOVNBQgSrVh-pU8pjPFuN4dh4jxrGGQhc",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "server",
+			"value": "128.199.18.121/api",
+			"type": "string"
+		},
+		{
+			"key": "digital-ocean",
+			"value": "68.183.85.171/api/new",
+			"type": "string"
+		},
+		{
+			"key": "local",
+			"value": "localhost:1338",
+			"type": "string"
+		}
+	]
+}

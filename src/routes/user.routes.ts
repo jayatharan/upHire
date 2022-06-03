@@ -1,27 +1,25 @@
 import express from "express";
-import { 
+import {
     createUserHandler, 
+    updateUserHandler, 
     updateUserBiography, 
-    getUserDetails, 
-    addUserProfessionalDetail, 
-    addUserEducationalDetail, 
-    addUserProjectDetail,
-    verifyEmailAddress,
+    getUserDetails,
     subscribeService,
     getMySubscriptions,
     unSubscribe,
-    updateUserHandler
-} from "../controller/user.controller";
-import { createUserSchema, verifyEmailSchema, updateUserSchema } from "../schema/user.schema";
+    addUserProjectDetail,
+    addUserEducationalDetail,
+    addUserProfessionalDetail,
+    getUserEducationalDetails,
+    getUserProfessionalDetails,
+    getUserProjectDetails
+} from '../controllers/user.controller'
+import { 
+    createUserSchema, updateUserSchema
+} from "../schemas/user.schema";
 import { validateRequest, requiredUser } from "../middleware";
 
 const router = express.Router();
-
-router.post(
-    "/",
-    validateRequest(createUserSchema),
-    createUserHandler
-);
 
 router.get(
     "/",
@@ -29,17 +27,17 @@ router.get(
     getUserDetails
 );
 
-router.patch(
+router.post(
     "/",
-    requiredUser,
-    validateRequest(updateUserSchema),
-    updateUserHandler
+    validateRequest(createUserSchema),
+    createUserHandler
 )
 
-router.post(
-    "/verify-email",
-    validateRequest(verifyEmailSchema),
-    verifyEmailAddress
+router.patch(
+    "/",
+    validateRequest(updateUserSchema),
+    requiredUser,
+    updateUserHandler
 )
 
 router.post(
@@ -47,24 +45,6 @@ router.post(
     requiredUser,
     updateUserBiography
 );
-
-router.post(
-    "/professional-detail",
-    requiredUser,
-    addUserProfessionalDetail
-);
-
-router.post(
-    "/educational-detail",
-    requiredUser,
-    addUserEducationalDetail
-)
-
-router.post(
-    "/project-detail",
-    requiredUser,
-    addUserProjectDetail
-)
 
 router.get(
     "/subscriptions",
@@ -82,6 +62,42 @@ router.delete(
     "/subscriptions/:service",
     requiredUser,
     unSubscribe
+)
+
+router.get(
+    "/project-detail",
+    requiredUser,
+    getUserProjectDetails
+)
+
+router.post(
+    "/project-detail",
+    requiredUser,
+    addUserProjectDetail
+)
+
+router.get(
+    "/educational-detail",
+    requiredUser,
+    getUserEducationalDetails
+)
+
+router.post(
+    "/educational-detail",
+    requiredUser,
+    addUserEducationalDetail
+)
+
+router.get(
+    "/professional-detail",
+    requiredUser,
+    getUserProfessionalDetails
+)
+
+router.post(
+    "/professional-detail",
+    requiredUser,
+    addUserProfessionalDetail
 )
 
 export default router;

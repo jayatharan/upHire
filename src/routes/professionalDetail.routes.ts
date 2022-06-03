@@ -1,13 +1,39 @@
 import express from "express";
-import { patchProfessionalDetail, deleteProfessionalDetail } from "../controller/professionalDetail.controller";
-import { requiredUser } from "../middleware";
+import {
+    getAllProfessionalDetail, 
+    createProfessionalDetail,
+    updateProfessionalDetail,
+    getProfessionalDetail,
+    deleteProfessionalDetail
+} from "../controllers/professionalDetail.controller";
+import { 
+    requiredUser 
+} from "../middleware";
 
 const router = express.Router();
+
+router.get(
+    "/",
+    requiredUser,
+    getAllProfessionalDetail
+)
+
+router.post(
+    "/",
+    requiredUser,
+    createProfessionalDetail
+)
 
 router.patch(
     "/:id",
     requiredUser,
-    patchProfessionalDetail
+    updateProfessionalDetail
+)
+
+router.get(
+    "/:id",
+    requiredUser,
+    getProfessionalDetail
 )
 
 router.delete(

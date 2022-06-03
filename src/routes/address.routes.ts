@@ -1,12 +1,22 @@
 import express from "express";
 import {
+    getAllAddress, 
     createAddress,
-    patchAddress,
+    updateAddress,
+    getAddress,
     deleteAddress
-} from "../controller/address.controller"
-import { requiredUser } from "../middleware";
+} from "../controllers/address.controller";
+import { 
+    requiredUser 
+} from "../middleware";
 
 const router = express.Router();
+
+router.get(
+    "/",
+    requiredUser,
+    getAllAddress
+)
 
 router.post(
     "/",
@@ -16,11 +26,19 @@ router.post(
 
 router.patch(
     "/:id",
-    patchAddress
+    requiredUser,
+    updateAddress
+)
+
+router.get(
+    "/:id",
+    requiredUser,
+    getAddress
 )
 
 router.delete(
     "/:id",
+    requiredUser,
     deleteAddress
 )
 
